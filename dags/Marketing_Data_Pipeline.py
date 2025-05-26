@@ -14,7 +14,7 @@ sys.path.append(str(Path(__file__).resolve().parent.parent / "scripts"))
 
 
 
-from data_generation_new import (
+from data_generation import (
     generate_dimension_if_needed, generate_contacts_if_needed,
     generate_form_fills_if_needed, generate_website_activity_if_needed,
 )
