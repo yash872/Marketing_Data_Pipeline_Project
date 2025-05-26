@@ -1,0 +1,39 @@
+[2025-05-24T12:19:44.254+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: marketing_data_pipeline.print_metadata_log manual__2025-05-24T12:18:08.583052+00:00 [queued]>
+[2025-05-24T12:19:44.289+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: marketing_data_pipeline.print_metadata_log manual__2025-05-24T12:18:08.583052+00:00 [queued]>
+[2025-05-24T12:19:44.290+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-05-24T12:19:44.381+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): print_metadata_log> on 2025-05-24 12:18:08.583052+00:00
+[2025-05-24T12:19:44.410+0000] {standard_task_runner.py:60} INFO - Started process 443 to run task
+[2025-05-24T12:19:44.427+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'marketing_data_pipeline', 'print_metadata_log', 'manual__2025-05-24T12:18:08.583052+00:00', '--job-id', '24', '--raw', '--subdir', 'DAGS_FOLDER/main_pipeline_dag.py', '--cfg-path', '/tmp/tmpwt59bi3s']
+[2025-05-24T12:19:44.439+0000] {standard_task_runner.py:88} INFO - Job 24: Subtask print_metadata_log
+[2025-05-24T12:19:44.675+0000] {task_command.py:423} INFO - Running <TaskInstance: marketing_data_pipeline.print_metadata_log manual__2025-05-24T12:18:08.583052+00:00 [running]> on host 00e321f10423
+[2025-05-24T12:19:45.011+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='yashbhawsar872@gmail.com' AIRFLOW_CTX_DAG_OWNER='Yash' AIRFLOW_CTX_DAG_ID='marketing_data_pipeline' AIRFLOW_CTX_TASK_ID='print_metadata_log' AIRFLOW_CTX_EXECUTION_DATE='2025-05-24T12:18:08.583052+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-24T12:18:08.583052+00:00'
+[2025-05-24T12:19:45.014+0000] {main_pipeline_dag.py:25} INFO - ▶️ Starting task: Print Metadata Logs
+[2025-05-24T12:19:45.036+0000] {logging_mixin.py:188} INFO - 
+=== File Metadata for 2025-05-24 ===
+[2025-05-24T12:19:45.037+0000] {logging_mixin.py:188} INFO - file_name | dataset_type | file_date | generated_at | validated_at | uploaded_at
+[2025-05-24T12:19:45.038+0000] {logging_mixin.py:188} INFO - --------------------------------------------------------------------------------
+[2025-05-24T12:19:45.046+0000] {logging_mixin.py:188} INFO - website_activity_2025-05-24.json | website_activity | 2025-05-24 | 2025-05-24T12:13:54.492951 | 2025-05-24T12:14:29.001729 | 2025-05-24T12:15:06.076706
+[2025-05-24T12:19:45.047+0000] {logging_mixin.py:188} INFO - form_fills_2025-05-24.parquet | form_fills | 2025-05-24 | 2025-05-24T12:13:55.007572 | 2025-05-24T12:14:31.871949 | 2025-05-24T12:15:03.264035
+[2025-05-24T12:19:45.048+0000] {logging_mixin.py:188} INFO - contacts_2025-05-24.csv | contacts | 2025-05-24 | 2025-05-24T12:13:57.065022 | 2025-05-24T12:14:28.734455 | 2025-05-24T12:15:00.032688
+[2025-05-24T12:19:45.050+0000] {logging_mixin.py:188} INFO - 
+=== DQ Checks for 2025-05-24 ===
+[2025-05-24T12:19:45.053+0000] {logging_mixin.py:188} INFO - file_name | check_name | status | details | timestamp
+[2025-05-24T12:19:45.054+0000] {logging_mixin.py:188} INFO - --------------------------------------------------------------------------------
+[2025-05-24T12:19:45.059+0000] {logging_mixin.py:188} INFO - website_activity_2025-05-24.json | schema_format | PASS | Got cols ['session_id', 'contact_id', 'timestamp', 'page_url', 'page_title', 'referrer_url', 'device', 'browser', 'os', 'event_type', 'campaign_params.utm_source', 'campaign_params.utm_medium', 'campaign_params.utm_campaign', 'geo_location.city', 'geo_location.country'] | 2025-05-24 12:14:15
+[2025-05-24T12:19:45.060+0000] {logging_mixin.py:188} INFO - contacts_2025-05-24.csv | schema_format | PASS | Got cols ['contact_id', 'first_name', 'last_name', 'email', 'phone', 'company_name', 'industry', 'job_title', 'job_level', 'lead_source', 'utm_campaign', 'utm_medium', 'utm_source', 'linkedin_url', 'employee_count', 'annual_revenue', 'status', 'created_at', 'last_modified_at'] | 2025-05-24 12:14:16
+[2025-05-24T12:19:45.061+0000] {logging_mixin.py:188} INFO - website_activity_2025-05-24.json | freshness | PASS | File date 2025-05-24 | 2025-05-24 12:14:17
+[2025-05-24T12:19:45.062+0000] {logging_mixin.py:188} INFO - contacts_2025-05-24.csv | freshness | PASS | File date 2025-05-24 | 2025-05-24 12:14:18
+[2025-05-24T12:19:45.063+0000] {logging_mixin.py:188} INFO - website_activity_2025-05-24.json | row_count | PASS | Count=1000, avg≈1000 | 2025-05-24 12:14:25
+[2025-05-24T12:19:45.064+0000] {logging_mixin.py:188} INFO - form_fills_2025-05-24.parquet | schema_format | PASS | Got cols ['form_id', 'contact_id', 'form_type', 'timestamp', 'referrer_url', 'user_agent', 'ip_address', 'project_budget', 'timeline', 'needs'] | 2025-05-24 12:14:26
+[2025-05-24T12:19:45.065+0000] {logging_mixin.py:188} INFO - contacts_2025-05-24.csv | row_count | PASS | Count=1000, avg≈1000 | 2025-05-24 12:14:26
+[2025-05-24T12:19:45.066+0000] {logging_mixin.py:188} INFO - form_fills_2025-05-24.parquet | freshness | PASS | File date 2025-05-24 | 2025-05-24 12:14:27
+[2025-05-24T12:19:45.069+0000] {logging_mixin.py:188} INFO - form_fills_2025-05-24.parquet | row_count | PASS | Count=1000, avg≈1000 | 2025-05-24 12:14:28
+[2025-05-24T12:19:45.071+0000] {logging_mixin.py:188} INFO - contacts_2025-05-24.csv | contacts | PASS | in=1000, out=1000, failures=0 | 2025-05-24 12:14:28
+[2025-05-24T12:19:45.072+0000] {logging_mixin.py:188} INFO - website_activity_2025-05-24.json | website_activity | PASS | in=1000, out=1000, failures=0 | 2025-05-24 12:14:28
+[2025-05-24T12:19:45.072+0000] {logging_mixin.py:188} INFO - form_fills_2025-05-24.parquet | form_fills | PASS | in=1000, out=1000, failures=0 | 2025-05-24 12:14:30
+[2025-05-24T12:19:45.075+0000] {metadata.py:251} INFO - 🖨️ Metadata printed for 2025-05-24
+[2025-05-24T12:19:45.078+0000] {main_pipeline_dag.py:27} INFO - ✅ Completed task: Print Metadata Logs
+[2025-05-24T12:19:45.082+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-05-24T12:19:45.134+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=marketing_data_pipeline, task_id=print_metadata_log, execution_date=20250524T121808, start_date=20250524T121944, end_date=20250524T121945
+[2025-05-24T12:19:45.244+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-05-24T12:19:45.312+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

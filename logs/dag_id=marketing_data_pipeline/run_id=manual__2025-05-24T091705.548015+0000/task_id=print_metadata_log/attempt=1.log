@@ -1,0 +1,48 @@
+[2025-05-24T09:18:27.750+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: marketing_data_pipeline.print_metadata_log manual__2025-05-24T09:17:05.548015+00:00 [queued]>
+[2025-05-24T09:18:27.775+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: marketing_data_pipeline.print_metadata_log manual__2025-05-24T09:17:05.548015+00:00 [queued]>
+[2025-05-24T09:18:27.776+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-05-24T09:18:27.833+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): print_metadata_log> on 2025-05-24 09:17:05.548015+00:00
+[2025-05-24T09:18:27.847+0000] {standard_task_runner.py:60} INFO - Started process 1656 to run task
+[2025-05-24T09:18:27.854+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'marketing_data_pipeline', 'print_metadata_log', 'manual__2025-05-24T09:17:05.548015+00:00', '--job-id', '49', '--raw', '--subdir', 'DAGS_FOLDER/main_pipeline_dag.py', '--cfg-path', '/tmp/tmpc072z07y']
+[2025-05-24T09:18:27.864+0000] {standard_task_runner.py:88} INFO - Job 49: Subtask print_metadata_log
+[2025-05-24T09:18:28.020+0000] {task_command.py:423} INFO - Running <TaskInstance: marketing_data_pipeline.print_metadata_log manual__2025-05-24T09:17:05.548015+00:00 [running]> on host e6492150ec46
+[2025-05-24T09:18:28.284+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='yashbhawsar872@gmail.com' AIRFLOW_CTX_DAG_OWNER='Yash' AIRFLOW_CTX_DAG_ID='marketing_data_pipeline' AIRFLOW_CTX_TASK_ID='print_metadata_log' AIRFLOW_CTX_EXECUTION_DATE='2025-05-24T09:17:05.548015+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-24T09:17:05.548015+00:00'
+[2025-05-24T09:18:28.286+0000] {main_pipeline_dag.py:25} INFO - ▶️ Starting task: Print Metadata Logs
+[2025-05-24T09:18:28.298+0000] {logging_mixin.py:188} INFO - 
+=== File Metadata for 2025-05-24 ===
+[2025-05-24T09:18:28.299+0000] {logging_mixin.py:188} INFO - file_name | dataset_type | file_date | generated_at | validated_at | uploaded_at
+[2025-05-24T09:18:28.300+0000] {logging_mixin.py:188} INFO - --------------------------------------------------------------------------------
+[2025-05-24T09:18:28.308+0000] {logging_mixin.py:188} INFO - form_fills_2025-05-24.parquet | form_fills | 2025-05-24 | 2025-05-24T09:17:34.491050 | 2025-05-24T09:17:59.718688 | 2025-05-24T09:18:20.480521
+[2025-05-24T09:18:28.309+0000] {logging_mixin.py:188} INFO - website_activity_2025-05-24.json | website_activity | 2025-05-24 | 2025-05-24T09:17:39.005983 | 2025-05-24T09:17:59.109452 | 2025-05-24T09:18:21.213168
+[2025-05-24T09:18:28.310+0000] {logging_mixin.py:188} INFO - contacts_2025-05-24.csv | contacts | 2025-05-24 | 2025-05-24T09:17:39.411126 | 2025-05-24T09:17:57.762204 | 2025-05-24T09:18:19.850038
+[2025-05-24T09:18:28.312+0000] {logging_mixin.py:188} INFO - 
+=== DQ Checks for 2025-05-24 ===
+[2025-05-24T09:18:28.313+0000] {logging_mixin.py:188} INFO - file_name | check_name | status | details | timestamp
+[2025-05-24T09:18:28.313+0000] {logging_mixin.py:188} INFO - --------------------------------------------------------------------------------
+[2025-05-24T09:18:28.319+0000] {logging_mixin.py:188} INFO - website_activity_2025-05-23.json | schema_format | FAIL | Missing {'url'} | 2025-05-24 08:18:51
+[2025-05-24T09:18:28.320+0000] {logging_mixin.py:188} INFO - contacts_2025-05-23.csv | schema_format | FAIL | Missing {'name'} | 2025-05-24 08:18:51
+[2025-05-24T09:18:28.320+0000] {logging_mixin.py:188} INFO - website_activity_2025-05-23.json | file-level | FAIL | website_activity_2025-05-23.json: Missing cols {'url'} | 2025-05-24 08:18:52
+[2025-05-24T09:18:28.321+0000] {logging_mixin.py:188} INFO - contacts_2025-05-23.csv | file-level | FAIL | contacts_2025-05-23.csv: Missing cols {'name'} | 2025-05-24 08:18:52
+[2025-05-24T09:18:28.322+0000] {logging_mixin.py:188} INFO - form_fills_2025-05-23.parquet | schema_format | FAIL | Missing {'user_id', 'submitted_at'} | 2025-05-24 08:18:52
+[2025-05-24T09:18:28.322+0000] {logging_mixin.py:188} INFO - form_fills_2025-05-23.parquet | file-level | FAIL | form_fills_2025-05-23.parquet: Missing cols {'user_id', 'submitted_at'} | 2025-05-24 08:18:53
+[2025-05-24T09:18:28.323+0000] {logging_mixin.py:188} INFO - website_activity_2025-05-24.json | schema_format | FAIL | Missing {'url'} | 2025-05-24 08:35:33
+[2025-05-24T09:18:28.324+0000] {logging_mixin.py:188} INFO - website_activity_2025-05-24.json | file-level | FAIL | website_activity_2025-05-24.json: Missing cols {'url'} | 2025-05-24 08:35:34
+[2025-05-24T09:18:28.326+0000] {logging_mixin.py:188} INFO - contacts_2025-05-24.csv | schema_format | FAIL | Missing {'name'} | 2025-05-24 08:35:34
+[2025-05-24T09:18:28.327+0000] {logging_mixin.py:188} INFO - contacts_2025-05-24.csv | file-level | FAIL | contacts_2025-05-24.csv: Missing cols {'name'} | 2025-05-24 08:35:35
+[2025-05-24T09:18:28.328+0000] {logging_mixin.py:188} INFO - form_fills_2025-05-24.parquet | schema_format | FAIL | Missing {'user_id', 'submitted_at'} | 2025-05-24 08:35:35
+[2025-05-24T09:18:28.329+0000] {logging_mixin.py:188} INFO - form_fills_2025-05-24.parquet | file-level | FAIL | form_fills_2025-05-24.parquet: Missing cols {'user_id', 'submitted_at'} | 2025-05-24 08:35:36
+[2025-05-24T09:18:28.330+0000] {logging_mixin.py:188} INFO - contacts_2025-05-24.csv | schema_format | FAIL | Missing {'name'} | 2025-05-24 09:17:56
+[2025-05-24T09:18:28.331+0000] {logging_mixin.py:188} INFO - form_fills_2025-05-24.parquet | schema_format | FAIL | Missing {'user_id', 'submitted_at'} | 2025-05-24 09:17:56
+[2025-05-24T09:18:28.333+0000] {logging_mixin.py:188} INFO - contacts_2025-05-24.csv | file-level | FAIL | contacts_2025-05-24.csv: Missing cols {'name'} | 2025-05-24 09:17:56
+[2025-05-24T09:18:28.334+0000] {logging_mixin.py:188} INFO - website_activity_2025-05-24.json | schema_format | FAIL | Missing {'url'} | 2025-05-24 09:17:56
+[2025-05-24T09:18:28.335+0000] {logging_mixin.py:188} INFO - website_activity_2025-05-24.json | file-level | FAIL | website_activity_2025-05-24.json: Missing cols {'url'} | 2025-05-24 09:17:57
+[2025-05-24T09:18:28.336+0000] {logging_mixin.py:188} INFO - contacts_2025-05-24.csv | contacts | FAIL | contacts_2025-05-24.csv: Missing cols {'name'} | 2025-05-24 09:17:57
+[2025-05-24T09:18:28.336+0000] {logging_mixin.py:188} INFO - form_fills_2025-05-24.parquet | file-level | FAIL | form_fills_2025-05-24.parquet: Missing cols {'user_id', 'submitted_at'} | 2025-05-24 09:17:58
+[2025-05-24T09:18:28.337+0000] {logging_mixin.py:188} INFO - website_activity_2025-05-24.json | website_activity | FAIL | website_activity_2025-05-24.json: Missing cols {'url'} | 2025-05-24 09:17:58
+[2025-05-24T09:18:28.338+0000] {logging_mixin.py:188} INFO - form_fills_2025-05-24.parquet | form_fills | FAIL | form_fills_2025-05-24.parquet: Missing cols {'user_id', 'submitted_at'} | 2025-05-24 09:17:59
+[2025-05-24T09:18:28.341+0000] {metadata.py:245} INFO - 🖨️ Metadata printed for 2025-05-24
+[2025-05-24T09:18:28.346+0000] {main_pipeline_dag.py:27} INFO - ✅ Completed task: Print Metadata Logs
+[2025-05-24T09:18:28.350+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-05-24T09:18:28.389+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=marketing_data_pipeline, task_id=print_metadata_log, execution_date=20250524T091705, start_date=20250524T091827, end_date=20250524T091828
+[2025-05-24T09:18:28.470+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-05-24T09:18:28.546+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

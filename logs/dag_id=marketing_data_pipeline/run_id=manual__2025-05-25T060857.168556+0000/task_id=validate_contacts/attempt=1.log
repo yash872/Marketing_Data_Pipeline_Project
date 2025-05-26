@@ -1,0 +1,23 @@
+[2025-05-25T06:09:42.572+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: marketing_data_pipeline.validate_contacts manual__2025-05-25T06:08:57.168556+00:00 [queued]>
+[2025-05-25T06:09:42.617+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: marketing_data_pipeline.validate_contacts manual__2025-05-25T06:08:57.168556+00:00 [queued]>
+[2025-05-25T06:09:42.619+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-05-25T06:09:42.680+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): validate_contacts> on 2025-05-25 06:08:57.168556+00:00
+[2025-05-25T06:09:42.695+0000] {standard_task_runner.py:60} INFO - Started process 414 to run task
+[2025-05-25T06:09:42.726+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'marketing_data_pipeline', 'validate_contacts', 'manual__2025-05-25T06:08:57.168556+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/main_pipeline_dag.py', '--cfg-path', '/tmp/tmpmtlh6vl2']
+[2025-05-25T06:09:42.735+0000] {standard_task_runner.py:88} INFO - Job 7: Subtask validate_contacts
+[2025-05-25T06:09:43.186+0000] {task_command.py:423} INFO - Running <TaskInstance: marketing_data_pipeline.validate_contacts manual__2025-05-25T06:08:57.168556+00:00 [running]> on host fe289fe396bd
+[2025-05-25T06:09:43.954+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='yashbhawsar872@gmail.com' AIRFLOW_CTX_DAG_OWNER='Yash' AIRFLOW_CTX_DAG_ID='marketing_data_pipeline' AIRFLOW_CTX_TASK_ID='validate_contacts' AIRFLOW_CTX_EXECUTION_DATE='2025-05-25T06:08:57.168556+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-25T06:08:57.168556+00:00'
+[2025-05-25T06:09:43.967+0000] {main_pipeline_dag.py:28} INFO - ▶️ Starting task: Validate Contacts
+[2025-05-25T06:09:48.532+0000] {metadata.py:144} INFO - 🧪 DQ Check logged: contacts_2025-05-25.csv | schema_format = PASS
+[2025-05-25T06:09:49.415+0000] {metadata.py:144} INFO - 🧪 DQ Check logged: contacts_2025-05-25.csv | freshness = PASS
+[2025-05-25T06:09:49.740+0000] {metadata.py:144} INFO - 🧪 DQ Check logged: contacts_2025-05-25.csv | row_count = PASS
+[2025-05-25T06:09:50.047+0000] {data_validation.py:139} INFO - Removed /opt/***/data/raw_data/contacts_2025-05-25.csv from raw_data folder
+[2025-05-25T06:09:52.617+0000] {metadata.py:164} INFO - 🔑 Logged DQ signature for contacts_2025-05-25.csv: 
+[2025-05-25T06:09:52.879+0000] {metadata.py:144} INFO - 🧪 DQ Check logged: contacts_2025-05-25.csv | contacts = PASS
+[2025-05-25T06:09:53.030+0000] {metadata.py:109} INFO - 📝 Logged stage 'validated' for contacts_2025-05-25.csv at 2025-05-25T06:09:52.910453
+[2025-05-25T06:09:53.035+0000] {utils.py:54} INFO - task_metrics
+[2025-05-25T06:09:53.043+0000] {main_pipeline_dag.py:30} INFO - ✅ Completed task: Validate Contacts
+[2025-05-25T06:09:53.050+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-05-25T06:09:53.120+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=marketing_data_pipeline, task_id=validate_contacts, execution_date=20250525T060857, start_date=20250525T060942, end_date=20250525T060953
+[2025-05-25T06:09:53.221+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-05-25T06:09:53.304+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

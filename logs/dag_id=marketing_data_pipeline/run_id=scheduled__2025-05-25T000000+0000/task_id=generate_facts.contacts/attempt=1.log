@@ -1,0 +1,16 @@
+[2025-05-26T00:00:25.631+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Marketing_Data_Pipeline.generate_facts.contacts scheduled__2025-05-25T00:00:00+00:00 [queued]>
+[2025-05-26T00:00:25.651+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Marketing_Data_Pipeline.generate_facts.contacts scheduled__2025-05-25T00:00:00+00:00 [queued]>
+[2025-05-26T00:00:25.652+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-05-26T00:00:25.678+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): generate_facts.contacts> on 2025-05-25 00:00:00+00:00
+[2025-05-26T00:00:25.689+0000] {standard_task_runner.py:60} INFO - Started process 27073 to run task
+[2025-05-26T00:00:25.698+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Marketing_Data_Pipeline', 'generate_facts.contacts', 'scheduled__2025-05-25T00:00:00+00:00', '--job-id', '171', '--raw', '--subdir', 'DAGS_FOLDER/Marketing_Data_Pipeline.py', '--cfg-path', '/tmp/tmpe1v3cmbv']
+[2025-05-26T00:00:25.703+0000] {standard_task_runner.py:88} INFO - Job 171: Subtask generate_facts.contacts
+[2025-05-26T00:00:25.886+0000] {task_command.py:423} INFO - Running <TaskInstance: Marketing_Data_Pipeline.generate_facts.contacts scheduled__2025-05-25T00:00:00+00:00 [running]> on host fe289fe396bd
+[2025-05-26T00:00:26.084+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='yashbhawsar872@gmail.com' AIRFLOW_CTX_DAG_OWNER='Yash' AIRFLOW_CTX_DAG_ID='Marketing_Data_Pipeline' AIRFLOW_CTX_TASK_ID='generate_facts.contacts' AIRFLOW_CTX_EXECUTION_DATE='2025-05-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-25T00:00:00+00:00'
+[2025-05-26T00:00:26.088+0000] {Marketing_Data_Pipeline.py:39} INFO - ▶️ Starting task: Generate Contacts
+[2025-05-26T00:00:26.104+0000] {data_generation_new.py:79} INFO - ⏩ Skipping contacts_2025-05-25.csv, already generated
+[2025-05-26T00:00:26.107+0000] {Marketing_Data_Pipeline.py:41} INFO - ✅ Completed task: Generate Contacts
+[2025-05-26T00:00:26.110+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-05-26T00:00:26.144+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=Marketing_Data_Pipeline, task_id=generate_facts.contacts, execution_date=20250525T000000, start_date=20250526T000025, end_date=20250526T000026
+[2025-05-26T00:00:26.193+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-05-26T00:00:26.268+0000] {taskinstance.py:3280} INFO - 2 downstream tasks scheduled from follow-on schedule check

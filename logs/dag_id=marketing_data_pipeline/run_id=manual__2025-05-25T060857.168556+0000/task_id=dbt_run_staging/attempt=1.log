@@ -1,0 +1,25 @@
+[2025-05-25T06:10:46.964+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: marketing_data_pipeline.dbt_run_staging manual__2025-05-25T06:08:57.168556+00:00 [queued]>
+[2025-05-25T06:10:47.009+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: marketing_data_pipeline.dbt_run_staging manual__2025-05-25T06:08:57.168556+00:00 [queued]>
+[2025-05-25T06:10:47.010+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-05-25T06:10:47.046+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): dbt_run_staging> on 2025-05-25 06:08:57.168556+00:00
+[2025-05-25T06:10:47.057+0000] {standard_task_runner.py:60} INFO - Started process 479 to run task
+[2025-05-25T06:10:47.065+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'marketing_data_pipeline', 'dbt_run_staging', 'manual__2025-05-25T06:08:57.168556+00:00', '--job-id', '15', '--raw', '--subdir', 'DAGS_FOLDER/main_pipeline_dag.py', '--cfg-path', '/tmp/tmp_izbh43l']
+[2025-05-25T06:10:47.073+0000] {standard_task_runner.py:88} INFO - Job 15: Subtask dbt_run_staging
+[2025-05-25T06:10:47.202+0000] {task_command.py:423} INFO - Running <TaskInstance: marketing_data_pipeline.dbt_run_staging manual__2025-05-25T06:08:57.168556+00:00 [running]> on host fe289fe396bd
+[2025-05-25T06:10:47.422+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='yashbhawsar872@gmail.com' AIRFLOW_CTX_DAG_OWNER='Yash' AIRFLOW_CTX_DAG_ID='marketing_data_pipeline' AIRFLOW_CTX_TASK_ID='dbt_run_staging' AIRFLOW_CTX_EXECUTION_DATE='2025-05-25T06:08:57.168556+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-25T06:08:57.168556+00:00'
+[2025-05-25T06:10:47.425+0000] {main_pipeline_dag.py:28} INFO - ▶️ Starting task: Run staging models
+[2025-05-25T06:10:47.430+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/main_pipeline_dag.py", line 29, in _wrapped
+    fn(**kwargs)
+TypeError: run_dbt() got an unexpected keyword argument 'conf'
+[2025-05-25T06:10:47.477+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=marketing_data_pipeline, task_id=dbt_run_staging, execution_date=20250525T060857, start_date=20250525T061046, end_date=20250525T061047
+[2025-05-25T06:10:47.502+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 15 for task dbt_run_staging (run_dbt() got an unexpected keyword argument 'conf'; 479)
+[2025-05-25T06:10:47.518+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-05-25T06:10:47.577+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

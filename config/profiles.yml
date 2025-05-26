@@ -1,0 +1,14 @@
+marketing_pipeline:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: uw98118.ap-southeast-1
+      user: DBT_USER
+      password: Pass@Snowflake872
+      role: DBT_ROLE
+      warehouse: DBT_WH
+      database: MARKETING_DB
+      schema: STG
+      threads: 4
+      client_session_keep_alive: False

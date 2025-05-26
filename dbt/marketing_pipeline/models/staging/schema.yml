@@ -1,0 +1,148 @@
+version: 2
+
+sources:
+  - name: raw_minio              # logical name for raw layer
+    database: MARKETING_DB       # Snowflake database
+    schema: RAW                  # the schema where we landed the files
+    tables:
+      - name: contacts
+      - name: form_fills
+      - name: website_activity
+      - name: campaigns
+      - name: forms
+      - name: pages 
+
+
+models:
+  - name: stg_campaigns
+    description: "Parsed raw campaign records"
+    columns:
+      - name: campaign_id
+        description: "Primary key for each campaign"
+        tests:
+          - not_null
+          - unique
+      - name: campaign_name
+        description: "Name of the campaign"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_campaigns')    # sanity-check self-referencing
+              field: campaign_id
+      - name: upload_date
+        description: "Date this batch was processed"
+        tests:
+          - not_null
+
+  - name: stg_contacts
+    description: "Parsed raw contact records"
+    columns:
+      - name: contact_id
+        tests:
+          - not_null
+          - unique
+      - name: email
+        tests:
+          - not_null
+          - unique
+          - accepted_values:
+              values: ['%@%']            # must contain “@”
+      - name: signup_date
+        tests:
+          - not_null
+      - name: upload_date
+        tests:
+          - not_null
+
+  - name: stg_form_fills
+    description: "Parsed raw form-fill events"
+    columns:
+      - name: fill_id
+        tests:
+          - not_null
+          - unique
+      - name: contact_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_contacts')
+              field: contact_id
+      - name: form_id
+        tests:
+          - not_null
+      - name: fill_date
+        description: "When the form was submitted"
+        tests:
+          - not_null
+          - expression_is_true:
+              expression: "fill_date <= current_timestamp()"
+
+      - name: upload_date
+        tests:
+          - not_null
+
+  - name: stg_forms
+    description: "Parsed raw form definitions"
+    columns:
+      - name: form_id
+        tests:
+          - not_null
+          - unique
+      - name: form_type
+        tests:
+          - not_null
+      - name: upload_date
+        tests:
+          - not_null
+
+  - name: stg_pages
+    description: "Parsed raw page metadata"
+    columns:
+      - name: page_id
+        tests:
+          - not_null
+          - unique
+      - name: page_url
+        tests:
+          - not_null
+          - expression_is_true:
+              expression: "page_url LIKE 'http%'"  
+      - name: page_title
+        tests:
+          - not_null
+      - name: upload_date
+        tests:
+          - not_null
+
+  - name: stg_website_activity
+    description: "Parsed raw web activity events"
+    columns:
+      - name: session_id
+        tests:
+          - not_null
+          - unique
+      - name: contact_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_contacts')
+              field: contact_id
+      - name: event_date
+        tests:
+          - not_null
+      - name: session_duration
+        tests:
+          - not_null
+      - name: pages_viewed
+        tests:
+          - not_null
+          - expression_is_true:
+              expression: "pages_viewed >= 0"
+      - name: upload_date
+        tests:
+          - not_null
+
+# reference your custom tests here:
+tests:
+  - no_duplicate_form_fills_per_contact
+  - website_activity_outside_business_hours

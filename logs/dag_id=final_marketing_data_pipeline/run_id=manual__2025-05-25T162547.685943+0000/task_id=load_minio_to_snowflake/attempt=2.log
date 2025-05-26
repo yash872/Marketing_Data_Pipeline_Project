@@ -1,0 +1,51 @@
+[2025-05-25T17:35:14.649+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: final_marketing_data_pipeline.load_minio_to_snowflake manual__2025-05-25T16:25:47.685943+00:00 [queued]>
+[2025-05-25T17:35:14.673+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: final_marketing_data_pipeline.load_minio_to_snowflake manual__2025-05-25T16:25:47.685943+00:00 [queued]>
+[2025-05-25T17:35:14.674+0000] {taskinstance.py:2170} INFO - Starting attempt 2 of 3
+[2025-05-25T17:35:16.204+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): load_minio_to_snowflake> on 2025-05-25 16:25:47.685943+00:00
+[2025-05-25T17:35:16.219+0000] {standard_task_runner.py:60} INFO - Started process 17741 to run task
+[2025-05-25T17:35:16.226+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'final_marketing_data_pipeline', 'load_minio_to_snowflake', 'manual__2025-05-25T16:25:47.685943+00:00', '--job-id', '129', '--raw', '--subdir', 'DAGS_FOLDER/test.py', '--cfg-path', '/tmp/tmptrttn48u']
+[2025-05-25T17:35:16.236+0000] {standard_task_runner.py:88} INFO - Job 129: Subtask load_minio_to_snowflake
+[2025-05-25T17:35:16.940+0000] {task_command.py:423} INFO - Running <TaskInstance: final_marketing_data_pipeline.load_minio_to_snowflake manual__2025-05-25T16:25:47.685943+00:00 [running]> on host fe289fe396bd
+[2025-05-25T17:35:17.719+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='yashbhawsar872@gmail.com' AIRFLOW_CTX_DAG_OWNER='Yash' AIRFLOW_CTX_DAG_ID='final_marketing_data_pipeline' AIRFLOW_CTX_TASK_ID='load_minio_to_snowflake' AIRFLOW_CTX_EXECUTION_DATE='2025-05-25T16:25:47.685943+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-25T16:25:47.685943+00:00'
+[2025-05-25T17:35:17.864+0000] {test.py:39} INFO - ▶️ Starting task: Upload valid-data to Snowflake RAW
+[2025-05-25T17:35:18.061+0000] {snowflake_upload.py:97} INFO - [⏬] downloaded valid-data/contacts/2025-05-25/contacts_2025-05-25.csv → /tmp/tmp6u4vi21f/contacts_2025-05-25.csv
+[2025-05-25T17:35:18.070+0000] {connection.py:486} INFO - Snowflake Connector for Python Version: 3.15.0, Python Version: 3.10.13, Platform: Linux-5.15.90.1-microsoft-standard-WSL2-x86_64-with-glibc2.36
+[2025-05-25T17:35:18.073+0000] {connection.py:1391} INFO - Connecting to GLOBAL Snowflake domain
+[2025-05-25T17:35:19.164+0000] {snowflake_upload.py:107} INFO - [INFO] running: PUT file:///tmp/tmp6u4vi21f/*.csv @%contacts OVERWRITE = TRUE
+[2025-05-25T17:35:21.366+0000] {snowflake_upload.py:117} INFO - [INFO] running COPY INTO RAW.contacts
+[2025-05-25T17:35:22.457+0000] {snowflake_upload.py:120} INFO - [✅] loaded contacts for 2025-05-25
+[2025-05-25T17:35:22.839+0000] {snowflake_upload.py:97} INFO - [⏬] downloaded valid-data/form_fills/2025-05-25/form_fills_2025-05-25.parquet → /tmp/tmph2keh1b6/form_fills_2025-05-25.parquet
+[2025-05-25T17:35:22.844+0000] {connection.py:486} INFO - Snowflake Connector for Python Version: 3.15.0, Python Version: 3.10.13, Platform: Linux-5.15.90.1-microsoft-standard-WSL2-x86_64-with-glibc2.36
+[2025-05-25T17:35:22.846+0000] {connection.py:1391} INFO - Connecting to GLOBAL Snowflake domain
+[2025-05-25T17:35:23.360+0000] {snowflake_upload.py:107} INFO - [INFO] running: PUT file:///tmp/tmph2keh1b6/*.parquet @%form_fills OVERWRITE = TRUE
+[2025-05-25T17:35:25.611+0000] {snowflake_upload.py:117} INFO - [INFO] running COPY INTO RAW.form_fills
+[2025-05-25T17:35:26.751+0000] {snowflake_upload.py:120} INFO - [✅] loaded form_fills for 2025-05-25
+[2025-05-25T17:35:27.232+0000] {snowflake_upload.py:97} INFO - [⏬] downloaded valid-data/website_activity/2025-05-25/website_activity_2025-05-25.json → /tmp/tmpnce_0kvy/website_activity_2025-05-25.json
+[2025-05-25T17:35:27.235+0000] {connection.py:486} INFO - Snowflake Connector for Python Version: 3.15.0, Python Version: 3.10.13, Platform: Linux-5.15.90.1-microsoft-standard-WSL2-x86_64-with-glibc2.36
+[2025-05-25T17:35:27.237+0000] {connection.py:1391} INFO - Connecting to GLOBAL Snowflake domain
+[2025-05-25T17:35:27.685+0000] {snowflake_upload.py:107} INFO - [INFO] running: PUT file:///tmp/tmpnce_0kvy/*.json @%website_activity OVERWRITE = TRUE
+[2025-05-25T17:35:28.690+0000] {snowflake_upload.py:117} INFO - [INFO] running COPY INTO RAW.website_activity
+[2025-05-25T17:35:29.550+0000] {snowflake_upload.py:120} INFO - [✅] loaded website_activity for 2025-05-25
+[2025-05-25T17:35:30.051+0000] {snowflake_upload.py:97} INFO - [⏬] downloaded valid-data/campaigns/2025-05-25/campaigns_2025-05-25.json → /tmp/tmp1uhqes5o/campaigns_2025-05-25.json
+[2025-05-25T17:35:30.060+0000] {connection.py:486} INFO - Snowflake Connector for Python Version: 3.15.0, Python Version: 3.10.13, Platform: Linux-5.15.90.1-microsoft-standard-WSL2-x86_64-with-glibc2.36
+[2025-05-25T17:35:30.068+0000] {connection.py:1391} INFO - Connecting to GLOBAL Snowflake domain
+[2025-05-25T17:35:30.700+0000] {snowflake_upload.py:107} INFO - [INFO] running: PUT file:///tmp/tmp1uhqes5o/*.json @%campaigns OVERWRITE = TRUE
+[2025-05-25T17:35:31.639+0000] {snowflake_upload.py:117} INFO - [INFO] running COPY INTO RAW.campaigns
+[2025-05-25T17:35:32.694+0000] {snowflake_upload.py:120} INFO - [✅] loaded campaigns for 2025-05-25
+[2025-05-25T17:35:33.814+0000] {snowflake_upload.py:97} INFO - [⏬] downloaded valid-data/forms/2025-05-25/forms_2025-05-25.json → /tmp/tmpi1uuxm2q/forms_2025-05-25.json
+[2025-05-25T17:35:33.818+0000] {connection.py:486} INFO - Snowflake Connector for Python Version: 3.15.0, Python Version: 3.10.13, Platform: Linux-5.15.90.1-microsoft-standard-WSL2-x86_64-with-glibc2.36
+[2025-05-25T17:35:33.831+0000] {connection.py:1391} INFO - Connecting to GLOBAL Snowflake domain
+[2025-05-25T17:35:34.681+0000] {snowflake_upload.py:107} INFO - [INFO] running: PUT file:///tmp/tmpi1uuxm2q/*.json @%forms OVERWRITE = TRUE
+[2025-05-25T17:35:35.702+0000] {snowflake_upload.py:117} INFO - [INFO] running COPY INTO RAW.forms
+[2025-05-25T17:35:36.935+0000] {snowflake_upload.py:120} INFO - [✅] loaded forms for 2025-05-25
+[2025-05-25T17:35:38.575+0000] {snowflake_upload.py:97} INFO - [⏬] downloaded valid-data/pages/2025-05-25/pages_2025-05-25.json → /tmp/tmpxwgyug9c/pages_2025-05-25.json
+[2025-05-25T17:35:38.579+0000] {connection.py:486} INFO - Snowflake Connector for Python Version: 3.15.0, Python Version: 3.10.13, Platform: Linux-5.15.90.1-microsoft-standard-WSL2-x86_64-with-glibc2.36
+[2025-05-25T17:35:38.581+0000] {connection.py:1391} INFO - Connecting to GLOBAL Snowflake domain
+[2025-05-25T17:35:39.146+0000] {snowflake_upload.py:107} INFO - [INFO] running: PUT file:///tmp/tmpxwgyug9c/*.json @%pages OVERWRITE = TRUE
+[2025-05-25T17:35:40.060+0000] {snowflake_upload.py:117} INFO - [INFO] running COPY INTO RAW.pages
+[2025-05-25T17:35:40.997+0000] {snowflake_upload.py:120} INFO - [✅] loaded pages for 2025-05-25
+[2025-05-25T17:35:41.312+0000] {test.py:41} INFO - ✅ Completed task: Upload valid-data to Snowflake RAW
+[2025-05-25T17:35:41.328+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-05-25T17:35:41.358+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=final_marketing_data_pipeline, task_id=load_minio_to_snowflake, execution_date=20250525T162547, start_date=20250525T173514, end_date=20250525T173541
+[2025-05-25T17:35:41.747+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-05-25T17:35:41.807+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

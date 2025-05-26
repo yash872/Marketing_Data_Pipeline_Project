@@ -1,0 +1,57 @@
+[2025-05-25T19:06:33.885+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: final_marketing_data_pipeline.dbt_run.dbt_run_marts manual__2025-05-25T16:25:47.685943+00:00 [queued]>
+[2025-05-25T19:06:33.948+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: final_marketing_data_pipeline.dbt_run.dbt_run_marts manual__2025-05-25T16:25:47.685943+00:00 [queued]>
+[2025-05-25T19:06:33.950+0000] {taskinstance.py:2170} INFO - Starting attempt 2 of 3
+[2025-05-25T19:06:34.059+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): dbt_run.dbt_run_marts> on 2025-05-25 16:25:47.685943+00:00
+[2025-05-25T19:06:34.088+0000] {standard_task_runner.py:60} INFO - Started process 19876 to run task
+[2025-05-25T19:06:34.097+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'final_marketing_data_pipeline', 'dbt_run.dbt_run_marts', 'manual__2025-05-25T16:25:47.685943+00:00', '--job-id', '135', '--raw', '--subdir', 'DAGS_FOLDER/test.py', '--cfg-path', '/tmp/tmpzbx8esjp']
+[2025-05-25T19:06:34.103+0000] {standard_task_runner.py:88} INFO - Job 135: Subtask dbt_run.dbt_run_marts
+[2025-05-25T19:06:34.274+0000] {task_command.py:423} INFO - Running <TaskInstance: final_marketing_data_pipeline.dbt_run.dbt_run_marts manual__2025-05-25T16:25:47.685943+00:00 [running]> on host fe289fe396bd
+[2025-05-25T19:06:34.583+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='yashbhawsar872@gmail.com' AIRFLOW_CTX_DAG_OWNER='Yash' AIRFLOW_CTX_DAG_ID='final_marketing_data_pipeline' AIRFLOW_CTX_TASK_ID='dbt_run.dbt_run_marts' AIRFLOW_CTX_EXECUTION_DATE='2025-05-25T16:25:47.685943+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-25T16:25:47.685943+00:00'
+[2025-05-25T19:06:34.588+0000] {test.py:39} INFO - ▶️ Starting task: Run mart models
+[2025-05-25T19:06:34.597+0000] {utils.py:64} INFO - Running dbt command: cd /opt/dbt/marketing_pipeline && dbt run --models marts --vars '{"batch_date": "2025-05-25"}'
+[2025-05-25T19:06:41.147+0000] {utils.py:73} INFO - [0m19:06:41  Running with dbt=1.9.4
+[2025-05-25T19:06:43.142+0000] {utils.py:73} INFO - [0m19:06:43  Registered adapter: snowflake=1.9.4
+[2025-05-25T19:06:46.366+0000] {utils.py:73} INFO - [0m19:06:46  Found 12 models, 79 data tests, 6 sources, 479 macros
+[2025-05-25T19:06:46.379+0000] {utils.py:73} INFO - [0m19:06:46
+[2025-05-25T19:06:46.384+0000] {utils.py:73} INFO - [0m19:06:46  Concurrency: 4 threads (target='dev')
+[2025-05-25T19:06:46.388+0000] {utils.py:73} INFO - [0m19:06:46
+[2025-05-25T19:06:48.557+0000] {utils.py:73} INFO - [0m19:06:48  1 of 6 START sql incremental model MART.mart_campaigns ......................... [RUN]
+[2025-05-25T19:06:48.564+0000] {utils.py:73} INFO - [0m19:06:48  2 of 6 START sql incremental model MART.mart_contacts .......................... [RUN]
+[2025-05-25T19:06:48.568+0000] {utils.py:73} INFO - [0m19:06:48  3 of 6 START sql incremental model MART.mart_form_fills ........................ [RUN]
+[2025-05-25T19:06:48.572+0000] {utils.py:73} INFO - [0m19:06:48  4 of 6 START sql incremental model MART.mart_forms ............................. [RUN]
+[2025-05-25T19:06:50.037+0000] {utils.py:73} INFO - [0m19:06:50  2 of 6 ERROR creating sql incremental model MART.mart_contacts ................. [[31mERROR[0m in 1.45s]
+[2025-05-25T19:06:50.062+0000] {utils.py:73} INFO - [0m19:06:50  5 of 6 START sql incremental model MART.mart_pages ............................. [RUN]
+[2025-05-25T19:06:50.574+0000] {utils.py:73} INFO - [0m19:06:50  1 of 6 OK created sql incremental model MART.mart_campaigns .................... [[32mSUCCESS 1[0m in 2.00s]
+[2025-05-25T19:06:50.588+0000] {utils.py:73} INFO - [0m19:06:50  6 of 6 START sql incremental model MART.mart_website_activity .................. [RUN]
+[2025-05-25T19:06:51.133+0000] {utils.py:73} INFO - [0m19:06:51  4 of 6 OK created sql incremental model MART.mart_forms ........................ [[32mSUCCESS 1[0m in 2.53s]
+[2025-05-25T19:06:51.303+0000] {utils.py:73} INFO - [0m19:06:51  3 of 6 OK created sql incremental model MART.mart_form_fills ................... [[32mSUCCESS 1[0m in 2.71s]
+[2025-05-25T19:06:51.356+0000] {utils.py:73} INFO - [0m19:06:51  5 of 6 OK created sql incremental model MART.mart_pages ........................ [[32mSUCCESS 1[0m in 1.28s]
+[2025-05-25T19:06:51.515+0000] {utils.py:73} INFO - [0m19:06:51  6 of 6 OK created sql incremental model MART.mart_website_activity ............. [[32mSUCCESS 1[0m in 0.92s]
+[2025-05-25T19:06:52.472+0000] {utils.py:73} INFO - [0m19:06:52
+[2025-05-25T19:06:52.481+0000] {utils.py:73} INFO - [0m19:06:52  Finished running 6 incremental models in 0 hours 0 minutes and 6.08 seconds (6.08s).
+[2025-05-25T19:06:52.728+0000] {utils.py:73} INFO - [0m19:06:52
+[2025-05-25T19:06:52.734+0000] {utils.py:73} INFO - [0m19:06:52  [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[2025-05-25T19:06:52.738+0000] {utils.py:73} INFO - [0m19:06:52
+[2025-05-25T19:06:52.742+0000] {utils.py:73} INFO - [0m19:06:52    Database Error in model mart_contacts (models/marts/mart_contacts.sql)
+[2025-05-25T19:06:52.747+0000] {utils.py:73} INFO - 000904 (42000): SQL compilation error: error line 12 at position 2
+[2025-05-25T19:06:52.752+0000] {utils.py:73} INFO - invalid identifier 'PHONE'
+[2025-05-25T19:06:52.757+0000] {utils.py:73} INFO - compiled code at target/run/marketing_pipeline/models/marts/mart_contacts.sql
+[2025-05-25T19:06:52.761+0000] {utils.py:73} INFO - [0m19:06:52
+[2025-05-25T19:06:52.767+0000] {utils.py:73} INFO - [0m19:06:52  Done. PASS=5 WARN=0 ERROR=1 SKIP=0 TOTAL=6
+[2025-05-25T19:06:54.434+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/test.py", line 40, in _wrapped
+    fn(**kwargs)
+  File "/opt/airflow/scripts/utils.py", line 77, in run_dbt
+    raise RuntimeError(f"dbt command failed with exit code {return_code}")
+RuntimeError: dbt command failed with exit code 1
+[2025-05-25T19:06:54.533+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=final_marketing_data_pipeline, task_id=dbt_run.dbt_run_marts, execution_date=20250525T162547, start_date=20250525T190633, end_date=20250525T190654
+[2025-05-25T19:06:54.583+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 135 for task dbt_run.dbt_run_marts (dbt command failed with exit code 1; 19876)
+[2025-05-25T19:06:54.636+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-05-25T19:06:54.716+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

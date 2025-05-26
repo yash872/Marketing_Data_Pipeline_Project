@@ -1,0 +1,16 @@
+[2025-05-26T00:00:57.587+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Marketing_Data_Pipeline.upload_quarantined_to_minio scheduled__2025-05-25T00:00:00+00:00 [queued]>
+[2025-05-26T00:00:57.607+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Marketing_Data_Pipeline.upload_quarantined_to_minio scheduled__2025-05-25T00:00:00+00:00 [queued]>
+[2025-05-26T00:00:57.608+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 4
+[2025-05-26T00:00:57.642+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): upload_quarantined_to_minio> on 2025-05-25 00:00:00+00:00
+[2025-05-26T00:00:57.655+0000] {standard_task_runner.py:60} INFO - Started process 27119 to run task
+[2025-05-26T00:00:57.665+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Marketing_Data_Pipeline', 'upload_quarantined_to_minio', 'scheduled__2025-05-25T00:00:00+00:00', '--job-id', '179', '--raw', '--subdir', 'DAGS_FOLDER/Marketing_Data_Pipeline.py', '--cfg-path', '/tmp/tmplsa0mm8l']
+[2025-05-26T00:00:57.670+0000] {standard_task_runner.py:88} INFO - Job 179: Subtask upload_quarantined_to_minio
+[2025-05-26T00:00:57.819+0000] {task_command.py:423} INFO - Running <TaskInstance: Marketing_Data_Pipeline.upload_quarantined_to_minio scheduled__2025-05-25T00:00:00+00:00 [running]> on host fe289fe396bd
+[2025-05-26T00:00:58.059+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='yashbhawsar872@gmail.com' AIRFLOW_CTX_DAG_OWNER='Yash' AIRFLOW_CTX_DAG_ID='Marketing_Data_Pipeline' AIRFLOW_CTX_TASK_ID='upload_quarantined_to_minio' AIRFLOW_CTX_EXECUTION_DATE='2025-05-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-25T00:00:00+00:00'
+[2025-05-26T00:00:58.062+0000] {Marketing_Data_Pipeline.py:39} INFO - ▶️ Starting task: Upload Quarantined to MinIO
+[2025-05-26T00:00:58.084+0000] {upload_to_minio.py:31} INFO - ℹ️ Bucket 'marketing-bucket' already exists
+[2025-05-26T00:00:58.096+0000] {Marketing_Data_Pipeline.py:41} INFO - ✅ Completed task: Upload Quarantined to MinIO
+[2025-05-26T00:00:58.100+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-05-26T00:00:58.140+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=Marketing_Data_Pipeline, task_id=upload_quarantined_to_minio, execution_date=20250525T000000, start_date=20250526T000057, end_date=20250526T000058
+[2025-05-26T00:00:58.198+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-05-26T00:00:58.257+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

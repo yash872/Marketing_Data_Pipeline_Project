@@ -1,0 +1,247 @@
+[2025-05-26T00:02:08.822+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Marketing_Data_Pipeline.dbt_run.dbt_test scheduled__2025-05-25T00:00:00+00:00 [queued]>
+[2025-05-26T00:02:08.843+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Marketing_Data_Pipeline.dbt_run.dbt_test scheduled__2025-05-25T00:00:00+00:00 [queued]>
+[2025-05-26T00:02:08.844+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-05-26T00:02:08.868+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): dbt_run.dbt_test> on 2025-05-25 00:00:00+00:00
+[2025-05-26T00:02:08.878+0000] {standard_task_runner.py:60} INFO - Started process 27212 to run task
+[2025-05-26T00:02:08.884+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Marketing_Data_Pipeline', 'dbt_run.dbt_test', 'scheduled__2025-05-25T00:00:00+00:00', '--job-id', '184', '--raw', '--subdir', 'DAGS_FOLDER/Marketing_Data_Pipeline.py', '--cfg-path', '/tmp/tmpd6erqcvt']
+[2025-05-26T00:02:08.888+0000] {standard_task_runner.py:88} INFO - Job 184: Subtask dbt_run.dbt_test
+[2025-05-26T00:02:09.009+0000] {task_command.py:423} INFO - Running <TaskInstance: Marketing_Data_Pipeline.dbt_run.dbt_test scheduled__2025-05-25T00:00:00+00:00 [running]> on host fe289fe396bd
+[2025-05-26T00:02:09.199+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='yashbhawsar872@gmail.com' AIRFLOW_CTX_DAG_OWNER='Yash' AIRFLOW_CTX_DAG_ID='Marketing_Data_Pipeline' AIRFLOW_CTX_TASK_ID='dbt_run.dbt_test' AIRFLOW_CTX_EXECUTION_DATE='2025-05-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-25T00:00:00+00:00'
+[2025-05-26T00:02:09.201+0000] {Marketing_Data_Pipeline.py:39} INFO - ▶️ Starting task: Run all dbt tests
+[2025-05-26T00:02:09.204+0000] {utils.py:86} INFO - Running dbt tests: cd /opt/dbt/marketing_pipeline && dbt test 
+[2025-05-26T00:02:09.207+0000] {utils.py:65} INFO - Running dbt command: cd /opt/dbt/marketing_pipeline && dbt test 
+[2025-05-26T00:02:12.586+0000] {utils.py:78} INFO - [0m00:02:12  Running with dbt=1.9.4
+[2025-05-26T00:02:14.490+0000] {utils.py:78} INFO - [0m00:02:14  Registered adapter: snowflake=1.9.4
+[2025-05-26T00:02:15.295+0000] {utils.py:78} INFO - [0m00:02:15  Unable to do partial parsing because config vars, config profile, or config target have changed
+[2025-05-26T00:02:21.546+0000] {utils.py:78} INFO - [0m00:02:21  Found 12 models, 79 data tests, 6 sources, 479 macros
+[2025-05-26T00:02:21.675+0000] {utils.py:78} INFO - [0m00:02:21
+[2025-05-26T00:02:21.686+0000] {utils.py:78} INFO - [0m00:02:21  Concurrency: 4 threads (target='dev')
+[2025-05-26T00:02:21.690+0000] {utils.py:78} INFO - [0m00:02:21
+[2025-05-26T00:02:26.412+0000] {utils.py:78} INFO - [0m00:02:26  2 of 79 START test expression_is_true_stg_form_fills_fill_date__fill_date_current_timestamp_  [RUN]
+[2025-05-26T00:02:26.423+0000] {utils.py:78} INFO - [0m00:02:26  1 of 79 START test accepted_values_stg_contacts_email___ ....................... [RUN]
+[2025-05-26T00:02:26.430+0000] {utils.py:78} INFO - [0m00:02:26  3 of 79 START test expression_is_true_stg_pages_page_url__page_url_LIKE_http_ .. [RUN]
+[2025-05-26T00:02:26.451+0000] {utils.py:78} INFO - [0m00:02:26  4 of 79 START test expression_is_true_stg_website_activity_pages_viewed__pages_viewed_0  [RUN]
+[2025-05-26T00:02:26.600+0000] {utils.py:78} INFO - [0m00:02:26  2 of 79 ERROR expression_is_true_stg_form_fills_fill_date__fill_date_current_timestamp_  [[31mERROR[0m in 0.16s]
+[2025-05-26T00:02:26.626+0000] {utils.py:78} INFO - [0m00:02:26  4 of 79 ERROR expression_is_true_stg_website_activity_pages_viewed__pages_viewed_0  [[31mERROR[0m in 0.17s]
+[2025-05-26T00:02:26.698+0000] {utils.py:78} INFO - [0m00:02:26  3 of 79 ERROR expression_is_true_stg_pages_page_url__page_url_LIKE_http_ ....... [[31mERROR[0m in 0.26s]
+[2025-05-26T00:02:26.704+0000] {utils.py:78} INFO - [0m00:02:26  5 of 79 START test mart_no_orphan_form_fills ................................... [RUN]
+[2025-05-26T00:02:26.728+0000] {utils.py:78} INFO - [0m00:02:26  6 of 79 START test mart_pages_url_format ....................................... [RUN]
+[2025-05-26T00:02:26.765+0000] {utils.py:78} INFO - [0m00:02:26  7 of 79 START test no_duplicate_form_fills_per_contact ......................... [RUN]
+[2025-05-26T00:02:27.261+0000] {utils.py:78} INFO - [0m00:02:27  1 of 79 FAIL 995 accepted_values_stg_contacts_email___ ......................... [[31mFAIL 995[0m in 0.67s]
+[2025-05-26T00:02:27.284+0000] {utils.py:78} INFO - [0m00:02:27  8 of 79 START test not_null_mart_campaigns_campaign_id ......................... [RUN]
+[2025-05-26T00:02:27.530+0000] {utils.py:78} INFO - [0m00:02:27  5 of 79 PASS mart_no_orphan_form_fills ......................................... [[32mPASS[0m in 0.81s]
+[2025-05-26T00:02:27.540+0000] {utils.py:78} INFO - [0m00:02:27  9 of 79 START test not_null_mart_campaigns_campaign_name ....................... [RUN]
+[2025-05-26T00:02:27.755+0000] {utils.py:78} INFO - [0m00:02:27  8 of 79 PASS not_null_mart_campaigns_campaign_id ............................... [[32mPASS[0m in 0.45s]
+[2025-05-26T00:02:27.765+0000] {utils.py:78} INFO - [0m00:02:27  10 of 79 START test not_null_mart_campaigns_end_date ........................... [RUN]
+[2025-05-26T00:02:27.971+0000] {utils.py:78} INFO - [0m00:02:27  6 of 79 FAIL 4 mart_pages_url_format ........................................... [[31mFAIL 4[0m in 1.21s]
+[2025-05-26T00:02:27.987+0000] {utils.py:78} INFO - [0m00:02:27  11 of 79 START test not_null_mart_campaigns_start_date ......................... [RUN]
+[2025-05-26T00:02:28.001+0000] {utils.py:78} INFO - [0m00:02:28  9 of 79 PASS not_null_mart_campaigns_campaign_name ............................. [[32mPASS[0m in 0.46s]
+[2025-05-26T00:02:28.060+0000] {utils.py:78} INFO - [0m00:02:28  7 of 79 FAIL 271 no_duplicate_form_fills_per_contact ........................... [[31mFAIL 271[0m in 1.15s]
+[2025-05-26T00:02:28.066+0000] {utils.py:78} INFO - [0m00:02:28  12 of 79 START test not_null_mart_contacts_contact_id .......................... [RUN]
+[2025-05-26T00:02:28.071+0000] {utils.py:78} INFO - [0m00:02:28  10 of 79 ERROR not_null_mart_campaigns_end_date ................................ [[31mERROR[0m in 0.30s]
+[2025-05-26T00:02:28.117+0000] {utils.py:78} INFO - [0m00:02:28  13 of 79 START test not_null_mart_contacts_email ............................... [RUN]
+[2025-05-26T00:02:28.138+0000] {utils.py:78} INFO - [0m00:02:28  14 of 79 START test not_null_mart_contacts_signup_date ......................... [RUN]
+[2025-05-26T00:02:28.365+0000] {utils.py:78} INFO - [0m00:02:28  11 of 79 ERROR not_null_mart_campaigns_start_date .............................. [[31mERROR[0m in 0.37s]
+[2025-05-26T00:02:28.376+0000] {utils.py:78} INFO - [0m00:02:28  15 of 79 START test not_null_mart_form_fills_contact_id ........................ [RUN]
+[2025-05-26T00:02:28.554+0000] {utils.py:78} INFO - [0m00:02:28  13 of 79 PASS not_null_mart_contacts_email ..................................... [[32mPASS[0m in 0.41s]
+[2025-05-26T00:02:28.575+0000] {utils.py:78} INFO - [0m00:02:28  14 of 79 PASS not_null_mart_contacts_signup_date ............................... [[32mPASS[0m in 0.42s]
+[2025-05-26T00:02:28.586+0000] {utils.py:78} INFO - [0m00:02:28  12 of 79 PASS not_null_mart_contacts_contact_id ................................ [[32mPASS[0m in 0.51s]
+[2025-05-26T00:02:28.593+0000] {utils.py:78} INFO - [0m00:02:28  16 of 79 START test not_null_mart_form_fills_estimated_value ................... [RUN]
+[2025-05-26T00:02:28.610+0000] {utils.py:78} INFO - [0m00:02:28  17 of 79 START test not_null_mart_form_fills_fill_date ......................... [RUN]
+[2025-05-26T00:02:28.617+0000] {utils.py:78} INFO - [0m00:02:28  18 of 79 START test not_null_mart_form_fills_fill_id ........................... [RUN]
+[2025-05-26T00:02:28.735+0000] {utils.py:78} INFO - [0m00:02:28  15 of 79 PASS not_null_mart_form_fills_contact_id .............................. [[32mPASS[0m in 0.35s]
+[2025-05-26T00:02:28.805+0000] {utils.py:78} INFO - [0m00:02:28  19 of 79 START test not_null_mart_form_fills_form_id ........................... [RUN]
+[2025-05-26T00:02:29.021+0000] {utils.py:78} INFO - [0m00:02:29  17 of 79 PASS not_null_mart_form_fills_fill_date ............................... [[32mPASS[0m in 0.40s]
+[2025-05-26T00:02:29.031+0000] {utils.py:78} INFO - [0m00:02:29  20 of 79 START test not_null_mart_form_fills_upload_date ....................... [RUN]
+[2025-05-26T00:02:29.078+0000] {utils.py:78} INFO - [0m00:02:29  16 of 79 PASS not_null_mart_form_fills_estimated_value ......................... [[32mPASS[0m in 0.47s]
+[2025-05-26T00:02:29.087+0000] {utils.py:78} INFO - [0m00:02:29  18 of 79 PASS not_null_mart_form_fills_fill_id ................................. [[32mPASS[0m in 0.45s]
+[2025-05-26T00:02:29.126+0000] {utils.py:78} INFO - [0m00:02:29  19 of 79 PASS not_null_mart_form_fills_form_id ................................. [[32mPASS[0m in 0.31s]
+[2025-05-26T00:02:29.139+0000] {utils.py:78} INFO - [0m00:02:29  21 of 79 START test not_null_mart_forms_form_id ................................ [RUN]
+[2025-05-26T00:02:29.142+0000] {utils.py:78} INFO - [0m00:02:29  22 of 79 START test not_null_mart_forms_form_type .............................. [RUN]
+[2025-05-26T00:02:29.172+0000] {utils.py:78} INFO - [0m00:02:29  23 of 79 START test not_null_mart_forms_upload_date ............................ [RUN]
+[2025-05-26T00:02:29.569+0000] {utils.py:78} INFO - [0m00:02:29  20 of 79 PASS not_null_mart_form_fills_upload_date ............................. [[32mPASS[0m in 0.53s]
+[2025-05-26T00:02:29.619+0000] {utils.py:78} INFO - [0m00:02:29  24 of 79 START test not_null_mart_pages_page_id ................................ [RUN]
+[2025-05-26T00:02:29.939+0000] {utils.py:78} INFO - [0m00:02:29  22 of 79 PASS not_null_mart_forms_form_type .................................... [[32mPASS[0m in 0.78s]
+[2025-05-26T00:02:29.949+0000] {utils.py:78} INFO - [0m00:02:29  24 of 79 PASS not_null_mart_pages_page_id ...................................... [[32mPASS[0m in 0.32s]
+[2025-05-26T00:02:29.971+0000] {utils.py:78} INFO - [0m00:02:29  21 of 79 PASS not_null_mart_forms_form_id ...................................... [[32mPASS[0m in 0.81s]
+[2025-05-26T00:02:29.984+0000] {utils.py:78} INFO - [0m00:02:29  23 of 79 PASS not_null_mart_forms_upload_date .................................. [[32mPASS[0m in 0.77s]
+[2025-05-26T00:02:30.026+0000] {utils.py:78} INFO - [0m00:02:30  25 of 79 START test not_null_mart_pages_page_title ............................. [RUN]
+[2025-05-26T00:02:30.036+0000] {utils.py:78} INFO - [0m00:02:30  26 of 79 START test not_null_mart_pages_page_url ............................... [RUN]
+[2025-05-26T00:02:30.042+0000] {utils.py:78} INFO - [0m00:02:30  27 of 79 START test not_null_mart_pages_upload_date ............................ [RUN]
+[2025-05-26T00:02:30.056+0000] {utils.py:78} INFO - [0m00:02:30  28 of 79 START test not_null_mart_website_activity_bounce ...................... [RUN]
+[2025-05-26T00:02:30.652+0000] {utils.py:78} INFO - [0m00:02:30  26 of 79 PASS not_null_mart_pages_page_url ..................................... [[32mPASS[0m in 0.58s]
+[2025-05-26T00:02:30.668+0000] {utils.py:78} INFO - [0m00:02:30  29 of 79 START test not_null_mart_website_activity_contact_id .................. [RUN]
+[2025-05-26T00:02:30.779+0000] {utils.py:78} INFO - [0m00:02:30  27 of 79 PASS not_null_mart_pages_upload_date .................................. [[32mPASS[0m in 0.71s]
+[2025-05-26T00:02:30.797+0000] {utils.py:78} INFO - [0m00:02:30  25 of 79 PASS not_null_mart_pages_page_title ................................... [[32mPASS[0m in 0.73s]
+[2025-05-26T00:02:30.800+0000] {utils.py:78} INFO - [0m00:02:30  30 of 79 START test not_null_mart_website_activity_event_date .................. [RUN]
+[2025-05-26T00:02:30.816+0000] {utils.py:78} INFO - [0m00:02:30  31 of 79 START test not_null_mart_website_activity_pages_viewed ................ [RUN]
+[2025-05-26T00:02:30.915+0000] {utils.py:78} INFO - [0m00:02:30  28 of 79 PASS not_null_mart_website_activity_bounce ............................ [[32mPASS[0m in 0.84s]
+[2025-05-26T00:02:30.938+0000] {utils.py:78} INFO - [0m00:02:30  32 of 79 START test not_null_mart_website_activity_session_duration ............ [RUN]
+[2025-05-26T00:02:31.042+0000] {utils.py:78} INFO - [0m00:02:31  29 of 79 PASS not_null_mart_website_activity_contact_id ........................ [[32mPASS[0m in 0.37s]
+[2025-05-26T00:02:31.054+0000] {utils.py:78} INFO - [0m00:02:31  33 of 79 START test not_null_mart_website_activity_session_id .................. [RUN]
+[2025-05-26T00:02:31.155+0000] {utils.py:78} INFO - [0m00:02:31  30 of 79 PASS not_null_mart_website_activity_event_date ........................ [[32mPASS[0m in 0.35s]
+[2025-05-26T00:02:31.173+0000] {utils.py:78} INFO - [0m00:02:31  31 of 79 PASS not_null_mart_website_activity_pages_viewed ...................... [[32mPASS[0m in 0.34s]
+[2025-05-26T00:02:31.217+0000] {utils.py:78} INFO - [0m00:02:31  34 of 79 START test not_null_mart_website_activity_upload_date ................. [RUN]
+[2025-05-26T00:02:31.225+0000] {utils.py:78} INFO - [0m00:02:31  35 of 79 START test not_null_stg_campaigns_campaign_id ......................... [RUN]
+[2025-05-26T00:02:31.236+0000] {utils.py:78} INFO - [0m00:02:31  32 of 79 PASS not_null_mart_website_activity_session_duration .................. [[32mPASS[0m in 0.29s]
+[2025-05-26T00:02:31.289+0000] {utils.py:78} INFO - [0m00:02:31  36 of 79 START test not_null_stg_campaigns_campaign_name ....................... [RUN]
+[2025-05-26T00:02:31.470+0000] {utils.py:78} INFO - [0m00:02:31  33 of 79 PASS not_null_mart_website_activity_session_id ........................ [[32mPASS[0m in 0.41s]
+[2025-05-26T00:02:31.514+0000] {utils.py:78} INFO - [0m00:02:31  37 of 79 START test not_null_stg_campaigns_upload_date ......................... [RUN]
+[2025-05-26T00:02:31.655+0000] {utils.py:78} INFO - [0m00:02:31  34 of 79 PASS not_null_mart_website_activity_upload_date ....................... [[32mPASS[0m in 0.43s]
+[2025-05-26T00:02:31.672+0000] {utils.py:78} INFO - [0m00:02:31  38 of 79 START test not_null_stg_contacts_contact_id ........................... [RUN]
+[2025-05-26T00:02:31.749+0000] {utils.py:78} INFO - [0m00:02:31  36 of 79 PASS not_null_stg_campaigns_campaign_name ............................. [[32mPASS[0m in 0.45s]
+[2025-05-26T00:02:31.764+0000] {utils.py:78} INFO - [0m00:02:31  35 of 79 PASS not_null_stg_campaigns_campaign_id ............................... [[32mPASS[0m in 0.52s]
+[2025-05-26T00:02:31.806+0000] {utils.py:78} INFO - [0m00:02:31  37 of 79 PASS not_null_stg_campaigns_upload_date ............................... [[32mPASS[0m in 0.28s]
+[2025-05-26T00:02:31.823+0000] {utils.py:78} INFO - [0m00:02:31  39 of 79 START test not_null_stg_contacts_email ................................ [RUN]
+[2025-05-26T00:02:31.827+0000] {utils.py:78} INFO - [0m00:02:31  40 of 79 START test not_null_stg_contacts_signup_date .......................... [RUN]
+[2025-05-26T00:02:31.860+0000] {utils.py:78} INFO - [0m00:02:31  41 of 79 START test not_null_stg_contacts_upload_date .......................... [RUN]
+[2025-05-26T00:02:32.140+0000] {utils.py:78} INFO - [0m00:02:32  38 of 79 PASS not_null_stg_contacts_contact_id ................................. [[32mPASS[0m in 0.46s]
+[2025-05-26T00:02:32.153+0000] {utils.py:78} INFO - [0m00:02:32  42 of 79 START test not_null_stg_form_fills_contact_id ......................... [RUN]
+[2025-05-26T00:02:32.167+0000] {utils.py:78} INFO - [0m00:02:32  39 of 79 PASS not_null_stg_contacts_email ...................................... [[32mPASS[0m in 0.33s]
+[2025-05-26T00:02:32.211+0000] {utils.py:78} INFO - [0m00:02:32  41 of 79 PASS not_null_stg_contacts_upload_date ................................ [[32mPASS[0m in 0.32s]
+[2025-05-26T00:02:32.221+0000] {utils.py:78} INFO - [0m00:02:32  43 of 79 START test not_null_stg_form_fills_fill_date .......................... [RUN]
+[2025-05-26T00:02:32.241+0000] {utils.py:78} INFO - [0m00:02:32  40 of 79 PASS not_null_stg_contacts_signup_date ................................ [[32mPASS[0m in 0.40s]
+[2025-05-26T00:02:32.270+0000] {utils.py:78} INFO - [0m00:02:32  44 of 79 START test not_null_stg_form_fills_fill_id ............................ [RUN]
+[2025-05-26T00:02:32.304+0000] {utils.py:78} INFO - [0m00:02:32  45 of 79 START test not_null_stg_form_fills_form_id ............................ [RUN]
+[2025-05-26T00:02:32.597+0000] {utils.py:78} INFO - [0m00:02:32  42 of 79 PASS not_null_stg_form_fills_contact_id ............................... [[32mPASS[0m in 0.44s]
+[2025-05-26T00:02:32.609+0000] {utils.py:78} INFO - [0m00:02:32  46 of 79 START test not_null_stg_form_fills_upload_date ........................ [RUN]
+[2025-05-26T00:02:32.631+0000] {utils.py:78} INFO - [0m00:02:32  43 of 79 PASS not_null_stg_form_fills_fill_date ................................ [[32mPASS[0m in 0.38s]
+[2025-05-26T00:02:32.656+0000] {utils.py:78} INFO - [0m00:02:32  44 of 79 PASS not_null_stg_form_fills_fill_id .................................. [[32mPASS[0m in 0.36s]
+[2025-05-26T00:02:32.680+0000] {utils.py:78} INFO - [0m00:02:32  47 of 79 START test not_null_stg_forms_form_id ................................. [RUN]
+[2025-05-26T00:02:32.686+0000] {utils.py:78} INFO - [0m00:02:32  48 of 79 START test not_null_stg_forms_form_type ............................... [RUN]
+[2025-05-26T00:02:32.746+0000] {utils.py:78} INFO - [0m00:02:32  45 of 79 PASS not_null_stg_form_fills_form_id .................................. [[32mPASS[0m in 0.42s]
+[2025-05-26T00:02:32.805+0000] {utils.py:78} INFO - [0m00:02:32  49 of 79 START test not_null_stg_forms_upload_date ............................. [RUN]
+[2025-05-26T00:02:32.974+0000] {utils.py:78} INFO - [0m00:02:32  46 of 79 PASS not_null_stg_form_fills_upload_date .............................. [[32mPASS[0m in 0.36s]
+[2025-05-26T00:02:32.986+0000] {utils.py:78} INFO - [0m00:02:32  50 of 79 START test not_null_stg_pages_page_id ................................. [RUN]
+[2025-05-26T00:02:33.079+0000] {utils.py:78} INFO - [0m00:02:33  48 of 79 PASS not_null_stg_forms_form_type ..................................... [[32mPASS[0m in 0.38s]
+[2025-05-26T00:02:33.091+0000] {utils.py:78} INFO - [0m00:02:33  47 of 79 PASS not_null_stg_forms_form_id ....................................... [[32mPASS[0m in 0.40s]
+[2025-05-26T00:02:33.118+0000] {utils.py:78} INFO - [0m00:02:33  51 of 79 START test not_null_stg_pages_page_title .............................. [RUN]
+[2025-05-26T00:02:33.122+0000] {utils.py:78} INFO - [0m00:02:33  52 of 79 START test not_null_stg_pages_page_url ................................ [RUN]
+[2025-05-26T00:02:33.304+0000] {utils.py:78} INFO - [0m00:02:33  49 of 79 PASS not_null_stg_forms_upload_date ................................... [[32mPASS[0m in 0.49s]
+[2025-05-26T00:02:33.313+0000] {utils.py:78} INFO - [0m00:02:33  53 of 79 START test not_null_stg_pages_upload_date ............................. [RUN]
+[2025-05-26T00:02:33.348+0000] {utils.py:78} INFO - [0m00:02:33  50 of 79 PASS not_null_stg_pages_page_id ....................................... [[32mPASS[0m in 0.36s]
+[2025-05-26T00:02:33.362+0000] {utils.py:78} INFO - [0m00:02:33  54 of 79 START test not_null_stg_website_activity_contact_id ................... [RUN]
+[2025-05-26T00:02:33.426+0000] {utils.py:78} INFO - [0m00:02:33  51 of 79 PASS not_null_stg_pages_page_title .................................... [[32mPASS[0m in 0.30s]
+[2025-05-26T00:02:33.484+0000] {utils.py:78} INFO - [0m00:02:33  55 of 79 START test not_null_stg_website_activity_event_date ................... [RUN]
+[2025-05-26T00:02:33.513+0000] {utils.py:78} INFO - [0m00:02:33  52 of 79 PASS not_null_stg_pages_page_url ...................................... [[32mPASS[0m in 0.38s]
+[2025-05-26T00:02:33.558+0000] {utils.py:78} INFO - [0m00:02:33  56 of 79 START test not_null_stg_website_activity_pages_viewed ................. [RUN]
+[2025-05-26T00:02:33.696+0000] {utils.py:78} INFO - [0m00:02:33  53 of 79 PASS not_null_stg_pages_upload_date ................................... [[32mPASS[0m in 0.38s]
+[2025-05-26T00:02:33.721+0000] {utils.py:78} INFO - [0m00:02:33  57 of 79 START test not_null_stg_website_activity_session_duration ............. [RUN]
+[2025-05-26T00:02:33.831+0000] {utils.py:78} INFO - [0m00:02:33  54 of 79 PASS not_null_stg_website_activity_contact_id ......................... [[32mPASS[0m in 0.46s]
+[2025-05-26T00:02:33.876+0000] {utils.py:78} INFO - [0m00:02:33  56 of 79 PASS not_null_stg_website_activity_pages_viewed ....................... [[32mPASS[0m in 0.30s]
+[2025-05-26T00:02:33.883+0000] {utils.py:78} INFO - [0m00:02:33  58 of 79 START test not_null_stg_website_activity_session_id ................... [RUN]
+[2025-05-26T00:02:33.906+0000] {utils.py:78} INFO - [0m00:02:33  55 of 79 PASS not_null_stg_website_activity_event_date ......................... [[32mPASS[0m in 0.40s]
+[2025-05-26T00:02:33.942+0000] {utils.py:78} INFO - [0m00:02:33  59 of 79 START test not_null_stg_website_activity_upload_date .................. [RUN]
+[2025-05-26T00:02:33.958+0000] {utils.py:78} INFO - [0m00:02:33  60 of 79 START test relationships_mart_form_fills_contact_id__contact_id__ref_mart_contacts_  [RUN]
+[2025-05-26T00:02:34.073+0000] {utils.py:78} INFO - [0m00:02:34  57 of 79 PASS not_null_stg_website_activity_session_duration ................... [[32mPASS[0m in 0.35s]
+[2025-05-26T00:02:34.140+0000] {utils.py:78} INFO - [0m00:02:34  61 of 79 START test relationships_mart_website_activity_contact_id__contact_id__ref_mart_contacts_  [RUN]
+[2025-05-26T00:02:34.342+0000] {utils.py:78} INFO - [0m00:02:34  58 of 79 PASS not_null_stg_website_activity_session_id ......................... [[32mPASS[0m in 0.45s]
+[2025-05-26T00:02:34.349+0000] {utils.py:78} INFO - [0m00:02:34  59 of 79 PASS not_null_stg_website_activity_upload_date ........................ [[32mPASS[0m in 0.40s]
+[2025-05-26T00:02:34.366+0000] {utils.py:78} INFO - [0m00:02:34  62 of 79 START test relationships_stg_campaigns_campaign_name__campaign_id__ref_stg_campaigns_  [RUN]
+[2025-05-26T00:02:34.370+0000] {utils.py:78} INFO - [0m00:02:34  63 of 79 START test relationships_stg_form_fills_contact_id__contact_id__ref_stg_contacts_  [RUN]
+[2025-05-26T00:02:34.443+0000] {utils.py:78} INFO - [0m00:02:34  60 of 79 PASS relationships_mart_form_fills_contact_id__contact_id__ref_mart_contacts_  [[32mPASS[0m in 0.47s]
+[2025-05-26T00:02:34.474+0000] {utils.py:78} INFO - [0m00:02:34  64 of 79 START test relationships_stg_website_activity_contact_id__contact_id__ref_stg_contacts_  [RUN]
+[2025-05-26T00:02:34.603+0000] {utils.py:78} INFO - [0m00:02:34  61 of 79 PASS relationships_mart_website_activity_contact_id__contact_id__ref_mart_contacts_  [[32mPASS[0m in 0.45s]
+[2025-05-26T00:02:34.654+0000] {utils.py:78} INFO - [0m00:02:34  65 of 79 START test unique_mart_campaigns_campaign_id .......................... [RUN]
+[2025-05-26T00:02:34.809+0000] {utils.py:78} INFO - [0m00:02:34  63 of 79 PASS relationships_stg_form_fills_contact_id__contact_id__ref_stg_contacts_  [[32mPASS[0m in 0.43s]
+[2025-05-26T00:02:34.824+0000] {utils.py:78} INFO - [0m00:02:34  66 of 79 START test unique_mart_contacts_contact_id ............................ [RUN]
+[2025-05-26T00:02:34.910+0000] {utils.py:78} INFO - [0m00:02:34  62 of 79 FAIL 3 relationships_stg_campaigns_campaign_name__campaign_id__ref_stg_campaigns_  [[31mFAIL 3[0m in 0.54s]
+[2025-05-26T00:02:34.932+0000] {utils.py:78} INFO - [0m00:02:34  67 of 79 START test unique_mart_contacts_email ................................. [RUN]
+[2025-05-26T00:02:34.980+0000] {utils.py:78} INFO - [0m00:02:34  64 of 79 PASS relationships_stg_website_activity_contact_id__contact_id__ref_stg_contacts_  [[32mPASS[0m in 0.47s]
+[2025-05-26T00:02:34.994+0000] {utils.py:78} INFO - [0m00:02:34  68 of 79 START test unique_mart_form_fills_fill_id ............................. [RUN]
+[2025-05-26T00:02:35.075+0000] {utils.py:78} INFO - [0m00:02:35  65 of 79 PASS unique_mart_campaigns_campaign_id ................................ [[32mPASS[0m in 0.41s]
+[2025-05-26T00:02:35.125+0000] {utils.py:78} INFO - [0m00:02:35  69 of 79 START test unique_mart_forms_form_id .................................. [RUN]
+[2025-05-26T00:02:35.138+0000] {utils.py:78} INFO - [0m00:02:35  66 of 79 PASS unique_mart_contacts_contact_id .................................. [[32mPASS[0m in 0.31s]
+[2025-05-26T00:02:35.187+0000] {utils.py:78} INFO - [0m00:02:35  70 of 79 START test unique_mart_pages_page_id .................................. [RUN]
+[2025-05-26T00:02:35.335+0000] {utils.py:78} INFO - [0m00:02:35  67 of 79 FAIL 4 unique_mart_contacts_email ..................................... [[31mFAIL 4[0m in 0.39s]
+[2025-05-26T00:02:35.347+0000] {utils.py:78} INFO - [0m00:02:35  71 of 79 START test unique_mart_website_activity_session_id .................... [RUN]
+[2025-05-26T00:02:35.386+0000] {utils.py:78} INFO - [0m00:02:35  68 of 79 PASS unique_mart_form_fills_fill_id ................................... [[32mPASS[0m in 0.39s]
+[2025-05-26T00:02:35.401+0000] {utils.py:78} INFO - [0m00:02:35  72 of 79 START test unique_stg_campaigns_campaign_id ........................... [RUN]
+[2025-05-26T00:02:35.487+0000] {utils.py:78} INFO - [0m00:02:35  70 of 79 PASS unique_mart_pages_page_id ........................................ [[32mPASS[0m in 0.28s]
+[2025-05-26T00:02:35.529+0000] {utils.py:78} INFO - [0m00:02:35  73 of 79 START test unique_stg_contacts_contact_id ............................. [RUN]
+[2025-05-26T00:02:35.571+0000] {utils.py:78} INFO - [0m00:02:35  69 of 79 PASS unique_mart_forms_form_id ........................................ [[32mPASS[0m in 0.42s]
+[2025-05-26T00:02:35.626+0000] {utils.py:78} INFO - [0m00:02:35  74 of 79 START test unique_stg_contacts_email .................................. [RUN]
+[2025-05-26T00:02:35.919+0000] {utils.py:78} INFO - [0m00:02:35  72 of 79 PASS unique_stg_campaigns_campaign_id ................................. [[32mPASS[0m in 0.51s]
+[2025-05-26T00:02:35.928+0000] {utils.py:78} INFO - [0m00:02:35  71 of 79 PASS unique_mart_website_activity_session_id .......................... [[32mPASS[0m in 0.58s]
+[2025-05-26T00:02:35.993+0000] {utils.py:78} INFO - [0m00:02:35  75 of 79 START test unique_stg_form_fills_fill_id .............................. [RUN]
+[2025-05-26T00:02:36.012+0000] {utils.py:78} INFO - [0m00:02:36  76 of 79 START test unique_stg_forms_form_id ................................... [RUN]
+[2025-05-26T00:02:36.230+0000] {utils.py:78} INFO - [0m00:02:36  73 of 79 PASS unique_stg_contacts_contact_id ................................... [[32mPASS[0m in 0.67s]
+[2025-05-26T00:02:36.325+0000] {utils.py:78} INFO - [0m00:02:36  77 of 79 START test unique_stg_pages_page_id ................................... [RUN]
+[2025-05-26T00:02:36.372+0000] {utils.py:78} INFO - [0m00:02:36  74 of 79 FAIL 4 unique_stg_contacts_email ...................................... [[31mFAIL 4[0m in 0.73s]
+[2025-05-26T00:02:36.396+0000] {utils.py:78} INFO - [0m00:02:36  78 of 79 START test unique_stg_website_activity_session_id ..................... [RUN]
+[2025-05-26T00:02:36.461+0000] {utils.py:78} INFO - [0m00:02:36  76 of 79 PASS unique_stg_forms_form_id ......................................... [[32mPASS[0m in 0.41s]
+[2025-05-26T00:02:36.531+0000] {utils.py:78} INFO - [0m00:02:36  75 of 79 PASS unique_stg_form_fills_fill_id .................................... [[32mPASS[0m in 0.48s]
+[2025-05-26T00:02:36.550+0000] {utils.py:78} INFO - [0m00:02:36  79 of 79 START test website_activity_outside_business_hours .................... [RUN]
+[2025-05-26T00:02:36.823+0000] {utils.py:78} INFO - [0m00:02:36  77 of 79 PASS unique_stg_pages_page_id ......................................... [[32mPASS[0m in 0.49s]
+[2025-05-26T00:02:36.926+0000] {utils.py:78} INFO - [0m00:02:36  78 of 79 PASS unique_stg_website_activity_session_id ........................... [[32mPASS[0m in 0.52s]
+[2025-05-26T00:02:36.946+0000] {utils.py:78} INFO - [0m00:02:36  79 of 79 FAIL 1000 website_activity_outside_business_hours ..................... [[31mFAIL 1000[0m in 0.37s]
+[2025-05-26T00:02:37.944+0000] {utils.py:78} INFO - [0m00:02:37
+[2025-05-26T00:02:37.948+0000] {utils.py:78} INFO - [0m00:02:37  Finished running 79 data tests in 0 hours 0 minutes and 16.25 seconds (16.25s).
+[2025-05-26T00:02:38.462+0000] {utils.py:78} INFO - [0m00:02:38
+[2025-05-26T00:02:38.498+0000] {utils.py:78} INFO - [0m00:02:38  [31mCompleted with 12 errors, 0 partial successes, and 0 warnings:[0m
+[2025-05-26T00:02:38.668+0000] {utils.py:78} INFO - [0m00:02:38
+[2025-05-26T00:02:38.708+0000] {utils.py:78} INFO - [0m00:02:38    Compilation Error in test expression_is_true_stg_form_fills_fill_date__fill_date_current_timestamp_ (models/staging/schema.yml)
+[2025-05-26T00:02:38.733+0000] {utils.py:78} INFO - 'test_expression_is_true' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[2025-05-26T00:02:38.749+0000] {utils.py:78} INFO - [0m00:02:38
+[2025-05-26T00:02:38.766+0000] {utils.py:78} INFO - [0m00:02:38    Compilation Error in test expression_is_true_stg_website_activity_pages_viewed__pages_viewed_0 (models/staging/schema.yml)
+[2025-05-26T00:02:38.785+0000] {utils.py:78} INFO - 'test_expression_is_true' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[2025-05-26T00:02:38.795+0000] {utils.py:78} INFO - [0m00:02:38
+[2025-05-26T00:02:38.804+0000] {utils.py:78} INFO - [0m00:02:38    Compilation Error in test expression_is_true_stg_pages_page_url__page_url_LIKE_http_ (models/staging/schema.yml)
+[2025-05-26T00:02:38.814+0000] {utils.py:78} INFO - 'test_expression_is_true' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[2025-05-26T00:02:38.820+0000] {utils.py:78} INFO - [0m00:02:38
+[2025-05-26T00:02:38.828+0000] {utils.py:78} INFO - [0m00:02:38  [31mFailure in test accepted_values_stg_contacts_email___ (models/staging/schema.yml)[0m
+[2025-05-26T00:02:38.840+0000] {utils.py:78} INFO - [0m00:02:38    Got 995 results, configured to fail if != 0
+[2025-05-26T00:02:38.844+0000] {utils.py:78} INFO - [0m00:02:38
+[2025-05-26T00:02:38.852+0000] {utils.py:78} INFO - [0m00:02:38    compiled code at target/compiled/marketing_pipeline/models/staging/schema.yml/accepted_values_stg_contacts_email___.sql
+[2025-05-26T00:02:38.861+0000] {utils.py:78} INFO - [0m00:02:38
+[2025-05-26T00:02:38.868+0000] {utils.py:78} INFO - [0m00:02:38  [31mFailure in test mart_pages_url_format (tests/mart_pages_url_format.sql)[0m
+[2025-05-26T00:02:38.872+0000] {utils.py:78} INFO - [0m00:02:38    Got 4 results, configured to fail if != 0
+[2025-05-26T00:02:38.875+0000] {utils.py:78} INFO - [0m00:02:38
+[2025-05-26T00:02:38.878+0000] {utils.py:78} INFO - [0m00:02:38    compiled code at target/compiled/marketing_pipeline/tests/mart_pages_url_format.sql
+[2025-05-26T00:02:38.906+0000] {utils.py:78} INFO - [0m00:02:38
+[2025-05-26T00:02:38.910+0000] {utils.py:78} INFO - [0m00:02:38  [31mFailure in test no_duplicate_form_fills_per_contact (tests/no_duplicate_form_fills_per_contact.sql)[0m
+[2025-05-26T00:02:38.914+0000] {utils.py:78} INFO - [0m00:02:38    Got 271 results, configured to fail if != 0
+[2025-05-26T00:02:38.921+0000] {utils.py:78} INFO - [0m00:02:38
+[2025-05-26T00:02:38.927+0000] {utils.py:78} INFO - [0m00:02:38    compiled code at target/compiled/marketing_pipeline/tests/no_duplicate_form_fills_per_contact.sql
+[2025-05-26T00:02:38.934+0000] {utils.py:78} INFO - [0m00:02:38
+[2025-05-26T00:02:38.956+0000] {utils.py:78} INFO - [0m00:02:38    Database Error in test not_null_mart_campaigns_end_date (models/marts/schema.yml)
+[2025-05-26T00:02:38.962+0000] {utils.py:78} INFO - 000904 (42000): SQL compilation error: error line 14 at position 7
+[2025-05-26T00:02:38.966+0000] {utils.py:78} INFO - invalid identifier 'END_DATE'
+[2025-05-26T00:02:38.969+0000] {utils.py:78} INFO - compiled code at target/run/marketing_pipeline/models/marts/schema.yml/not_null_mart_campaigns_end_date.sql
+[2025-05-26T00:02:38.973+0000] {utils.py:78} INFO - [0m00:02:38
+[2025-05-26T00:02:38.976+0000] {utils.py:78} INFO - [0m00:02:38    Database Error in test not_null_mart_campaigns_start_date (models/marts/schema.yml)
+[2025-05-26T00:02:38.980+0000] {utils.py:78} INFO - 000904 (42000): SQL compilation error: error line 14 at position 7
+[2025-05-26T00:02:38.984+0000] {utils.py:78} INFO - invalid identifier 'START_DATE'
+[2025-05-26T00:02:38.988+0000] {utils.py:78} INFO - compiled code at target/run/marketing_pipeline/models/marts/schema.yml/not_null_mart_campaigns_start_date.sql
+[2025-05-26T00:02:38.992+0000] {utils.py:78} INFO - [0m00:02:38
+[2025-05-26T00:02:38.996+0000] {utils.py:78} INFO - [0m00:02:38  [31mFailure in test relationships_stg_campaigns_campaign_name__campaign_id__ref_stg_campaigns_ (models/staging/schema.yml)[0m
+[2025-05-26T00:02:38.999+0000] {utils.py:78} INFO - [0m00:02:38    Got 3 results, configured to fail if != 0
+[2025-05-26T00:02:39.002+0000] {utils.py:78} INFO - [0m00:02:38
+[2025-05-26T00:02:39.006+0000] {utils.py:78} INFO - [0m00:02:38    compiled code at target/compiled/marketing_pipeline/models/staging/schema.yml/relationships_stg_campaigns_3a16908a32571b0bb273e549269b9f1a.sql
+[2025-05-26T00:02:39.009+0000] {utils.py:78} INFO - [0m00:02:38
+[2025-05-26T00:02:39.012+0000] {utils.py:78} INFO - [0m00:02:38  [31mFailure in test unique_mart_contacts_email (models/marts/schema.yml)[0m
+[2025-05-26T00:02:39.015+0000] {utils.py:78} INFO - [0m00:02:38    Got 4 results, configured to fail if != 0
+[2025-05-26T00:02:39.019+0000] {utils.py:78} INFO - [0m00:02:38
+[2025-05-26T00:02:39.021+0000] {utils.py:78} INFO - [0m00:02:38    compiled code at target/compiled/marketing_pipeline/models/marts/schema.yml/unique_mart_contacts_email.sql
+[2025-05-26T00:02:39.024+0000] {utils.py:78} INFO - [0m00:02:39
+[2025-05-26T00:02:39.028+0000] {utils.py:78} INFO - [0m00:02:39  [31mFailure in test unique_stg_contacts_email (models/staging/schema.yml)[0m
+[2025-05-26T00:02:39.031+0000] {utils.py:78} INFO - [0m00:02:39    Got 4 results, configured to fail if != 0
+[2025-05-26T00:02:39.033+0000] {utils.py:78} INFO - [0m00:02:39
+[2025-05-26T00:02:39.036+0000] {utils.py:78} INFO - [0m00:02:39    compiled code at target/compiled/marketing_pipeline/models/staging/schema.yml/unique_stg_contacts_email.sql
+[2025-05-26T00:02:39.040+0000] {utils.py:78} INFO - [0m00:02:39
+[2025-05-26T00:02:39.044+0000] {utils.py:78} INFO - [0m00:02:39  [31mFailure in test website_activity_outside_business_hours (tests/website_activity_outside_business_hours.sql)[0m
+[2025-05-26T00:02:39.048+0000] {utils.py:78} INFO - [0m00:02:39    Got 1000 results, configured to fail if != 0
+[2025-05-26T00:02:39.051+0000] {utils.py:78} INFO - [0m00:02:39
+[2025-05-26T00:02:39.056+0000] {utils.py:78} INFO - [0m00:02:39    compiled code at target/compiled/marketing_pipeline/tests/website_activity_outside_business_hours.sql
+[2025-05-26T00:02:39.061+0000] {utils.py:78} INFO - [0m00:02:39
+[2025-05-26T00:02:39.067+0000] {utils.py:78} INFO - [0m00:02:39  Done. PASS=67 WARN=0 ERROR=12 SKIP=0 TOTAL=79
+[2025-05-26T00:02:39.769+0000] {utils.py:91} ERROR - dbt tests failed: dbt command failed with exit code 1
+[2025-05-26T00:02:39.773+0000] {email_notification.py:56} WARNING - 📧 Sending generic failure email [Airflow] Failure in Marketing_Data_Pipeline.dbt_run.dbt_test (Attempt 1/1)
+[2025-05-26T00:02:39.807+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.10/site-packages/***/utils/email.py:154 RemovedInAirflow3Warning: Fetching SMTP credentials from configuration variables will be deprecated in a future release. Please set credentials using a connection instead.
+[2025-05-26T00:02:39.809+0000] {email.py:270} INFO - Email alerting: attempt 1
+[2025-05-26T00:02:41.327+0000] {email.py:281} INFO - Sent an alert email to ['yashbhawsar872@gmail.com']
+[2025-05-26T00:02:42.866+0000] {Marketing_Data_Pipeline.py:41} INFO - ✅ Completed task: Run all dbt tests
+[2025-05-26T00:02:42.871+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-05-26T00:02:42.913+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=Marketing_Data_Pipeline, task_id=dbt_run.dbt_test, execution_date=20250525T000000, start_date=20250526T000208, end_date=20250526T000242
+[2025-05-26T00:02:43.000+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-05-26T00:02:43.068+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

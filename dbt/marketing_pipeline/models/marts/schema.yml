@@ -1,0 +1,125 @@
+version: 2
+
+models:
+  - name: mart_campaigns
+    description: "Clean campaign dimension"
+    columns:
+      - name: campaign_id
+        tests:
+          - not_null
+          - unique
+      - name: campaign_name
+        tests:
+          - not_null
+      - name: start_date
+        tests:
+          - not_null
+      - name: end_date
+        tests:
+          - not_null
+
+  - name: mart_contacts
+    description: "Clean contact dimension"
+    columns:
+      - name: contact_id
+        tests:
+          - not_null
+          - unique
+      - name: email
+        tests:
+          - not_null
+          - unique
+      - name: signup_date
+        tests:
+          - not_null
+
+  - name: mart_form_fills
+    description: "Fact table for form fills"
+    columns:
+      - name: fill_id
+        tests:
+          - not_null
+          - unique
+      - name: contact_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('mart_contacts')
+              field: contact_id
+      - name: form_id
+        tests:
+          - not_null
+      - name: fill_date
+        tests:
+          - not_null
+      - name: estimated_value
+        tests:
+          - not_null
+      - name: upload_date
+        tests:
+          - not_null
+
+  - name: mart_forms
+    description: "Form dimension"
+    columns:
+      - name: form_id
+        tests:
+          - not_null
+          - unique
+      - name: form_type
+        tests:
+          - not_null
+      - name: upload_date
+        tests:
+          - not_null
+
+  - name: mart_pages
+    description: "Page dimension"
+    columns:
+      - name: page_id
+        tests:
+          - not_null
+          - unique
+      - name: page_url
+        tests:
+          - not_null
+      - name: page_title
+        tests:
+          - not_null
+      - name: upload_date
+        tests:
+          - not_null
+
+  - name: mart_website_activity
+    description: "Fact table for website activity"
+    columns:
+      - name: session_id
+        tests:
+          - not_null
+          - unique
+      - name: contact_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('mart_contacts')
+              field: contact_id
+      - name: event_date
+        tests:
+          - not_null
+      - name: session_duration
+        tests:
+          - not_null
+      - name: pages_viewed
+        tests:
+          - not_null
+      - name: bounce
+        tests:
+          - not_null
+      - name: upload_date
+        tests:
+          - not_null
+
+# custom mart tests
+tests:
+  - mart_no_orphan_form_fills
+  - mart_pages_url_format

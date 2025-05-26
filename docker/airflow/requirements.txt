@@ -1,0 +1,6 @@
+pandas
+faker
+pyarrow
+minio
+dbt-snowflake
+python-json-logger

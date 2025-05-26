@@ -1,0 +1,17 @@
+[2025-05-25T05:28:09.161+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: marketing_data_pipeline.generate_website_activity manual__2025-05-25T05:27:20.358267+00:00 [queued]>
+[2025-05-25T05:28:09.198+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: marketing_data_pipeline.generate_website_activity manual__2025-05-25T05:27:20.358267+00:00 [queued]>
+[2025-05-25T05:28:09.200+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-05-25T05:28:09.347+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): generate_website_activity> on 2025-05-25 05:27:20.358267+00:00
+[2025-05-25T05:28:09.359+0000] {standard_task_runner.py:60} INFO - Started process 3435 to run task
+[2025-05-25T05:28:09.367+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'marketing_data_pipeline', 'generate_website_activity', 'manual__2025-05-25T05:27:20.358267+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/main_pipeline_dag.py', '--cfg-path', '/tmp/tmpanqgqi2y']
+[2025-05-25T05:28:09.449+0000] {standard_task_runner.py:88} INFO - Job 5: Subtask generate_website_activity
+[2025-05-25T05:28:13.831+0000] {task_command.py:423} INFO - Running <TaskInstance: marketing_data_pipeline.generate_website_activity manual__2025-05-25T05:27:20.358267+00:00 [running]> on host 0b3688707aa0
+[2025-05-25T05:28:20.586+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='yashbhawsar872@gmail.com' AIRFLOW_CTX_DAG_OWNER='Yash' AIRFLOW_CTX_DAG_ID='marketing_data_pipeline' AIRFLOW_CTX_TASK_ID='generate_website_activity' AIRFLOW_CTX_EXECUTION_DATE='2025-05-25T05:27:20.358267+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-25T05:27:20.358267+00:00'
+[2025-05-25T05:28:20.588+0000] {main_pipeline_dag.py:27} INFO - ▶️ Starting task: Generate Website Activity
+[2025-05-25T05:28:43.309+0000] {data_generation.py:117} INFO - ✅ website_activity_2025-05-25.json file generated
+[2025-05-25T05:28:47.494+0000] {metadata.py:109} INFO - 📝 Logged stage 'generated' for website_activity_2025-05-25.json at 2025-05-25T05:28:43.467063
+[2025-05-25T05:28:47.514+0000] {main_pipeline_dag.py:29} INFO - ✅ Completed task: Generate Website Activity
+[2025-05-25T05:28:47.546+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-05-25T05:28:47.638+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=marketing_data_pipeline, task_id=generate_website_activity, execution_date=20250525T052720, start_date=20250525T052809, end_date=20250525T052847
+[2025-05-25T05:28:47.880+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-05-25T05:28:48.418+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

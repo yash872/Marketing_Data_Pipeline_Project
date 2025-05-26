@@ -1,0 +1,84 @@
+[2025-05-24T07:24:00.409+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: marketing_data_pipeline.generate_form_fills scheduled__2025-05-23T00:00:00+00:00 [queued]>
+[2025-05-24T07:24:00.513+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: marketing_data_pipeline.generate_form_fills scheduled__2025-05-23T00:00:00+00:00 [queued]>
+[2025-05-24T07:24:00.535+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-05-24T07:24:00.646+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): generate_form_fills> on 2025-05-23 00:00:00+00:00
+[2025-05-24T07:24:00.671+0000] {standard_task_runner.py:60} INFO - Started process 642 to run task
+[2025-05-24T07:24:00.732+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'marketing_data_pipeline', 'generate_form_fills', 'scheduled__2025-05-23T00:00:00+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/main_pipeline_dag.py', '--cfg-path', '/tmp/tmp112uarmz']
+[2025-05-24T07:24:00.744+0000] {standard_task_runner.py:88} INFO - Job 11: Subtask generate_form_fills
+[2025-05-24T07:24:01.146+0000] {task_command.py:423} INFO - Running <TaskInstance: marketing_data_pipeline.generate_form_fills scheduled__2025-05-23T00:00:00+00:00 [running]> on host fcb3825e40cf
+[2025-05-24T07:24:01.648+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='yashbhawsar872@gmail.com' AIRFLOW_CTX_DAG_OWNER='Yash' AIRFLOW_CTX_DAG_ID='marketing_data_pipeline' AIRFLOW_CTX_TASK_ID='generate_form_fills' AIRFLOW_CTX_EXECUTION_DATE='2025-05-23T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-23T00:00:00+00:00'
+[2025-05-24T07:24:01.674+0000] {main_pipeline_dag.py:25} INFO - ▶️ Starting task: Generate Form Fills
+[2025-05-24T07:24:01.773+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/main_pipeline_dag.py", line 26, in _wrapped
+    fn(**kwargs)
+TypeError: generate_form_fills_if_needed() got an unexpected keyword argument 'conf'
+[2025-05-24T07:24:02.058+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=marketing_data_pipeline, task_id=generate_form_fills, execution_date=20250523T000000, start_date=20250524T072400, end_date=20250524T072402
+[2025-05-24T07:24:02.528+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 11 for task generate_form_fills (generate_form_fills_if_needed() got an unexpected keyword argument 'conf'; 642)
+[2025-05-24T07:24:03.075+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-05-24T07:24:03.597+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-24T07:26:02.328+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: marketing_data_pipeline.generate_form_fills scheduled__2025-05-23T00:00:00+00:00 [queued]>
+[2025-05-24T07:26:02.355+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: marketing_data_pipeline.generate_form_fills scheduled__2025-05-23T00:00:00+00:00 [queued]>
+[2025-05-24T07:26:02.356+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-05-24T07:26:02.402+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): generate_form_fills> on 2025-05-23 00:00:00+00:00
+[2025-05-24T07:26:02.414+0000] {standard_task_runner.py:60} INFO - Started process 693 to run task
+[2025-05-24T07:26:02.432+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'marketing_data_pipeline', 'generate_form_fills', 'scheduled__2025-05-23T00:00:00+00:00', '--job-id', '17', '--raw', '--subdir', 'DAGS_FOLDER/main_pipeline_dag.py', '--cfg-path', '/tmp/tmp9fqejp3j']
+[2025-05-24T07:26:02.440+0000] {standard_task_runner.py:88} INFO - Job 17: Subtask generate_form_fills
+[2025-05-24T07:26:02.865+0000] {task_command.py:423} INFO - Running <TaskInstance: marketing_data_pipeline.generate_form_fills scheduled__2025-05-23T00:00:00+00:00 [running]> on host fcb3825e40cf
+[2025-05-24T07:26:03.819+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='yashbhawsar872@gmail.com' AIRFLOW_CTX_DAG_OWNER='Yash' AIRFLOW_CTX_DAG_ID='marketing_data_pipeline' AIRFLOW_CTX_TASK_ID='generate_form_fills' AIRFLOW_CTX_EXECUTION_DATE='2025-05-23T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-23T00:00:00+00:00'
+[2025-05-24T07:26:03.827+0000] {main_pipeline_dag.py:25} INFO - ▶️ Starting task: Generate Form Fills
+[2025-05-24T07:26:03.840+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/main_pipeline_dag.py", line 26, in _wrapped
+    fn(**kwargs)
+TypeError: generate_form_fills_if_needed() got an unexpected keyword argument 'conf'
+[2025-05-24T07:26:04.070+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=marketing_data_pipeline, task_id=generate_form_fills, execution_date=20250523T000000, start_date=20250524T072602, end_date=20250524T072604
+[2025-05-24T07:26:04.179+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 17 for task generate_form_fills (generate_form_fills_if_needed() got an unexpected keyword argument 'conf'; 693)
+[2025-05-24T07:26:04.240+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-05-24T07:26:04.474+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-24T08:18:27.988+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: marketing_data_pipeline.generate_form_fills scheduled__2025-05-23T00:00:00+00:00 [queued]>
+[2025-05-24T08:18:28.137+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: marketing_data_pipeline.generate_form_fills scheduled__2025-05-23T00:00:00+00:00 [queued]>
+[2025-05-24T08:18:28.186+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-05-24T08:18:28.421+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): generate_form_fills> on 2025-05-23 00:00:00+00:00
+[2025-05-24T08:18:28.488+0000] {standard_task_runner.py:60} INFO - Started process 319 to run task
+[2025-05-24T08:18:28.521+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'marketing_data_pipeline', 'generate_form_fills', 'scheduled__2025-05-23T00:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/main_pipeline_dag.py', '--cfg-path', '/tmp/tmpeds71kab']
+[2025-05-24T08:18:28.552+0000] {standard_task_runner.py:88} INFO - Job 5: Subtask generate_form_fills
+[2025-05-24T08:18:29.381+0000] {task_command.py:423} INFO - Running <TaskInstance: marketing_data_pipeline.generate_form_fills scheduled__2025-05-23T00:00:00+00:00 [running]> on host e6492150ec46
+[2025-05-24T08:18:30.477+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='yashbhawsar872@gmail.com' AIRFLOW_CTX_DAG_OWNER='Yash' AIRFLOW_CTX_DAG_ID='marketing_data_pipeline' AIRFLOW_CTX_TASK_ID='generate_form_fills' AIRFLOW_CTX_EXECUTION_DATE='2025-05-23T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-23T00:00:00+00:00'
+[2025-05-24T08:18:30.515+0000] {main_pipeline_dag.py:25} INFO - ▶️ Starting task: Generate Form Fills
+[2025-05-24T08:18:34.982+0000] {data_generation.py:90} INFO - ✅ form_fills_2025-05-23.parquet file generated
+[2025-05-24T08:18:35.228+0000] {metadata.py:107} INFO - 📝 Logged stage 'generated' for form_fills_2025-05-23.parquet at 2025-05-24T08:18:35.005194
+[2025-05-24T08:18:35.234+0000] {main_pipeline_dag.py:27} INFO - ✅ Completed task: Generate Form Fills
+[2025-05-24T08:18:35.247+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-05-24T08:18:35.361+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=marketing_data_pipeline, task_id=generate_form_fills, execution_date=20250523T000000, start_date=20250524T081828, end_date=20250524T081835
+[2025-05-24T08:18:35.628+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-05-24T08:18:36.066+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-24T10:16:57.223+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: marketing_data_pipeline.generate_form_fills scheduled__2025-05-23T00:00:00+00:00 [queued]>
+[2025-05-24T10:16:57.330+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: marketing_data_pipeline.generate_form_fills scheduled__2025-05-23T00:00:00+00:00 [queued]>
+[2025-05-24T10:16:57.331+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-05-24T10:16:57.926+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): generate_form_fills> on 2025-05-23 00:00:00+00:00
+[2025-05-24T10:16:57.935+0000] {standard_task_runner.py:60} INFO - Started process 346 to run task
+[2025-05-24T10:16:57.941+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'marketing_data_pipeline', 'generate_form_fills', 'scheduled__2025-05-23T00:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/main_pipeline_dag.py', '--cfg-path', '/tmp/tmpr03n_xgg']
+[2025-05-24T10:16:57.945+0000] {standard_task_runner.py:88} INFO - Job 4: Subtask generate_form_fills
+[2025-05-24T10:17:09.361+0000] {task_command.py:423} INFO - Running <TaskInstance: marketing_data_pipeline.generate_form_fills scheduled__2025-05-23T00:00:00+00:00 [running]> on host 8c3b47b76f3b
+[2025-05-24T10:17:11.726+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='yashbhawsar872@gmail.com' AIRFLOW_CTX_DAG_OWNER='Yash' AIRFLOW_CTX_DAG_ID='marketing_data_pipeline' AIRFLOW_CTX_TASK_ID='generate_form_fills' AIRFLOW_CTX_EXECUTION_DATE='2025-05-23T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-23T00:00:00+00:00'
+[2025-05-24T10:17:11.735+0000] {main_pipeline_dag.py:25} INFO - ▶️ Starting task: Generate Form Fills
+[2025-05-24T10:17:24.239+0000] {data_generation.py:90} INFO - ✅ form_fills_2025-05-23.parquet file generated
+[2025-05-24T10:17:30.659+0000] {metadata.py:107} INFO - 📝 Logged stage 'generated' for form_fills_2025-05-23.parquet at 2025-05-24T10:17:24.291393
+[2025-05-24T10:17:30.856+0000] {main_pipeline_dag.py:27} INFO - ✅ Completed task: Generate Form Fills
+[2025-05-24T10:17:31.001+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-05-24T10:17:31.257+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=marketing_data_pipeline, task_id=generate_form_fills, execution_date=20250523T000000, start_date=20250524T101657, end_date=20250524T101731
+[2025-05-24T10:17:32.013+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-05-24T10:17:32.308+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
