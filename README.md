@@ -18,7 +18,6 @@ An end-to-end, production-grade ELT pipeline for synthetic marketing data—cove
 8. [Design Decisions & Scope](#design-decisions--scope)  
 9. [Future Improvements](#future-improvements)  
 10. [Contributing](#contributing)  
-11. [License](#license)
 
 ---
 
@@ -39,20 +38,44 @@ This repository implements a robust marketing data pipeline that:
 ## Repository Structure
 
 ```
-.
-├── dags/                       # Airflow DAG definitions
+├── config/
+│   └──  airflow.cfg 
+├── dags/
+│   └──  Marketing_Data_Pipeline.py              <-- Airflow DAG definitions
+├── data/                                        <-- Input data files location (generated)
+│   ├── quarantine_data/
+│   ├── raw_data/
+│   ├── uploaded_data/
+│   ├── validated_data/
+|   └── metadata.db.py                           <-- metadata.db will generate here            
 ├── scripts/
-│   ├── data_generator.py      # Generates synthetic datasets
-│   ├── data_validation.py     # Runs data quality checks
-│   └── upload_to_minio.py     # Idempotent upload logic
-├── dbt/                        # dbt project for transformations
-│   ├── models/
-│   └── schema.yml
-├── docs/                       # Project documentation (Word, PDFs)
-├── docker-compose.yml          # Local dev stack (Airflow, MinIO, Postgres)
-├── Dockerfile                  # Builds Python & DAG image
-├── .env.example                # Sample environment variables
-├── README.md                   # This file
+│   ├── data_generator.py                        <-- Generates synthetic datasets
+│   ├── data_validation.py                       <-- Runs data quality checks
+│   ├── email_notification.py                    <-- email service using smtp server (gmail)
+│   ├── logging_config.py                        <-- custom logging functions
+│   ├── metadata.py                              <-- metadata db operation handling logic
+│   ├── upload_to_minio.py                       <-- Idempotent upload to minio
+│   └── snowflake_upload.py                      <-- logic to load data from minio to snowflake 
+├── dbt/                                         <-- dbt project for transformations
+|   ├── log/                      
+│   ├── marketing_pipeline/
+|   │   ├── models/                              <-- dbt models
+|   |   │   ├── marts/
+|   |   │   ├── staging/
+|   │   ├── tests/                               <-- custome test cases
+|   │   └── dbt_project.yml/
+│   └── target/
+├── docker/                  
+|   ├── docker-compose.yml                       <-- Local dev stack (Airflow, MinIO, Postgres)
+|   ├── airflow
+|   │   ├── Dockerfile                           <-- Builds Python & DAG image
+|   │   ├── entrypoint.sh
+|   │   └── requirements.txt                     <-- all pyhton installation requirements
+├──documents/
+|   ├── Marketing_Data_Pipeline_Project.doc      <-- Detailed document of the complete project
+├──images/               
+├── .env                                         <-- Sample environment variables
+├── README.md                                    <-- This file
 └── LICENSE
 ```
 
@@ -60,21 +83,34 @@ This repository implements a robust marketing data pipeline that:
 
 ## Tech Stack
 
-| Layer               | Technology                                |
-|---------------------|-------------------------------------------|
-| Orchestration       | Apache Airflow 2.x (Docker Compose)       |
-| Generation          | Python 3.8, Faker, pandas, pyarrow        |
-| Validation & Upload | Python, MinIO (S3-compatible)             |
-| Transformation      | dbt v1.8.7, Snowflake                     |
-| Metadata & Logging  | SQLite, python-json-logger, Slack API     |
+| Layer                | Technology                                          |
+|----------------------|-----------------------------------------------------|
+| Orchestration        | Apache Airflow 2.x (Docker Compose)                 |
+| Scripting & Compute  | Python 3.8, Faker, pandas, pyarrow                  |
+| Object Storage       | MinIO (S3-compatible)                               |
+| Validation & Upload  | Python, MinIO (S3-compatible)                       |
+| Metadata Store       | SQLite (local file metadata.db)                     |
+| Data Warehouse       | Snowflake (Standard Edition)                        |
+| Transformation       | dbt v1.8.7                                          |
+| Logging & Alert      | Airflow callbacks, python-json-logger, Email Alerts |
 
 ---
 
 ## Prerequisites
 
 - Docker & Docker Compose  
-- Python 3.8+ (for script testing)  
-- Snowflake account & credentials (for dbt models)
+- Python 3.8+ `(for script testing)`
+- dbt `(if you want to test locally)`
+  ```bash
+   pip install dbt-snowflake
+   ``` 
+- Snowflake account & credentials
+
+### Note!:
+- Below setup is created intentionally for ease of use and demonstration purpose only, not a part of standard practices and will be changed accordingly after some time.
+- Snowflake:
+   - I have already created and setup Snowflake Trial account with all required user, role, table, stage etc. In case if you want to know I have kept the SQL scripts in repo.
+   - dbt will connect with snowflake using profiles.yml placed in root config folder and mapped with airflow container profiles.yml, you can check volumes mapping in docker-compose.yml  
 
 ---
 
@@ -82,57 +118,46 @@ This repository implements a robust marketing data pipeline that:
 
 1. **Clone the repository**  
    ```bash
-   git clone https://github.com/your-org/marketing-data-pipeline.git
-   cd marketing-data-pipeline
+   git clone https://github.com/yash872/Marketing_Data_Pipeline_Project.git
+   cd Marketing_Data_Pipeline_Project
+   cd docker
    ```
-2. **Build and launch services**  
+2. **Build and launch services**
+- Docker shold be up and running in your machine.
+- you can check it with
+-  ```bash
+   docker ps
+   ```
+- you should see somthing like this
+- ![docker_ps](https://github.com/yash872/Marketing_Data_Pipeline_Project/blob/main/Images/docker_ps.PNG)
+- Once the docker is started running you can below command, remeber to run it from docker directory where the docker-compose.yml is available
    ```bash
    docker-compose up -d --build
    ```
-3. **Initialize Airflow**  
-   ```bash
-   docker exec -it airflow_scheduler bash
-   airflow db init
-   airflow users create      --username admin      --firstname Admin      --lastname User      --role Admin      --email admin@example.com
-   exit
-   ```
+- entrypoint.sh is having the logic to create airfow admin user at run time.
+- It may take little longer in first time to setup and run Airflow servers.
+- when the airflow-webserver is up and rumming you will see below log INFO Listening at http://0.0.0.0:8080
+   
 ---
 
-## Configuration
-
-1. Copy `.env.example` to `.env` and set your values:
-   ```ini
-   SNOWFLAKE_ACCOUNT=...
-   SNOWFLAKE_USER=...
-   SNOWFLAKE_PASSWORD=...
-   SNOWFLAKE_WAREHOUSE=...
-   SNOWFLAKE_DATABASE=...
-   SNOWFLAKE_SCHEMA=...
-
-   MINIO_ENDPOINT=minio:9000
-   MINIO_ACCESS_KEY=minioadmin
-   MINIO_SECRET_KEY=minioadmin
-   ```
-2. Verify MinIO console at: `http://localhost:9001` (minioadmin/minioadmin)
-
----
 
 ## Running the Pipeline
 
-### Trigger via Airflow
-```bash
-docker exec -it airflow_scheduler bash
-airflow dags trigger Marketing_Data_Pipeline
-```
+- Once the airflow servers are up and running, we are good to go!
+- AS we have created end to end pipeline from Generation --> Validation --> Load to Data Lake (minio) --> minio to snowflake staging 
+- Try to access:
 - **Airflow UI**: http://localhost:8080  
 - **MinIO Console**: http://localhost:9001  
 
-### dbt Transform & Tests
+### dbt Transform & Tests 
+- `(only if you want to test locally)`
 ```bash
-docker exec -it dbt_runner bash
-dbt deps
-dbt run --profiles-dir .
-dbt test --profiles-dir .
+cd Marketing_Data_Pipeline_Project
+cd dbt
+
+dbt run --models staging
+dbt run --models marts
+dbt test
 ```
 
 ---
