@@ -73,7 +73,8 @@ This repository implements a robust marketing data pipeline that:
 |   │   └── requirements.txt                     <-- all pyhton installation requirements
 ├──documents/
 |   ├── Marketing_Data_Pipeline_Project.doc      <-- Detailed document of the complete project
-├──logs/                                         <-- Mounted with Airflow log path
+├──logs/
+|   ├── pipeline.log                             <-- Mounted with Airflow log path
 ├──images/                                     
 ├── .env                                         <-- Sample environment variables
 ├── README.md                                    <-- This file
@@ -102,6 +103,7 @@ This repository implements a robust marketing data pipeline that:
 - Docker & Docker Compose  
 - Python 3.8+ `(for script testing)`
 - dbt `(if you want to test locally)`
+  
   ```bash
    pip install dbt-snowflake
    ``` 
@@ -112,7 +114,7 @@ This repository implements a robust marketing data pipeline that:
 - Snowflake:
   - A Snowflake Trial account has been provisioned with the necessary users, roles, tables, and stages. All associated SQL provisioning scripts are available in the repository for your reference.
   - dbt is configured to connect to Snowflake via the profiles.yml file in the project’s root config directory. This file is volume-mounted into the Airflow container—please see the volume mappings in docker-compose.yml for details.
-  - URL: https://uw98118.ap-southeast-1.snowflakecomputing.com/console/login
+  - URL:  https://uw98118.ap-southeast-1.snowflakecomputing.com/console/login
 
 ---
 
@@ -125,19 +127,24 @@ This repository implements a robust marketing data pipeline that:
    cd docker
    ```
 2. **Build and launch services**
-- Docker shold be up and running in your machine.
-- you can check it with
--  ```bash
+- Docker shold be up and running in your machine you can check it with:
+  
+  ```bash
    docker ps
    ```
+  
 - you should see somthing like this
-- ![docker_ps](https://github.com/yash872/Marketing_Data_Pipeline_Project/blob/main/Images/docker_ps.PNG)
+  ![docker_ps](https://github.com/yash872/Marketing_Data_Pipeline_Project/blob/main/Images/docker_ps.PNG)
+  
 - Once the docker is up and running you can run below command, make sure you run it from docker directory where the `docker-compose.yml` is present
+  
    ```bash
    docker-compose up -d --build
    ```
+   
 - No need to createa airflow Admin user, as we already mentioned those steps in `entrypoint.sh` to create user at run time.
-- It may take little longer in first time to setup and run Airflow servers.
+- It may take little longer in first time to setup and run Airflow servers, please be patient..
+  
 - when the airflow-webserver is up and rumming you will see below log INFO Listening at  http://0.0.0.0:8080
   ![docker_build](https://github.com/yash872/Marketing_Data_Pipeline_Project/blob/main/Images/docker_build.PNG)
    
@@ -145,7 +152,7 @@ This repository implements a robust marketing data pipeline that:
 
 ## Running the Pipeline
 
-- Once the airflow servers are up and running, we are good to go!
+- Once the airflow servers are up and running, we are good to go!!
 - AS we have created end to end pipeline from Generation --> Validation --> Load to Data Lake (minio) --> minio to snowflake staging --> dbt run, test
 - Try to access:
 - **Airflow UI**: http://localhost:8080  
@@ -155,7 +162,7 @@ This repository implements a robust marketing data pipeline that:
 - you will see a login screen asking for credential, give username: airflow, password: airflow
    
 - you should see Airflow UI main screen with Dags like below
-- ![airflow_main](https://github.com/yash872/Marketing_Data_Pipeline_Project/blob/main/Images/airflow_main.PNG)
+  ![airflow_main](https://github.com/yash872/Marketing_Data_Pipeline_Project/blob/main/Images/airflow_main.PNG)
 
 - Now you can run the pipeline manually or schedule by changing the default args like `start_date`.
 
@@ -163,28 +170,28 @@ This repository implements a robust marketing data pipeline that:
 
 ### dbt Transform & Tests 
 - `(only if you want to test locally)`
-```bash
-cd Marketing_Data_Pipeline_Project
-cd dbt
-
-dbt run --models staging
-dbt run --models marts
-dbt test
-```
+    ```bash
+    cd Marketing_Data_Pipeline_Project
+    cd dbt
+    
+    dbt run --models staging
+    dbt run --models marts
+    dbt test
+    ```
 ---
 
 ## Execution Flow with Screenshots
 -  Complete Pipeline End to End
-  ![dag_full](https://github.com/yash872/Marketing_Data_Pipeline_Project/blob/main/Images/dag_full.PNG)
+   ![dag_full](https://github.com/yash872/Marketing_Data_Pipeline_Project/blob/main/Images/dag_full.PNG)
 
--  Now lets have a closer look:
--  This is the starting of the pipeline where we initiate the metadata.db before any execution so that we can log the acticity and track status.
--  Initialize metadata --> generate all dimensions followed by validation task for each if them.
+   **Now lets have a closer look:**
+-  This is the starting of the pipeline where we initiate the metadata.db before starting any execution so that we can logging acticity and metadata tracking.
+-  Once the metadata.db is created it will trigger the generation task parallel for all dimensions followed by validation task for each if them.
 -  after generation dimension tasks, generation fact will be triggerd, where first contact will be create so that it can be used in other 2 Facts as reference.  
--  ![dag_gen](https://github.com/yash872/Marketing_Data_Pipeline_Project/blob/main/Images/dag_gen.PNG)
+   ![dag_gen](https://github.com/yash872/Marketing_Data_Pipeline_Project/blob/main/Images/dag_gen.PNG)
 
 -  here we wait until the fact data generated and then we executed the validation task for each data task.
--  ![dag_val_fact](https://github.com/yash872/Marketing_Data_Pipeline_Project/blob/main/Images/dag_val_fact.PNG)
+   ![dag_val_fact](https://github.com/yash872/Marketing_Data_Pipeline_Project/blob/main/Images/dag_val_fact.PNG)
 
 -  In the next step:
     - we will wait for all data validation task to be completed before proceeding further, thats the purpose of having dq_barrier as `EmptyOperator` and with TRIGGER_RULE AS `ALL_DONE`
@@ -202,13 +209,16 @@ dbt test
     - After successfull creation of all staging data it will trigger `dbt_run_marts`, to create marts table inside snowlake MART Schema, e.g.  MARKETING_DB.STG.STG_CONTATCS --->  MARKETING_DB.MART.MART_CONTATCS.
     - Once we have both STG and MART data creation completed it will trigger the `dbt_test` to run all the default and custom test defined in `schema.yml`.
     - After completion of the dbt test, we will be get an email notification if there are failed test cases, for better monitoring purpose.
+      
      ![dag_dbt](https://github.com/yash872/Marketing_Data_Pipeline_Project/blob/main/Images/dag_dbt.PNG)
 
 -  Once the pipeline is completed successfully:
   - you will be able to see the Dag status on as successfull on Airflow home page like below
+    
     ![dag_main_run](https://github.com/yash872/Marketing_Data_Pipeline_Project/blob/main/Images/dag_main_run.PNG)
 
   - Inside the Dag running screen, on the left panel you can see all the task in order of completion with Green mark for successfull run.
+    
    ![dag_run_bar](https://github.com/yash872/Marketing_Data_Pipeline_Project/blob/main/Images/dag_run_bar.PNG)
 
 ---
