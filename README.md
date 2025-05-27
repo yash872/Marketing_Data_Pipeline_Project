@@ -33,7 +33,9 @@ This repository implements a robust marketing data pipeline that:
 - **Orchestrates** tasks with Apache Airflow, featuring retries, callbacks, and metrics logging  
 - **Transforms** data using dbt incremental models in Snowflake, with built-in tests and documentation  
 - **Optimizes** performance via Snowflake clustering and Pandas vectorization  
-- **Monitors** pipeline health and data quality with alerts over email and Slack 
+- **Monitors** pipeline health and data quality with alerts over email and Slack
+
+- For more detail please check out complete [Project Document](https://github.com/yash872/Marketing_Data_Pipeline_Project/blob/main/Documents/Marketing_Data_Pipeline_Project.pdf)
 
 ---
 
@@ -236,7 +238,7 @@ This repository implements a robust marketing data pipeline that:
 
 ## Logs and Outputs
 
--  All the captured Logs are available in [a link](https://github.com/yash872/Marketing_Data_Pipeline_Project/blob/main/logs/pipeline.log)
+-  All the captured Logs are available in [Pipeline-Logs](https://github.com/yash872/Marketing_Data_Pipeline_Project/blob/main/logs/pipeline.log)
   
 -  we have a `file_metadata table` in `metadata.db` This is how we store the entries for every file to track status and maintain Idempotancy:
    ![file_metadata](https://github.com/yash872/Marketing_Data_Pipeline_Project/blob/main/Images/file_metadata.PNG)
