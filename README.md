@@ -236,7 +236,7 @@ This repository implements a robust marketing data pipeline that:
 
 ## Logs and Outputs
 
--  All the captured Logs are available in ![Pipeline.logs](https://github.com/yash872/Marketing_Data_Pipeline_Project/blob/main/logs/pipeline.log)
+-  All the captured Logs are available in [a link](https://github.com/yash872/Marketing_Data_Pipeline_Project/blob/main/logs/pipeline.log)
   
 -  we have a `file_metadata table` in `metadata.db` This is how we store the entries for every file to track status and maintain Idempotancy:
    ![file_metadata](https://github.com/yash872/Marketing_Data_Pipeline_Project/blob/main/Images/file_metadata.PNG)
