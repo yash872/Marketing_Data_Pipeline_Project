@@ -111,7 +111,8 @@ This repository implements a robust marketing data pipeline that:
 - The configuration below has been provided solely for demonstration and ease of use; it does not represent our standard production practices and will be updated in due course:
 - Snowflake:
   - A Snowflake Trial account has been provisioned with the necessary users, roles, tables, and stages. All associated SQL provisioning scripts are available in the repository for your reference.
-  - dbt is configured to connect to Snowflake via the profiles.yml file in the project’s root config directory. This file is volume-mounted into the Airflow container—please see the volume mappings in docker-compose.yml for details. 
+  - dbt is configured to connect to Snowflake via the profiles.yml file in the project’s root config directory. This file is volume-mounted into the Airflow container—please see the volume mappings in docker-compose.yml for details.
+  - URL: https://uw98118.ap-southeast-1.snowflakecomputing.com/console/login
 
 ---
 
@@ -151,6 +152,8 @@ This repository implements a robust marketing data pipeline that:
 - **MinIO Console**: http://localhost:9001
 
 
+- you will see a login screen asking for credential, give username: airflow, password: airflow
+   
 - you should see Airflow UI main screen with Dags like below
 - ![airflow_main](https://github.com/yash872/Marketing_Data_Pipeline_Project/blob/main/Images/airflow_main.PNG)
 
@@ -213,7 +216,28 @@ dbt test
 ## Logs and Outputs:
 
 -  All the captured Logs are available in logs/pipeline.log
--   
+  
+-  XCom values passed during data validation for `notify_dq_failure` check:
+   ![dag_xcom](https://github.com/yash872/Marketing_Data_Pipeline_Project/blob/main/Images/dag_xcom.PNG)
+
+-  logs generated during `dbt_run_staging`:
+   ![dbt_log_stg](https://github.com/yash872/Marketing_Data_Pipeline_Project/blob/main/Images/dbt_log_stg.PNG)
+
+-  logs generated during `dbt_run_marts`:
+   ![dbt_log_mart](https://github.com/yash872/Marketing_Data_Pipeline_Project/blob/main/Images/dbt_log_mart.PNG)
+   
+-  you can check the `dbt_test` run result and Notification alert email sent INFO.
+   ![dbt_test_email](https://github.com/yash872/Marketing_Data_Pipeline_Project/blob/main/Images/dbt_test_email.PNG)
+   
+-  Alert Email received on my mailbox.
+   ![email_notification](https://github.com/yash872/Marketing_Data_Pipeline_Project/blob/main/Images/email_notification.PNG)
+
+-  Snowflake Data Screenshots as Output:
+    - Snowflake RAW Schema Tables, Stages, and File Formats Pre Created as part of Initial Setup
+    ![snowflaek_RAW_schema](https://github.com/yash872/Marketing_Data_Pipeline_Project/blob/main/Images/snowflaek_RAW_schema.PNG)
+
+    - Snowflake sample output for MARKETING_DB.MART.MART_CONTATCS
+    ![snowflake_mart_contacts](https://github.com/yash872/Marketing_Data_Pipeline_Project/blob/main/Images/snowflake_mart_contacts.PNG)   
 
 ---
 
