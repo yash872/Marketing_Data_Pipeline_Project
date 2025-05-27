@@ -12,8 +12,7 @@
 
 with raw as (
   select
-    data,
-    to_date('{{ batch_date }}') as upload_date
+    data
   from {{ source('raw_minio','pages') }}
 ),
 
@@ -22,12 +21,12 @@ parsed as (
     data:"page_id"        :: string        as page_id,
     data:"page_url"       :: string        as page_url,
     data:"page_title"      :: string        as page_title,
-    upload_date
+    data:"dim_date"      :: string        as dim_date
   from raw
 )
 
 select * from parsed
 
 {% if is_incremental() %}
-  where upload_date = to_date('{{ batch_date }}')
+  where dim_date = '{{ batch_date }}'
 {% endif %}

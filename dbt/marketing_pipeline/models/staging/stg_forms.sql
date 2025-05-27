@@ -12,8 +12,7 @@
 
 with raw as (
   select
-    data,
-    to_date('{{ batch_date }}') as upload_date
+    data
   from {{ source('raw_minio','forms') }}
 ),
 
@@ -21,12 +20,12 @@ parsed as (
   select
     data:"form_id"        :: string        as form_id,
     data:"form_type"       :: string        as form_type,
-    upload_date
+    data:"dim_date"      :: string        as dim_date
   from raw
 )
 
 select * from parsed
 
 {% if is_incremental() %}
-  where upload_date = to_date('{{ batch_date }}')
+  where dim_date = '{{ batch_date }}'
 {% endif %}

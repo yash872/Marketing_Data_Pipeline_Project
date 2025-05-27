@@ -10,5 +10,5 @@
 select
   form_id,
   form_type,
-  upload_date
+  dim_date
 from {{ ref('stg_forms') }}

@@ -12,8 +12,7 @@
 
 with raw as (
   select
-    data,
-    to_date('{{ batch_date }}') as upload_date
+    data
   from {{ source('raw_minio','website_activity') }}
 ),
 
@@ -30,13 +29,12 @@ parsed as (
     data:"session_duration" :: decimal      as session_duration,
     data:"pages_viewed"     :: number       as pages_viewed,
     data:"bounce"          :: boolean       as bounce,
-    data:"referrer_domain"    :: string     as referrer_domain,
-    upload_date
+    data:"referrer_domain"    :: string     as referrer_domain
   from raw
 )
 
 select * from parsed
 
 {% if is_incremental() %}
-  where upload_date = to_date('{{ batch_date }}')
+  where event_date = to_date('{{ batch_date }}')
 {% endif %}

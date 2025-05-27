@@ -11,5 +11,5 @@ select
   page_id,
   page_url,
   page_title,
-  upload_date
+  dim_date
 from {{ ref('stg_pages') }}

@@ -1,0 +1,28 @@
+[2025-05-27T22:22:17.095+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Marketing_Data_Pipeline.upload_validated_to_minio manual__2025-05-27T00:00:00+00:00 [queued]>
+[2025-05-27T22:22:17.126+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Marketing_Data_Pipeline.upload_validated_to_minio manual__2025-05-27T00:00:00+00:00 [queued]>
+[2025-05-27T22:22:17.128+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 4
+[2025-05-27T22:22:17.239+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): upload_validated_to_minio> on 2025-05-27 00:00:00+00:00
+[2025-05-27T22:22:17.258+0000] {standard_task_runner.py:60} INFO - Started process 2067 to run task
+[2025-05-27T22:22:17.266+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Marketing_Data_Pipeline', 'upload_validated_to_minio', 'manual__2025-05-27T00:00:00+00:00', '--job-id', '92', '--raw', '--subdir', 'DAGS_FOLDER/Marketing_Data_Pipeline.py', '--cfg-path', '/tmp/tmpxdd_rfrg']
+[2025-05-27T22:22:17.278+0000] {standard_task_runner.py:88} INFO - Job 92: Subtask upload_validated_to_minio
+[2025-05-27T22:22:17.480+0000] {task_command.py:423} INFO - Running <TaskInstance: Marketing_Data_Pipeline.upload_validated_to_minio manual__2025-05-27T00:00:00+00:00 [running]> on host 485388d78c3d
+[2025-05-27T22:22:18.192+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='yashbhawsar872@gmail.com' AIRFLOW_CTX_DAG_OWNER='Yash' AIRFLOW_CTX_DAG_ID='Marketing_Data_Pipeline' AIRFLOW_CTX_TASK_ID='upload_validated_to_minio' AIRFLOW_CTX_EXECUTION_DATE='2025-05-27T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-27T00:00:00+00:00'
+[2025-05-27T22:22:18.273+0000] {Marketing_Data_Pipeline.py:39} INFO - ▶️ Starting task: Upload Validated to MinIO
+[2025-05-27T22:22:18.424+0000] {upload_to_minio.py:31} INFO - ℹ️ Bucket 'marketing-bucket' already exists
+[2025-05-27T22:22:18.863+0000] {metadata.py:109} INFO - 📝 Logged stage 'uploaded' for campaigns_2025-05-27.json at 2025-05-27T22:22:18.699926
+[2025-05-27T22:22:18.873+0000] {upload_to_minio.py:61} INFO - 📤 Uploaded campaigns_2025-05-27.json to valid-data/campaigns/2025-05-27/campaigns_2025-05-27.json
+[2025-05-27T22:22:19.591+0000] {metadata.py:109} INFO - 📝 Logged stage 'uploaded' for contacts_2025-05-27.csv at 2025-05-27T22:22:19.411537
+[2025-05-27T22:22:19.599+0000] {upload_to_minio.py:61} INFO - 📤 Uploaded contacts_2025-05-27.csv to valid-data/contacts/2025-05-27/contacts_2025-05-27.csv
+[2025-05-27T22:22:20.089+0000] {metadata.py:109} INFO - 📝 Logged stage 'uploaded' for forms_2025-05-27.json at 2025-05-27T22:22:19.857789
+[2025-05-27T22:22:20.128+0000] {upload_to_minio.py:61} INFO - 📤 Uploaded forms_2025-05-27.json to valid-data/forms/2025-05-27/forms_2025-05-27.json
+[2025-05-27T22:22:20.941+0000] {metadata.py:109} INFO - 📝 Logged stage 'uploaded' for form_fills_2025-05-27.parquet at 2025-05-27T22:22:20.775660
+[2025-05-27T22:22:20.952+0000] {upload_to_minio.py:61} INFO - 📤 Uploaded form_fills_2025-05-27.parquet to valid-data/form_fills/2025-05-27/form_fills_2025-05-27.parquet
+[2025-05-27T22:22:21.263+0000] {metadata.py:109} INFO - 📝 Logged stage 'uploaded' for pages_2025-05-27.json at 2025-05-27T22:22:21.134563
+[2025-05-27T22:22:21.269+0000] {upload_to_minio.py:61} INFO - 📤 Uploaded pages_2025-05-27.json to valid-data/pages/2025-05-27/pages_2025-05-27.json
+[2025-05-27T22:22:22.005+0000] {metadata.py:109} INFO - 📝 Logged stage 'uploaded' for website_activity_2025-05-27.json at 2025-05-27T22:22:21.727764
+[2025-05-27T22:22:22.016+0000] {upload_to_minio.py:61} INFO - 📤 Uploaded website_activity_2025-05-27.json to valid-data/website_activity/2025-05-27/website_activity_2025-05-27.json
+[2025-05-27T22:22:22.022+0000] {Marketing_Data_Pipeline.py:41} INFO - ✅ Completed task: Upload Validated to MinIO
+[2025-05-27T22:22:22.027+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-05-27T22:22:22.106+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=Marketing_Data_Pipeline, task_id=upload_validated_to_minio, execution_date=20250527T000000, start_date=20250527T222217, end_date=20250527T222222
+[2025-05-27T22:22:22.259+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-05-27T22:22:22.382+0000] {taskinstance.py:3280} INFO - 2 downstream tasks scheduled from follow-on schedule check

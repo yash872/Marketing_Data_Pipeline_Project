@@ -18,6 +18,5 @@ select
   job_title,
   country,
   opted_in,
-  signup_date,
-  upload_date
+  signup_date
 from {{ ref('stg_contacts') }}

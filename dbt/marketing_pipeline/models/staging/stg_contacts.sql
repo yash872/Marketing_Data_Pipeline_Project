@@ -24,8 +24,7 @@ with raw as (
     job_title ::  string as job_title,
     country ::  string as country,
     opted_in  ::  boolean as opted_in,
-    signup_date ::  timestamp_ntz as signup_date,
-    to_date('{{ batch_date }}')   as upload_date
+    signup_date ::  timestamp_ntz as signup_date
 
   from {{ source('raw_minio','contacts') }}
 
@@ -34,5 +33,5 @@ with raw as (
 select * from raw
 
 {% if is_incremental() %}
-  where upload_date = to_date('{{ batch_date }}')
+  where signup_date = to_date('{{ batch_date }}')
 {% endif %}

@@ -1,0 +1,33 @@
+[2025-05-27T21:29:07.962+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Marketing_Data_Pipeline.upload_quarantined_to_minio scheduled__2025-05-24T00:00:00+00:00 [queued]>
+[2025-05-27T21:29:07.997+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Marketing_Data_Pipeline.upload_quarantined_to_minio scheduled__2025-05-24T00:00:00+00:00 [queued]>
+[2025-05-27T21:29:08.000+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 4
+[2025-05-27T21:29:08.097+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): upload_quarantined_to_minio> on 2025-05-24 00:00:00+00:00
+[2025-05-27T21:29:08.126+0000] {standard_task_runner.py:60} INFO - Started process 486 to run task
+[2025-05-27T21:29:08.139+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Marketing_Data_Pipeline', 'upload_quarantined_to_minio', 'scheduled__2025-05-24T00:00:00+00:00', '--job-id', '25', '--raw', '--subdir', 'DAGS_FOLDER/Marketing_Data_Pipeline.py', '--cfg-path', '/tmp/tmpufzpmfpu']
+[2025-05-27T21:29:08.149+0000] {standard_task_runner.py:88} INFO - Job 25: Subtask upload_quarantined_to_minio
+[2025-05-27T21:29:08.464+0000] {task_command.py:423} INFO - Running <TaskInstance: Marketing_Data_Pipeline.upload_quarantined_to_minio scheduled__2025-05-24T00:00:00+00:00 [running]> on host 485388d78c3d
+[2025-05-27T21:29:08.986+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='yashbhawsar872@gmail.com' AIRFLOW_CTX_DAG_OWNER='Yash' AIRFLOW_CTX_DAG_ID='Marketing_Data_Pipeline' AIRFLOW_CTX_TASK_ID='upload_quarantined_to_minio' AIRFLOW_CTX_EXECUTION_DATE='2025-05-24T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-24T00:00:00+00:00'
+[2025-05-27T21:29:08.990+0000] {Marketing_Data_Pipeline.py:39} INFO - ▶️ Starting task: Upload Quarantined to MinIO
+[2025-05-27T21:29:11.208+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/Marketing_Data_Pipeline.py", line 40, in _wrapped
+    fn(**kwargs)
+  File "/opt/airflow/scripts/upload_to_minio.py", line 89, in upload_all_quarantined_files
+    _ensure_bucket(client, BUCKET_NAME)
+  File "/opt/airflow/scripts/upload_to_minio.py", line 28, in _ensure_bucket
+    client.make_bucket(bucket_name)
+  File "/home/airflow/.local/lib/python3.10/site-packages/minio/api.py", line 657, in make_bucket
+    self._url_open(
+  File "/home/airflow/.local/lib/python3.10/site-packages/minio/api.py", line 424, in _url_open
+    raise response_error
+minio.error.S3Error: S3 operation failed; code: BucketAlreadyOwnedByYou, message: Your previous request to create the named bucket succeeded and you already own it., resource: /marketing-bucket, request_id: 18437F934692D69F, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: marketing-bucket
+[2025-05-27T21:29:13.373+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=Marketing_Data_Pipeline, task_id=upload_quarantined_to_minio, execution_date=20250524T000000, start_date=20250527T212907, end_date=20250527T212913
+[2025-05-27T21:29:13.489+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 25 for task upload_quarantined_to_minio (S3 operation failed; code: BucketAlreadyOwnedByYou, message: Your previous request to create the named bucket succeeded and you already own it., resource: /marketing-bucket, request_id: 18437F934692D69F, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: marketing-bucket; 486)
+[2025-05-27T21:29:13.578+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-05-27T21:29:13.800+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

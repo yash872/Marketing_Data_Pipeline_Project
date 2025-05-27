@@ -10,5 +10,5 @@
 select
   campaign_id,
   campaign_name,
-  upload_date
+  dim_date
 from {{ ref('stg_campaigns') }}

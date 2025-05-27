@@ -16,6 +16,5 @@ select
   fill_date,
   referrer_url,
   user_agent,
-  estimated_value,
-  upload_date
+  estimated_value
 from {{ ref('stg_form_fills') }}

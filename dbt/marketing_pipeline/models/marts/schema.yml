@@ -55,9 +55,7 @@ models:
       - name: estimated_value
         tests:
           - not_null
-      - name: upload_date
-        tests:
-          - not_null
+      
 
   - name: mart_forms
     description: "Form dimension"
@@ -69,9 +67,7 @@ models:
       - name: form_type
         tests:
           - not_null
-      - name: upload_date
-        tests:
-          - not_null
+     
 
   - name: mart_pages
     description: "Page dimension"
@@ -86,9 +82,7 @@ models:
       - name: page_title
         tests:
           - not_null
-      - name: upload_date
-        tests:
-          - not_null
+      
 
   - name: mart_website_activity
     description: "Fact table for website activity"
@@ -115,9 +109,7 @@ models:
       - name: bounce
         tests:
           - not_null
-      - name: upload_date
-        tests:
-          - not_null
+      
 
 # custom mart tests
 tests:

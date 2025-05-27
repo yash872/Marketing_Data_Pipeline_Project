@@ -58,13 +58,20 @@ def generate_dimension_if_needed(name: str, ds: str, **kwargs):
 
     # Select data based on dimension name
     if name == 'campaigns':
-        data = CAMPAIGNS
+        base_data = CAMPAIGNS
     elif name == 'forms':
-        data = FORMS
+        base_data = FORMS
     elif name == 'pages':
-        data = PAGES
+        base_data = PAGES
     else:
         raise ValueError(f"Unknown dimension: {name}")
+    
+    
+    data = []
+    for rec in base_data:
+        rec_with_date = rec.copy()
+        rec_with_date['dim_date'] = ds
+        data.append(rec_with_date)
 
     # Write file and log
     with open(RAW_DIR / file_name, "w") as f:

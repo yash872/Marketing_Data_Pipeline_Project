@@ -29,7 +29,7 @@ models:
           - relationships:
               to: ref('stg_campaigns')    # sanity-check self-referencing
               field: campaign_id
-      - name: upload_date
+      - name: dim_date
         description: "Date this batch was processed"
         tests:
           - not_null
@@ -50,9 +50,7 @@ models:
       - name: signup_date
         tests:
           - not_null
-      - name: upload_date
-        tests:
-          - not_null
+     
 
   - name: stg_form_fills
     description: "Parsed raw form-fill events"
@@ -77,9 +75,7 @@ models:
           - expression_is_true:
               expression: "fill_date <= current_timestamp()"
 
-      - name: upload_date
-        tests:
-          - not_null
+   
 
   - name: stg_forms
     description: "Parsed raw form definitions"
@@ -91,9 +87,7 @@ models:
       - name: form_type
         tests:
           - not_null
-      - name: upload_date
-        tests:
-          - not_null
+    
 
   - name: stg_pages
     description: "Parsed raw page metadata"
@@ -110,9 +104,7 @@ models:
       - name: page_title
         tests:
           - not_null
-      - name: upload_date
-        tests:
-          - not_null
+      
 
   - name: stg_website_activity
     description: "Parsed raw web activity events"
@@ -138,9 +130,7 @@ models:
           - not_null
           - expression_is_true:
               expression: "pages_viewed >= 0"
-      - name: upload_date
-        tests:
-          - not_null
+      
 
 # reference your custom tests here:
 tests:

@@ -12,8 +12,7 @@
 
 with raw as (
   select
-    data,
-    to_date('{{ batch_date }}') as upload_date
+    data
   from {{ source('raw_minio','form_fills') }}
 ),
 
@@ -27,13 +26,12 @@ parsed as (
     data:"fill_date"      :: timestamp_ntz as fill_date,
     data:"referrer_url"   :: string        as referrer_url,
     data:"user_agent"     :: string        as user_agent,
-    data:"estimated_value" :: string       as estimated_value,
-    upload_date
+    data:"estimated_value" :: string       as estimated_value
   from raw
 )
 
 select * from parsed
 
 {% if is_incremental() %}
-  where upload_date = to_date('{{ batch_date }}')
+  where fill_date = to_date('{{ batch_date }}')
 {% endif %}

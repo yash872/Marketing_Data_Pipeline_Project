@@ -19,6 +19,5 @@ select
   session_duration,
   pages_viewed,
   bounce,
-  referrer_domain,
-  upload_date
+  referrer_domain
 from {{ ref('stg_website_activity') }}

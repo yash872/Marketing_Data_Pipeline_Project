@@ -1,0 +1,17 @@
+[2025-05-27T22:21:18.493+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Marketing_Data_Pipeline.generate_and_validate_dims.pages manual__2025-05-27T00:00:00+00:00 [queued]>
+[2025-05-27T22:21:18.569+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Marketing_Data_Pipeline.generate_and_validate_dims.pages manual__2025-05-27T00:00:00+00:00 [queued]>
+[2025-05-27T22:21:18.571+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-05-27T22:21:18.669+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): generate_and_validate_dims.pages> on 2025-05-27 00:00:00+00:00
+[2025-05-27T22:21:18.690+0000] {standard_task_runner.py:60} INFO - Started process 1992 to run task
+[2025-05-27T22:21:18.698+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Marketing_Data_Pipeline', 'generate_and_validate_dims.pages', 'manual__2025-05-27T00:00:00+00:00', '--job-id', '78', '--raw', '--subdir', 'DAGS_FOLDER/Marketing_Data_Pipeline.py', '--cfg-path', '/tmp/tmpgiheksah']
+[2025-05-27T22:21:18.746+0000] {standard_task_runner.py:88} INFO - Job 78: Subtask generate_and_validate_dims.pages
+[2025-05-27T22:21:19.148+0000] {task_command.py:423} INFO - Running <TaskInstance: Marketing_Data_Pipeline.generate_and_validate_dims.pages manual__2025-05-27T00:00:00+00:00 [running]> on host 485388d78c3d
+[2025-05-27T22:21:19.662+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='yashbhawsar872@gmail.com' AIRFLOW_CTX_DAG_OWNER='Yash' AIRFLOW_CTX_DAG_ID='Marketing_Data_Pipeline' AIRFLOW_CTX_TASK_ID='generate_and_validate_dims.pages' AIRFLOW_CTX_EXECUTION_DATE='2025-05-27T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-27T00:00:00+00:00'
+[2025-05-27T22:21:19.666+0000] {Marketing_Data_Pipeline.py:39} INFO - ▶️ Starting task: Generate Pages
+[2025-05-27T22:21:20.096+0000] {metadata.py:109} INFO - 📝 Logged stage 'generated' for pages_2025-05-27.json at 2025-05-27T22:21:19.793922
+[2025-05-27T22:21:20.102+0000] {data_generation.py:80} INFO - ✅ Generated pages_2025-05-27.json with 4 records
+[2025-05-27T22:21:20.109+0000] {Marketing_Data_Pipeline.py:41} INFO - ✅ Completed task: Generate Pages
+[2025-05-27T22:21:20.119+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-05-27T22:21:20.179+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=Marketing_Data_Pipeline, task_id=generate_and_validate_dims.pages, execution_date=20250527T000000, start_date=20250527T222118, end_date=20250527T222120
+[2025-05-27T22:21:20.282+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-05-27T22:21:20.422+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
