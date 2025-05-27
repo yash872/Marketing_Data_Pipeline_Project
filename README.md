@@ -8,16 +8,18 @@ An end-to-end, production-grade ELT pipeline for synthetic marketing data—cove
 
 ## 📖 Table of Contents
 
-1. [Project Overview](#project-overview)  
-2. [Repository Structure](#repository-structure)  
-3. [Tech Stack](#tech-stack)  
-4. [Prerequisites](#prerequisites)  
-5. [Setup & Installation](#setup--installation)  
-6. [Configuration](#configuration)  
-7. [Running the Pipeline](#running-the-pipeline)  
-8. [Design Decisions & Scope](#design-decisions--scope)  
-9. [Future Improvements](#future-improvements)  
-10. [Contributing](#contributing)  
+1. [Project Overview](#project-overview)
+2. [Data Architecture](#Data-Architecture)  
+3. [Repository Structure](#repository-structure)  
+4. [Tech Stack](#tech-stack)  
+5. [Prerequisites](#prerequisites)  
+6. [Setup & Installation](#setup--installation)
+7. [Running the Pipeline](#running-the-pipeline)
+8. [Execution Flow with Screenshots](#Execution-Flow-with-Screenshots)
+9. [Logs and Outputs](#Logs-and-Outputs) 
+10. [Design Decisions & Scope](#design-decisions--scope)  
+11. [Future Improvements](#future-improvements)  
+12. [Contributing](#contributing)  
 
 ---
 
@@ -32,6 +34,12 @@ This repository implements a robust marketing data pipeline that:
 - **Transforms** data using dbt incremental models in Snowflake, with built-in tests and documentation  
 - **Optimizes** performance via Snowflake clustering and Pandas vectorization  
 - **Monitors** pipeline health and data quality with alerts over email and Slack  
+
+---
+
+## Data Architecture
+
+![Data_Architecture](https://github.com/yash872/Marketing_Data_Pipeline_Project/blob/main/Images/Data_Architecture.PNG)
 
 ---
 
@@ -135,8 +143,11 @@ This repository implements a robust marketing data pipeline that:
   
 - you should see somthing like this
   ![docker_ps](https://github.com/yash872/Marketing_Data_Pipeline_Project/blob/main/Images/docker_ps.PNG)
+
+- Once the docker is up and running you can check it should show up and running containers
+  ![docker_ps_run](https://github.com/yash872/Marketing_Data_Pipeline_Project/blob/main/Images/docker_ps_run.PNG)
   
-- Once the docker is up and running you can run below command, make sure you run it from docker directory where the `docker-compose.yml` is present
+- Now you can run below command, make sure you run it from docker directory where the `docker-compose.yml` is present
   
    ```bash
    docker-compose up -d --build
@@ -223,9 +234,12 @@ This repository implements a robust marketing data pipeline that:
 
 ---
 
-## Logs and Outputs:
+## Logs and Outputs
 
 -  All the captured Logs are available in logs/pipeline.log
+  
+-  we have a `file_metadata table` in `metadata.db` This is how we store the entries for every file to track status and maintain Idempotancy:
+   ![file_metadata](https://github.com/yash872/Marketing_Data_Pipeline_Project/blob/main/Images/file_metadata.PNG)
   
 -  XCom values passed during data validation for `notify_dq_failure` check:
    ![dag_xcom](https://github.com/yash872/Marketing_Data_Pipeline_Project/blob/main/Images/dag_xcom.PNG)
