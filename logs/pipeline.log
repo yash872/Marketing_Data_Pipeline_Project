@@ -1,0 +1,793 @@
+2025-05-26 22:28:13,831 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Init Metadata DB
+2025-05-26 22:28:14,067 - INFO - metadata - 🔧 Initializing metadata database...
+2025-05-26 22:28:14,133 - INFO - metadata - ✅ Metadata DB initialized.
+2025-05-26 22:28:14,137 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Init Metadata DB
+2025-05-26 22:28:19,659 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Generate Forms
+2025-05-26 22:28:19,781 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Generate Pages
+2025-05-26 22:28:19,844 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Generate Campaigns
+2025-05-26 22:28:20,000 - INFO - metadata - 📝 Logged stage 'generated' for forms_2025-05-26.json at 2025-05-26T22:28:19.736407
+2025-05-26 22:28:20,015 - INFO - data_generation - ✅ Generated forms_2025-05-26.json with 4 records
+2025-05-26 22:28:20,030 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Generate Forms
+2025-05-26 22:28:20,438 - INFO - metadata - 📝 Logged stage 'generated' for pages_2025-05-26.json at 2025-05-26T22:28:20.100485
+2025-05-26 22:28:20,463 - INFO - data_generation - ✅ Generated pages_2025-05-26.json with 4 records
+2025-05-26 22:28:20,484 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Generate Pages
+2025-05-26 22:28:21,102 - INFO - metadata - 📝 Logged stage 'generated' for campaigns_2025-05-26.json at 2025-05-26T22:28:20.122534
+2025-05-26 22:28:21,108 - INFO - data_generation - ✅ Generated campaigns_2025-05-26.json with 3 records
+2025-05-26 22:28:21,112 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Generate Campaigns
+2025-05-26 22:28:31,632 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Validate Pages
+2025-05-26 22:28:31,650 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Validate Forms
+2025-05-26 22:28:32,156 - INFO - metadata - 🧪 DQ Check logged: pages_2025-05-26.json | schema_format = PASS
+2025-05-26 22:28:32,369 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Validate Campaigns
+2025-05-26 22:28:32,422 - INFO - metadata - 🧪 DQ Check logged: forms_2025-05-26.json | schema_format = PASS
+2025-05-26 22:28:32,832 - INFO - metadata - 🧪 DQ Check logged: pages_2025-05-26.json | freshness = PASS
+2025-05-26 22:28:33,293 - INFO - metadata - 🧪 DQ Check logged: forms_2025-05-26.json | freshness = PASS
+2025-05-26 22:28:33,781 - INFO - metadata - 🧪 DQ Check logged: pages_2025-05-26.json | row_count = WARN
+2025-05-26 22:28:33,834 - INFO - data_validation - Valid Data for pages_2025-05-26.json created in /opt/airflow/data/validated_data
+2025-05-26 22:28:33,852 - INFO - data_validation - Removed /opt/airflow/data/raw_data/pages_2025-05-26.json from raw_data folder
+2025-05-26 22:28:34,259 - INFO - metadata - 🧪 DQ Check logged: campaigns_2025-05-26.json | schema_format = PASS
+2025-05-26 22:28:35,576 - INFO - metadata - 🧪 DQ Check logged: forms_2025-05-26.json | row_count = WARN
+2025-05-26 22:28:36,201 - INFO - data_validation - Valid Data for forms_2025-05-26.json created in /opt/airflow/data/validated_data
+2025-05-26 22:28:36,222 - INFO - data_validation - Removed /opt/airflow/data/raw_data/forms_2025-05-26.json from raw_data folder
+2025-05-26 22:28:37,063 - INFO - metadata - 🧪 DQ Check logged: campaigns_2025-05-26.json | freshness = PASS
+2025-05-26 22:28:37,472 - INFO - metadata - 🧪 DQ Check logged: campaigns_2025-05-26.json | row_count = WARN
+2025-05-26 22:28:37,513 - INFO - data_validation - Valid Data for campaigns_2025-05-26.json created in /opt/airflow/data/validated_data
+2025-05-26 22:28:37,527 - INFO - data_validation - Removed /opt/airflow/data/raw_data/campaigns_2025-05-26.json from raw_data folder
+2025-05-26 22:28:37,859 - INFO - metadata - 🔑 Logged DQ signature for forms_2025-05-26.json: 
+2025-05-26 22:28:38,175 - INFO - metadata - 🔑 Logged DQ signature for pages_2025-05-26.json: 
+2025-05-26 22:28:38,562 - INFO - metadata - 🔑 Logged DQ signature for campaigns_2025-05-26.json: 
+2025-05-26 22:28:38,751 - INFO - metadata - 🧪 DQ Check logged: pages_2025-05-26.json | pages = PASS
+2025-05-26 22:28:39,040 - INFO - metadata - 🧪 DQ Check logged: campaigns_2025-05-26.json | campaigns = PASS
+2025-05-26 22:28:39,240 - INFO - metadata - 📝 Logged stage 'validated' for campaigns_2025-05-26.json at 2025-05-26T22:28:39.046116
+2025-05-26 22:28:39,250 - INFO - utils - task_metrics
+2025-05-26 22:28:39,256 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Validate Campaigns
+2025-05-26 22:28:39,508 - INFO - metadata - 🧪 DQ Check logged: forms_2025-05-26.json | forms = PASS
+2025-05-26 22:28:39,725 - INFO - metadata - 📝 Logged stage 'validated' for pages_2025-05-26.json at 2025-05-26T22:28:38.761004
+2025-05-26 22:28:39,729 - INFO - utils - task_metrics
+2025-05-26 22:28:39,733 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Validate Pages
+2025-05-26 22:28:40,014 - INFO - metadata - 📝 Logged stage 'validated' for forms_2025-05-26.json at 2025-05-26T22:28:39.514373
+2025-05-26 22:28:40,019 - INFO - utils - task_metrics
+2025-05-26 22:28:40,023 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Validate Forms
+2025-05-26 22:28:44,215 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Generate Contacts
+2025-05-26 22:28:46,008 - INFO - data_generation - ✅ contacts_2025-05-26.csv generated (1000 rows)
+2025-05-26 22:28:46,348 - INFO - metadata - 📝 Logged stage 'generated' for contacts_2025-05-26.csv at 2025-05-26T22:28:46.014259
+2025-05-26 22:28:46,355 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Generate Contacts
+2025-05-26 22:28:52,309 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Generate Form Fills
+2025-05-26 22:28:52,468 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Generate Website Activity
+2025-05-26 22:28:53,642 - INFO - data_generation - ✅ website_activity_2025-05-26.json generated (1000 rows)
+2025-05-26 22:28:53,943 - INFO - metadata - 📝 Logged stage 'generated' for website_activity_2025-05-26.json at 2025-05-26T22:28:53.662978
+2025-05-26 22:28:53,947 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Generate Website Activity
+2025-05-26 22:28:54,265 - INFO - data_generation - ✅ form_fills_2025-05-26.parquet generated (1000 rows)
+2025-05-26 22:28:54,591 - INFO - metadata - 📝 Logged stage 'generated' for form_fills_2025-05-26.parquet at 2025-05-26T22:28:54.271052
+2025-05-26 22:28:54,598 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Generate Form Fills
+2025-05-26 22:29:04,330 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Validate Contacts
+2025-05-26 22:29:04,551 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Validate Website Activity
+2025-05-26 22:29:04,609 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Validate Form Fills
+2025-05-26 22:29:04,855 - INFO - metadata - 🧪 DQ Check logged: contacts_2025-05-26.csv | schema_format = PASS
+2025-05-26 22:29:05,167 - INFO - metadata - 🧪 DQ Check logged: contacts_2025-05-26.csv | freshness = PASS
+2025-05-26 22:29:05,443 - INFO - metadata - 🧪 DQ Check logged: form_fills_2025-05-26.parquet | schema_format = PASS
+2025-05-26 22:29:05,701 - INFO - metadata - 🧪 DQ Check logged: form_fills_2025-05-26.parquet | freshness = PASS
+2025-05-26 22:29:05,993 - INFO - metadata - 🧪 DQ Check logged: form_fills_2025-05-26.parquet | row_count = PASS
+2025-05-26 22:29:06,220 - INFO - data_validation - Valid Data for form_fills_2025-05-26.parquet created in /opt/airflow/data/validated_data
+2025-05-26 22:29:06,293 - INFO - data_validation - Removed /opt/airflow/data/raw_data/form_fills_2025-05-26.parquet from raw_data folder
+2025-05-26 22:29:06,394 - INFO - metadata - 🧪 DQ Check logged: contacts_2025-05-26.csv | row_count = PASS
+2025-05-26 22:29:06,457 - INFO - data_validation - Valid Data for contacts_2025-05-26.csv created in /opt/airflow/data/validated_data
+2025-05-26 22:29:06,479 - INFO - data_validation - Removed /opt/airflow/data/raw_data/contacts_2025-05-26.csv from raw_data folder
+2025-05-26 22:29:06,719 - INFO - metadata - 🔑 Logged DQ signature for form_fills_2025-05-26.parquet: 
+2025-05-26 22:29:07,022 - INFO - metadata - 🔑 Logged DQ signature for contacts_2025-05-26.csv: 
+2025-05-26 22:29:07,278 - INFO - metadata - 🧪 DQ Check logged: form_fills_2025-05-26.parquet | form_fills = PASS
+2025-05-26 22:29:07,582 - INFO - metadata - 🧪 DQ Check logged: website_activity_2025-05-26.json | schema_format = PASS
+2025-05-26 22:29:07,788 - INFO - metadata - 🧪 DQ Check logged: website_activity_2025-05-26.json | freshness = PASS
+2025-05-26 22:29:08,000 - INFO - metadata - 🧪 DQ Check logged: website_activity_2025-05-26.json | row_count = PASS
+2025-05-26 22:29:08,053 - INFO - data_validation - Valid Data for website_activity_2025-05-26.json created in /opt/airflow/data/validated_data
+2025-05-26 22:29:08,074 - INFO - data_validation - Removed /opt/airflow/data/raw_data/website_activity_2025-05-26.json from raw_data folder
+2025-05-26 22:29:08,306 - INFO - metadata - 🧪 DQ Check logged: contacts_2025-05-26.csv | contacts = PASS
+2025-05-26 22:29:08,506 - INFO - metadata - 📝 Logged stage 'validated' for contacts_2025-05-26.csv at 2025-05-26T22:29:08.311545
+2025-05-26 22:29:08,511 - INFO - utils - task_metrics
+2025-05-26 22:29:08,516 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Validate Contacts
+2025-05-26 22:29:08,927 - INFO - metadata - 🔑 Logged DQ signature for website_activity_2025-05-26.json: 
+2025-05-26 22:29:09,384 - INFO - metadata - 📝 Logged stage 'validated' for form_fills_2025-05-26.parquet at 2025-05-26T22:29:07.287589
+2025-05-26 22:29:09,391 - INFO - utils - task_metrics
+2025-05-26 22:29:09,396 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Validate Form Fills
+2025-05-26 22:29:09,691 - INFO - metadata - 🧪 DQ Check logged: website_activity_2025-05-26.json | website_activity = PASS
+2025-05-26 22:29:09,945 - INFO - metadata - 📝 Logged stage 'validated' for website_activity_2025-05-26.json at 2025-05-26T22:29:09.697238
+2025-05-26 22:29:09,957 - INFO - utils - task_metrics
+2025-05-26 22:29:09,963 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Validate Website Activity
+2025-05-26 22:29:26,123 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Upload Quarantined to MinIO
+2025-05-26 22:29:26,169 - INFO - upload_to_minio - ℹ️ Bucket 'marketing-bucket' already exists
+2025-05-26 22:29:26,186 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Upload Quarantined to MinIO
+2025-05-26 22:29:26,292 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Upload Validated to MinIO
+2025-05-26 22:29:26,352 - INFO - upload_to_minio - ℹ️ Bucket 'marketing-bucket' already exists
+2025-05-26 22:29:27,406 - INFO - metadata - 📝 Logged stage 'uploaded' for campaigns_2025-05-26.json at 2025-05-26T22:29:27.059841
+2025-05-26 22:29:27,411 - INFO - upload_to_minio - 📤 Uploaded campaigns_2025-05-26.json to valid-data/campaigns/2025-05-26/campaigns_2025-05-26.json
+2025-05-26 22:29:28,769 - INFO - metadata - 📝 Logged stage 'uploaded' for contacts_2025-05-26.csv at 2025-05-26T22:29:28.525942
+2025-05-26 22:29:28,774 - INFO - upload_to_minio - 📤 Uploaded contacts_2025-05-26.csv to valid-data/contacts/2025-05-26/contacts_2025-05-26.csv
+2025-05-26 22:29:29,500 - INFO - metadata - 📝 Logged stage 'uploaded' for forms_2025-05-26.json at 2025-05-26T22:29:29.216486
+2025-05-26 22:29:29,505 - INFO - upload_to_minio - 📤 Uploaded forms_2025-05-26.json to valid-data/forms/2025-05-26/forms_2025-05-26.json
+2025-05-26 22:29:30,361 - INFO - metadata - 📝 Logged stage 'uploaded' for form_fills_2025-05-26.parquet at 2025-05-26T22:29:30.021534
+2025-05-26 22:29:30,368 - INFO - upload_to_minio - 📤 Uploaded form_fills_2025-05-26.parquet to valid-data/form_fills/2025-05-26/form_fills_2025-05-26.parquet
+2025-05-26 22:29:31,314 - INFO - metadata - 📝 Logged stage 'uploaded' for pages_2025-05-26.json at 2025-05-26T22:29:30.874846
+2025-05-26 22:29:31,321 - INFO - upload_to_minio - 📤 Uploaded pages_2025-05-26.json to valid-data/pages/2025-05-26/pages_2025-05-26.json
+2025-05-26 22:29:32,688 - INFO - metadata - 📝 Logged stage 'uploaded' for website_activity_2025-05-26.json at 2025-05-26T22:29:32.428351
+2025-05-26 22:29:32,699 - INFO - upload_to_minio - 📤 Uploaded website_activity_2025-05-26.json to valid-data/website_activity/2025-05-26/website_activity_2025-05-26.json
+2025-05-26 22:29:32,704 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Upload Validated to MinIO
+2025-05-26 22:29:39,521 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Upload valid-data to Snowflake RAW
+2025-05-26 22:29:39,631 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Print Metadata Logs
+2025-05-26 22:29:39,754 - INFO - metadata - 🖨️ Metadata printed for 2025-05-26
+2025-05-26 22:29:39,758 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Print Metadata Logs
+2025-05-26 22:29:39,777 - INFO - snowflake_upload - [⏬] downloaded valid-data/contacts/2025-05-26/contacts_2025-05-26.csv → /tmp/tmp_xpkk6yq/contacts_2025-05-26.csv
+2025-05-26 22:29:43,414 - INFO - snowflake_upload - [INFO] running: PUT file:///tmp/tmp_xpkk6yq/contacts_2025-05-26.csv @RAW_CONTACTS_STAGE/2025-05-26/
+2025-05-26 22:29:43,417 - INFO - snowflake_upload - [INFO] running COPY INTO RAW.contacts
+2025-05-26 22:29:44,446 - INFO - snowflake_upload - [✅] loaded contacts for 2025-05-26
+2025-05-26 22:29:44,818 - INFO - snowflake_upload - [⏬] downloaded valid-data/form_fills/2025-05-26/form_fills_2025-05-26.parquet → /tmp/tmp9jccuqi7/form_fills_2025-05-26.parquet
+2025-05-26 22:29:47,191 - INFO - snowflake_upload - [INFO] running: PUT file:///tmp/tmp9jccuqi7/form_fills_2025-05-26.parquet @RAW_FORM_FILLS_STAGE/2025-05-26/
+2025-05-26 22:29:47,201 - INFO - snowflake_upload - [INFO] running COPY INTO RAW.form_fills
+2025-05-26 22:29:48,121 - INFO - snowflake_upload - [✅] loaded form_fills for 2025-05-26
+2025-05-26 22:29:48,437 - INFO - snowflake_upload - [⏬] downloaded valid-data/website_activity/2025-05-26/website_activity_2025-05-26.json → /tmp/tmp95jq1gz9/website_activity_2025-05-26.json
+2025-05-26 22:29:50,651 - INFO - snowflake_upload - [INFO] running: PUT file:///tmp/tmp95jq1gz9/website_activity_2025-05-26.json @RAW_WEBSITE_ACTIVITY_STAGE/2025-05-26/
+2025-05-26 22:29:50,656 - INFO - snowflake_upload - [INFO] running COPY INTO RAW.website_activity
+2025-05-26 22:29:51,519 - INFO - snowflake_upload - [✅] loaded website_activity for 2025-05-26
+2025-05-26 22:29:51,836 - INFO - snowflake_upload - [⏬] downloaded valid-data/campaigns/2025-05-26/campaigns_2025-05-26.json → /tmp/tmpoeb6zv4l/campaigns_2025-05-26.json
+2025-05-26 22:29:53,451 - INFO - snowflake_upload - [INFO] running: PUT file:///tmp/tmpoeb6zv4l/campaigns_2025-05-26.json @RAW_CAMPAIGNS_STAGE/2025-05-26/
+2025-05-26 22:29:53,456 - INFO - snowflake_upload - [INFO] running COPY INTO RAW.campaigns
+2025-05-26 22:29:54,339 - INFO - snowflake_upload - [✅] loaded campaigns for 2025-05-26
+2025-05-26 22:29:55,374 - INFO - snowflake_upload - [⏬] downloaded valid-data/forms/2025-05-26/forms_2025-05-26.json → /tmp/tmpwqu8wjap/forms_2025-05-26.json
+2025-05-26 22:29:57,285 - INFO - snowflake_upload - [INFO] running: PUT file:///tmp/tmpwqu8wjap/forms_2025-05-26.json @RAW_FORMS_STAGE/2025-05-26/
+2025-05-26 22:29:57,289 - INFO - snowflake_upload - [INFO] running COPY INTO RAW.forms
+2025-05-26 22:29:58,086 - INFO - snowflake_upload - [✅] loaded forms for 2025-05-26
+2025-05-26 22:29:58,403 - INFO - snowflake_upload - [⏬] downloaded valid-data/pages/2025-05-26/pages_2025-05-26.json → /tmp/tmpnj2d3dy4/pages_2025-05-26.json
+2025-05-26 22:29:59,942 - INFO - snowflake_upload - [INFO] running: PUT file:///tmp/tmpnj2d3dy4/pages_2025-05-26.json @RAW_PAGES_STAGE/2025-05-26/
+2025-05-26 22:29:59,947 - INFO - snowflake_upload - [INFO] running COPY INTO RAW.pages
+2025-05-26 22:30:00,692 - INFO - snowflake_upload - [✅] loaded pages for 2025-05-26
+2025-05-26 22:30:00,925 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Upload valid-data to Snowflake RAW
+2025-05-26 22:30:05,082 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Run staging models
+2025-05-26 22:30:05,089 - INFO - utils - Running dbt command: cd /opt/dbt/marketing_pipeline && dbt run --models staging --vars '{"batch_date": "2025-05-26"}'
+2025-05-26 22:30:15,991 - INFO - utils - [0m22:30:15  Running with dbt=1.9.4
+2025-05-26 22:30:18,929 - INFO - utils - [0m22:30:18  Registered adapter: snowflake=1.9.4
+2025-05-26 22:30:21,617 - INFO - utils - [0m22:30:21  Unable to do partial parsing because config vars, config profile, or config target have changed
+2025-05-26 22:30:38,408 - INFO - utils - [0m22:30:38  Found 12 models, 79 data tests, 6 sources, 479 macros
+2025-05-26 22:30:38,423 - INFO - utils - [0m22:30:38
+2025-05-26 22:30:38,428 - INFO - utils - [0m22:30:38  Concurrency: 4 threads (target='dev')
+2025-05-26 22:30:38,433 - INFO - utils - [0m22:30:38
+2025-05-26 22:30:41,534 - INFO - utils - [0m22:30:41  1 of 6 START sql incremental model STG.stg_campaigns ........................... [RUN]
+2025-05-26 22:30:41,567 - INFO - utils - [0m22:30:41  2 of 6 START sql incremental model STG.stg_contacts ............................ [RUN]
+2025-05-26 22:30:41,573 - INFO - utils - [0m22:30:41  3 of 6 START sql incremental model STG.stg_form_fills .......................... [RUN]
+2025-05-26 22:30:41,580 - INFO - utils - [0m22:30:41  4 of 6 START sql incremental model STG.stg_forms ............................... [RUN]
+2025-05-26 22:30:49,240 - INFO - utils - [0m22:30:49  1 of 6 OK created sql incremental model STG.stg_campaigns ...................... [[32mSUCCESS 3[0m in 7.64s]
+2025-05-26 22:30:49,246 - INFO - utils - [0m22:30:49  4 of 6 OK created sql incremental model STG.stg_forms .......................... [[32mSUCCESS 4[0m in 7.63s]
+2025-05-26 22:30:49,264 - INFO - utils - [0m22:30:49  2 of 6 OK created sql incremental model STG.stg_contacts ....................... [[32mSUCCESS 1000[0m in 7.67s]
+2025-05-26 22:30:49,322 - INFO - utils - [0m22:30:49  5 of 6 START sql incremental model STG.stg_pages ............................... [RUN]
+2025-05-26 22:30:49,328 - INFO - utils - [0m22:30:49  6 of 6 START sql incremental model STG.stg_website_activity .................... [RUN]
+2025-05-26 22:30:49,472 - INFO - utils - [0m22:30:49  3 of 6 OK created sql incremental model STG.stg_form_fills ..................... [[32mSUCCESS 1000[0m in 7.87s]
+2025-05-26 22:30:52,051 - INFO - utils - [0m22:30:52  6 of 6 OK created sql incremental model STG.stg_website_activity ............... [[32mSUCCESS 1000[0m in 2.71s]
+2025-05-26 22:30:52,196 - INFO - utils - [0m22:30:52  5 of 6 OK created sql incremental model STG.stg_pages .......................... [[32mSUCCESS 4[0m in 2.86s]
+2025-05-26 22:30:53,237 - INFO - utils - [0m22:30:53
+2025-05-26 22:30:53,248 - INFO - utils - [0m22:30:53  Finished running 6 incremental models in 0 hours 0 minutes and 14.80 seconds (14.80s).
+2025-05-26 22:30:53,494 - INFO - utils - [0m22:30:53
+2025-05-26 22:30:53,501 - INFO - utils - [0m22:30:53  [32mCompleted successfully[0m
+2025-05-26 22:30:53,513 - INFO - utils - [0m22:30:53
+2025-05-26 22:30:53,519 - INFO - utils - [0m22:30:53  Done. PASS=6 WARN=0 ERROR=0 SKIP=0 TOTAL=6
+2025-05-26 22:30:54,597 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Run staging models
+2025-05-26 22:31:00,945 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Run mart models
+2025-05-26 22:31:00,949 - INFO - utils - Running dbt command: cd /opt/dbt/marketing_pipeline && dbt run --models marts --vars '{"batch_date": "2025-05-26"}'
+2025-05-26 22:31:06,776 - INFO - utils - [0m22:31:06  Running with dbt=1.9.4
+2025-05-26 22:31:08,694 - INFO - utils - [0m22:31:08  Registered adapter: snowflake=1.9.4
+2025-05-26 22:31:12,210 - INFO - utils - [0m22:31:12  Found 12 models, 79 data tests, 6 sources, 479 macros
+2025-05-26 22:31:12,230 - INFO - utils - [0m22:31:12
+2025-05-26 22:31:12,245 - INFO - utils - [0m22:31:12  Concurrency: 4 threads (target='dev')
+2025-05-26 22:31:12,260 - INFO - utils - [0m22:31:12
+2025-05-26 22:31:14,561 - INFO - utils - [0m22:31:14  1 of 6 START sql incremental model MART.mart_campaigns ......................... [RUN]
+2025-05-26 22:31:14,571 - INFO - utils - [0m22:31:14  2 of 6 START sql incremental model MART.mart_contacts .......................... [RUN]
+2025-05-26 22:31:14,580 - INFO - utils - [0m22:31:14  3 of 6 START sql incremental model MART.mart_form_fills ........................ [RUN]
+2025-05-26 22:31:14,587 - INFO - utils - [0m22:31:14  4 of 6 START sql incremental model MART.mart_forms ............................. [RUN]
+2025-05-26 22:31:18,864 - INFO - utils - [0m22:31:18  4 of 6 OK created sql incremental model MART.mart_forms ........................ [[32mSUCCESS 4[0m in 4.25s]
+2025-05-26 22:31:18,929 - INFO - utils - [0m22:31:18  5 of 6 START sql incremental model MART.mart_pages ............................. [RUN]
+2025-05-26 22:31:19,076 - INFO - utils - [0m22:31:19  3 of 6 OK created sql incremental model MART.mart_form_fills ................... [[32mSUCCESS 3000[0m in 4.47s]
+2025-05-26 22:31:19,112 - INFO - utils - [0m22:31:19  1 of 6 OK created sql incremental model MART.mart_campaigns .................... [[32mSUCCESS 3[0m in 4.51s]
+2025-05-26 22:31:19,137 - INFO - utils - [0m22:31:19  6 of 6 START sql incremental model MART.mart_website_activity .................. [RUN]
+2025-05-26 22:31:19,170 - INFO - utils - [0m22:31:19  2 of 6 OK created sql incremental model MART.mart_contacts ..................... [[32mSUCCESS 3000[0m in 4.57s]
+2025-05-26 22:31:21,664 - INFO - utils - [0m22:31:21  5 of 6 OK created sql incremental model MART.mart_pages ........................ [[32mSUCCESS 4[0m in 2.72s]
+2025-05-26 22:31:21,977 - INFO - utils - [0m22:31:21  6 of 6 OK created sql incremental model MART.mart_website_activity ............. [[32mSUCCESS 3000[0m in 2.83s]
+2025-05-26 22:31:23,190 - INFO - utils - [0m22:31:23
+2025-05-26 22:31:23,235 - INFO - utils - [0m22:31:23  Finished running 6 incremental models in 0 hours 0 minutes and 10.91 seconds (10.91s).
+2025-05-26 22:31:23,871 - INFO - utils - [0m22:31:23
+2025-05-26 22:31:23,882 - INFO - utils - [0m22:31:23  [32mCompleted successfully[0m
+2025-05-26 22:31:23,904 - INFO - utils - [0m22:31:23
+2025-05-26 22:31:23,909 - INFO - utils - [0m22:31:23  Done. PASS=6 WARN=0 ERROR=0 SKIP=0 TOTAL=6
+2025-05-26 22:31:25,567 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Run mart models
+2025-05-26 22:31:31,894 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Run all dbt tests
+2025-05-26 22:31:31,902 - INFO - utils - Running dbt tests: cd /opt/dbt/marketing_pipeline && dbt test 
+2025-05-26 22:31:31,908 - INFO - utils - Running dbt command: cd /opt/dbt/marketing_pipeline && dbt test 
+2025-05-26 22:31:38,801 - INFO - utils - [0m22:31:38  Running with dbt=1.9.4
+2025-05-26 22:31:40,718 - INFO - utils - [0m22:31:40  Registered adapter: snowflake=1.9.4
+2025-05-26 22:31:41,670 - INFO - utils - [0m22:31:41  Unable to do partial parsing because config vars, config profile, or config target have changed
+2025-05-26 22:31:49,856 - INFO - utils - [0m22:31:49  Found 12 models, 79 data tests, 6 sources, 479 macros
+2025-05-26 22:31:49,887 - INFO - utils - [0m22:31:49
+2025-05-26 22:31:49,899 - INFO - utils - [0m22:31:49  Concurrency: 4 threads (target='dev')
+2025-05-26 22:31:49,906 - INFO - utils - [0m22:31:49
+2025-05-26 22:31:51,502 - INFO - utils - [0m22:31:51  1 of 79 START test accepted_values_stg_contacts_email___ ....................... [RUN]
+2025-05-26 22:31:51,510 - INFO - utils - [0m22:31:51  2 of 79 START test expression_is_true_stg_form_fills_fill_date__fill_date_current_timestamp_  [RUN]
+2025-05-26 22:31:51,520 - INFO - utils - [0m22:31:51  3 of 79 START test expression_is_true_stg_pages_page_url__page_url_LIKE_http_ .. [RUN]
+2025-05-26 22:31:51,532 - INFO - utils - [0m22:31:51  4 of 79 START test expression_is_true_stg_website_activity_pages_viewed__pages_viewed_0  [RUN]
+2025-05-26 22:31:51,713 - INFO - utils - [0m22:31:51  2 of 79 ERROR expression_is_true_stg_form_fills_fill_date__fill_date_current_timestamp_  [[31mERROR[0m in 0.16s]
+2025-05-26 22:31:51,720 - INFO - utils - [0m22:31:51  3 of 79 ERROR expression_is_true_stg_pages_page_url__page_url_LIKE_http_ ....... [[31mERROR[0m in 0.09s]
+2025-05-26 22:31:51,731 - INFO - utils - [0m22:31:51  4 of 79 ERROR expression_is_true_stg_website_activity_pages_viewed__pages_viewed_0  [[31mERROR[0m in 0.10s]
+2025-05-26 22:31:51,804 - INFO - utils - [0m22:31:51  5 of 79 START test mart_no_orphan_form_fills ................................... [RUN]
+2025-05-26 22:31:51,837 - INFO - utils - [0m22:31:51  6 of 79 START test mart_pages_url_format ....................................... [RUN]
+2025-05-26 22:31:51,851 - INFO - utils - [0m22:31:51  7 of 79 START test no_duplicate_form_fills_per_contact ......................... [RUN]
+2025-05-26 22:31:52,610 - INFO - utils - [0m22:31:52  1 of 79 FAIL 2978 accepted_values_stg_contacts_email___ ........................ [[31mFAIL 2978[0m in 1.07s]
+2025-05-26 22:31:52,633 - INFO - utils - [0m22:31:52  8 of 79 START test not_null_mart_campaigns_campaign_id ......................... [RUN]
+2025-05-26 22:31:53,305 - INFO - utils - [0m22:31:53  5 of 79 PASS mart_no_orphan_form_fills ......................................... [[32mPASS[0m in 1.40s]
+2025-05-26 22:31:53,352 - INFO - utils - [0m22:31:53  9 of 79 START test not_null_mart_campaigns_campaign_name ....................... [RUN]
+2025-05-26 22:31:53,723 - INFO - utils - [0m22:31:53  7 of 79 FAIL 804 no_duplicate_form_fills_per_contact ........................... [[31mFAIL 804[0m in 1.87s]
+2025-05-26 22:31:53,739 - INFO - utils - [0m22:31:53  10 of 79 START test not_null_mart_campaigns_end_date ........................... [RUN]
+2025-05-26 22:31:53,791 - INFO - utils - [0m22:31:53  8 of 79 PASS not_null_mart_campaigns_campaign_id ............................... [[32mPASS[0m in 1.15s]
+2025-05-26 22:31:53,808 - INFO - utils - [0m22:31:53  11 of 79 START test not_null_mart_campaigns_start_date ......................... [RUN]
+2025-05-26 22:31:53,866 - INFO - utils - [0m22:31:53  9 of 79 PASS not_null_mart_campaigns_campaign_name ............................. [[32mPASS[0m in 0.46s]
+2025-05-26 22:31:53,884 - INFO - utils - [0m22:31:53  12 of 79 START test not_null_mart_contacts_contact_id .......................... [RUN]
+2025-05-26 22:31:53,983 - INFO - utils - [0m22:31:53  6 of 79 FAIL 4 mart_pages_url_format ........................................... [[31mFAIL 4[0m in 2.11s]
+2025-05-26 22:31:53,997 - INFO - utils - [0m22:31:53  13 of 79 START test not_null_mart_contacts_email ............................... [RUN]
+2025-05-26 22:31:54,459 - INFO - utils - [0m22:31:54  10 of 79 ERROR not_null_mart_campaigns_end_date ................................ [[31mERROR[0m in 0.71s]
+2025-05-26 22:31:54,480 - INFO - utils - [0m22:31:54  14 of 79 START test not_null_mart_contacts_signup_date ......................... [RUN]
+2025-05-26 22:31:54,530 - INFO - utils - [0m22:31:54  11 of 79 ERROR not_null_mart_campaigns_start_date .............................. [[31mERROR[0m in 0.72s]
+2025-05-26 22:31:54,561 - INFO - utils - [0m22:31:54  15 of 79 START test not_null_mart_form_fills_contact_id ........................ [RUN]
+2025-05-26 22:31:54,619 - INFO - utils - [0m22:31:54  12 of 79 PASS not_null_mart_contacts_contact_id ................................ [[32mPASS[0m in 0.72s]
+2025-05-26 22:31:54,636 - INFO - utils - [0m22:31:54  16 of 79 START test not_null_mart_form_fills_estimated_value ................... [RUN]
+2025-05-26 22:31:54,737 - INFO - utils - [0m22:31:54  13 of 79 PASS not_null_mart_contacts_email ..................................... [[32mPASS[0m in 0.73s]
+2025-05-26 22:31:54,827 - INFO - utils - [0m22:31:54  17 of 79 START test not_null_mart_form_fills_fill_date ......................... [RUN]
+2025-05-26 22:31:54,986 - INFO - utils - [0m22:31:54  14 of 79 PASS not_null_mart_contacts_signup_date ............................... [[32mPASS[0m in 0.49s]
+2025-05-26 22:31:55,018 - INFO - utils - [0m22:31:55  18 of 79 START test not_null_mart_form_fills_fill_id ........................... [RUN]
+2025-05-26 22:31:55,402 - INFO - utils - [0m22:31:55  15 of 79 PASS not_null_mart_form_fills_contact_id .............................. [[32mPASS[0m in 0.83s]
+2025-05-26 22:31:55,416 - INFO - utils - [0m22:31:55  19 of 79 START test not_null_mart_form_fills_form_id ........................... [RUN]
+2025-05-26 22:31:55,976 - INFO - utils - [0m22:31:55  16 of 79 PASS not_null_mart_form_fills_estimated_value ......................... [[32mPASS[0m in 1.34s]
+2025-05-26 22:31:55,991 - INFO - utils - [0m22:31:55  20 of 79 START test not_null_mart_form_fills_upload_date ....................... [RUN]
+2025-05-26 22:31:57,072 - INFO - utils - [0m22:31:57  19 of 79 PASS not_null_mart_form_fills_form_id ................................. [[32mPASS[0m in 1.65s]
+2025-05-26 22:31:57,094 - INFO - utils - [0m22:31:57  17 of 79 PASS not_null_mart_form_fills_fill_date ............................... [[32mPASS[0m in 2.26s]
+2025-05-26 22:31:57,142 - INFO - utils - [0m22:31:57  20 of 79 PASS not_null_mart_form_fills_upload_date ............................. [[32mPASS[0m in 1.13s]
+2025-05-26 22:31:57,165 - INFO - utils - [0m22:31:57  18 of 79 PASS not_null_mart_form_fills_fill_id ................................. [[32mPASS[0m in 2.14s]
+2025-05-26 22:31:57,228 - INFO - utils - [0m22:31:57  21 of 79 START test not_null_mart_forms_form_id ................................ [RUN]
+2025-05-26 22:31:57,260 - INFO - utils - [0m22:31:57  23 of 79 START test not_null_mart_forms_upload_date ............................ [RUN]
+2025-05-26 22:31:57,294 - INFO - utils - [0m22:31:57  22 of 79 START test not_null_mart_forms_form_type .............................. [RUN]
+2025-05-26 22:31:57,319 - INFO - utils - [0m22:31:57  24 of 79 START test not_null_mart_pages_page_id ................................ [RUN]
+2025-05-26 22:31:58,044 - INFO - utils - [0m22:31:58  23 of 79 PASS not_null_mart_forms_upload_date .................................. [[32mPASS[0m in 0.74s]
+2025-05-26 22:31:58,059 - INFO - utils - [0m22:31:58  25 of 79 START test not_null_mart_pages_page_title ............................. [RUN]
+2025-05-26 22:31:58,093 - INFO - utils - [0m22:31:58  22 of 79 PASS not_null_mart_forms_form_type .................................... [[32mPASS[0m in 0.80s]
+2025-05-26 22:31:58,120 - INFO - utils - [0m22:31:58  24 of 79 PASS not_null_mart_pages_page_id ...................................... [[32mPASS[0m in 0.82s]
+2025-05-26 22:31:58,140 - INFO - utils - [0m22:31:58  21 of 79 PASS not_null_mart_forms_form_id ...................................... [[32mPASS[0m in 0.86s]
+2025-05-26 22:31:58,196 - INFO - utils - [0m22:31:58  26 of 79 START test not_null_mart_pages_page_url ............................... [RUN]
+2025-05-26 22:31:58,227 - INFO - utils - [0m22:31:58  27 of 79 START test not_null_mart_pages_upload_date ............................ [RUN]
+2025-05-26 22:31:58,285 - INFO - utils - [0m22:31:58  28 of 79 START test not_null_mart_website_activity_bounce ...................... [RUN]
+2025-05-26 22:31:59,167 - INFO - utils - [0m22:31:59  25 of 79 PASS not_null_mart_pages_page_title ................................... [[32mPASS[0m in 1.09s]
+2025-05-26 22:31:59,191 - INFO - utils - [0m22:31:59  29 of 79 START test not_null_mart_website_activity_contact_id .................. [RUN]
+2025-05-26 22:31:59,216 - INFO - utils - [0m22:31:59  26 of 79 PASS not_null_mart_pages_page_url ..................................... [[32mPASS[0m in 0.98s]
+2025-05-26 22:31:59,269 - INFO - utils - [0m22:31:59  30 of 79 START test not_null_mart_website_activity_event_date .................. [RUN]
+2025-05-26 22:31:59,704 - INFO - utils - [0m22:31:59  27 of 79 PASS not_null_mart_pages_upload_date .................................. [[32mPASS[0m in 1.44s]
+2025-05-26 22:31:59,755 - INFO - utils - [0m22:31:59  31 of 79 START test not_null_mart_website_activity_pages_viewed ................ [RUN]
+2025-05-26 22:31:59,929 - INFO - utils - [0m22:31:59  28 of 79 PASS not_null_mart_website_activity_bounce ............................ [[32mPASS[0m in 1.47s]
+2025-05-26 22:31:59,956 - INFO - utils - [0m22:31:59  30 of 79 PASS not_null_mart_website_activity_event_date ........................ [[32mPASS[0m in 0.68s]
+2025-05-26 22:31:59,981 - INFO - utils - [0m22:31:59  29 of 79 PASS not_null_mart_website_activity_contact_id ........................ [[32mPASS[0m in 0.78s]
+2025-05-26 22:32:00,076 - INFO - utils - [0m22:32:00  32 of 79 START test not_null_mart_website_activity_session_duration ............ [RUN]
+2025-05-26 22:32:00,105 - INFO - utils - [0m22:32:00  33 of 79 START test not_null_mart_website_activity_session_id .................. [RUN]
+2025-05-26 22:32:00,120 - INFO - utils - [0m22:32:00  34 of 79 START test not_null_mart_website_activity_upload_date ................. [RUN]
+2025-05-26 22:32:00,475 - INFO - utils - [0m22:32:00  31 of 79 PASS not_null_mart_website_activity_pages_viewed ...................... [[32mPASS[0m in 0.71s]
+2025-05-26 22:32:00,546 - INFO - utils - [0m22:32:00  35 of 79 START test not_null_stg_campaigns_campaign_id ......................... [RUN]
+2025-05-26 22:32:00,942 - INFO - utils - [0m22:32:00  33 of 79 PASS not_null_mart_website_activity_session_id ........................ [[32mPASS[0m in 0.78s]
+2025-05-26 22:32:00,963 - INFO - utils - [0m22:32:00  32 of 79 PASS not_null_mart_website_activity_session_duration .................. [[32mPASS[0m in 0.85s]
+2025-05-26 22:32:00,995 - INFO - utils - [0m22:32:00  35 of 79 PASS not_null_stg_campaigns_campaign_id ............................... [[32mPASS[0m in 0.44s]
+2025-05-26 22:32:01,025 - INFO - utils - [0m22:32:01  36 of 79 START test not_null_stg_campaigns_campaign_name ....................... [RUN]
+2025-05-26 22:32:01,042 - INFO - utils - [0m22:32:01  34 of 79 PASS not_null_mart_website_activity_upload_date ....................... [[32mPASS[0m in 0.84s]
+2025-05-26 22:32:01,052 - INFO - utils - [0m22:32:01  37 of 79 START test not_null_stg_campaigns_upload_date ......................... [RUN]
+2025-05-26 22:32:01,086 - INFO - utils - [0m22:32:01  38 of 79 START test not_null_stg_contacts_contact_id ........................... [RUN]
+2025-05-26 22:32:01,141 - INFO - utils - [0m22:32:01  39 of 79 START test not_null_stg_contacts_email ................................ [RUN]
+2025-05-26 22:32:01,647 - INFO - utils - [0m22:32:01  36 of 79 PASS not_null_stg_campaigns_campaign_name ............................. [[32mPASS[0m in 0.59s]
+2025-05-26 22:32:01,661 - INFO - utils - [0m22:32:01  40 of 79 START test not_null_stg_contacts_signup_date .......................... [RUN]
+2025-05-26 22:32:02,109 - INFO - utils - [0m22:32:02  38 of 79 PASS not_null_stg_contacts_contact_id ................................. [[32mPASS[0m in 1.00s]
+2025-05-26 22:32:02,126 - INFO - utils - [0m22:32:02  41 of 79 START test not_null_stg_contacts_upload_date .......................... [RUN]
+2025-05-26 22:32:02,156 - INFO - utils - [0m22:32:02  37 of 79 PASS not_null_stg_campaigns_upload_date ............................... [[32mPASS[0m in 1.08s]
+2025-05-26 22:32:02,197 - INFO - utils - [0m22:32:02  42 of 79 START test not_null_stg_form_fills_contact_id ......................... [RUN]
+2025-05-26 22:32:02,483 - INFO - utils - [0m22:32:02  39 of 79 PASS not_null_stg_contacts_email ...................................... [[32mPASS[0m in 1.29s]
+2025-05-26 22:32:02,508 - INFO - utils - [0m22:32:02  43 of 79 START test not_null_stg_form_fills_fill_date .......................... [RUN]
+2025-05-26 22:32:02,729 - INFO - utils - [0m22:32:02  41 of 79 PASS not_null_stg_contacts_upload_date ................................ [[32mPASS[0m in 0.57s]
+2025-05-26 22:32:02,774 - INFO - utils - [0m22:32:02  44 of 79 START test not_null_stg_form_fills_fill_id ............................ [RUN]
+2025-05-26 22:32:02,868 - INFO - utils - [0m22:32:02  42 of 79 PASS not_null_stg_form_fills_contact_id ............................... [[32mPASS[0m in 0.66s]
+2025-05-26 22:32:02,903 - INFO - utils - [0m22:32:02  45 of 79 START test not_null_stg_form_fills_form_id ............................ [RUN]
+2025-05-26 22:32:02,963 - INFO - utils - [0m22:32:02  40 of 79 PASS not_null_stg_contacts_signup_date ................................ [[32mPASS[0m in 1.29s]
+2025-05-26 22:32:03,023 - INFO - utils - [0m22:32:03  46 of 79 START test not_null_stg_form_fills_upload_date ........................ [RUN]
+2025-05-26 22:32:03,065 - INFO - utils - [0m22:32:03  43 of 79 PASS not_null_stg_form_fills_fill_date ................................ [[32mPASS[0m in 0.55s]
+2025-05-26 22:32:03,085 - INFO - utils - [0m22:32:03  47 of 79 START test not_null_stg_forms_form_id ................................. [RUN]
+2025-05-26 22:32:03,517 - INFO - utils - [0m22:32:03  44 of 79 PASS not_null_stg_form_fills_fill_id .................................. [[32mPASS[0m in 0.73s]
+2025-05-26 22:32:03,543 - INFO - utils - [0m22:32:03  45 of 79 PASS not_null_stg_form_fills_form_id .................................. [[32mPASS[0m in 0.61s]
+2025-05-26 22:32:03,569 - INFO - utils - [0m22:32:03  46 of 79 PASS not_null_stg_form_fills_upload_date .............................. [[32mPASS[0m in 0.54s]
+2025-05-26 22:32:03,625 - INFO - utils - [0m22:32:03  48 of 79 START test not_null_stg_forms_form_type ............................... [RUN]
+2025-05-26 22:32:03,672 - INFO - utils - [0m22:32:03  50 of 79 START test not_null_stg_pages_page_id ................................. [RUN]
+2025-05-26 22:32:03,699 - INFO - utils - [0m22:32:03  49 of 79 START test not_null_stg_forms_upload_date ............................. [RUN]
+2025-05-26 22:32:03,821 - INFO - utils - [0m22:32:03  47 of 79 PASS not_null_stg_forms_form_id ....................................... [[32mPASS[0m in 0.72s]
+2025-05-26 22:32:03,953 - INFO - utils - [0m22:32:03  51 of 79 START test not_null_stg_pages_page_title .............................. [RUN]
+2025-05-26 22:32:04,355 - INFO - utils - [0m22:32:04  50 of 79 PASS not_null_stg_pages_page_id ....................................... [[32mPASS[0m in 0.67s]
+2025-05-26 22:32:04,384 - INFO - utils - [0m22:32:04  48 of 79 PASS not_null_stg_forms_form_type ..................................... [[32mPASS[0m in 0.71s]
+2025-05-26 22:32:04,418 - INFO - utils - [0m22:32:04  52 of 79 START test not_null_stg_pages_page_url ................................ [RUN]
+2025-05-26 22:32:04,464 - INFO - utils - [0m22:32:04  49 of 79 PASS not_null_stg_forms_upload_date ................................... [[32mPASS[0m in 0.71s]
+2025-05-26 22:32:04,483 - INFO - utils - [0m22:32:04  53 of 79 START test not_null_stg_pages_upload_date ............................. [RUN]
+2025-05-26 22:32:04,558 - INFO - utils - [0m22:32:04  51 of 79 PASS not_null_stg_pages_page_title .................................... [[32mPASS[0m in 0.58s]
+2025-05-26 22:32:04,637 - INFO - utils - [0m22:32:04  54 of 79 START test not_null_stg_website_activity_contact_id ................... [RUN]
+2025-05-26 22:32:04,716 - INFO - utils - [0m22:32:04  55 of 79 START test not_null_stg_website_activity_event_date ................... [RUN]
+2025-05-26 22:32:05,648 - INFO - utils - [0m22:32:05  53 of 79 PASS not_null_stg_pages_upload_date ................................... [[32mPASS[0m in 1.05s]
+2025-05-26 22:32:05,714 - INFO - utils - [0m22:32:05  52 of 79 PASS not_null_stg_pages_page_url ...................................... [[32mPASS[0m in 1.24s]
+2025-05-26 22:32:05,741 - INFO - utils - [0m22:32:05  54 of 79 PASS not_null_stg_website_activity_contact_id ......................... [[32mPASS[0m in 1.06s]
+2025-05-26 22:32:05,784 - INFO - utils - [0m22:32:05  56 of 79 START test not_null_stg_website_activity_pages_viewed ................. [RUN]
+2025-05-26 22:32:05,822 - INFO - utils - [0m22:32:05  57 of 79 START test not_null_stg_website_activity_session_duration ............. [RUN]
+2025-05-26 22:32:05,839 - INFO - utils - [0m22:32:05  58 of 79 START test not_null_stg_website_activity_session_id ................... [RUN]
+2025-05-26 22:32:06,128 - INFO - utils - [0m22:32:06  55 of 79 PASS not_null_stg_website_activity_event_date ......................... [[32mPASS[0m in 1.37s]
+2025-05-26 22:32:06,176 - INFO - utils - [0m22:32:06  59 of 79 START test not_null_stg_website_activity_upload_date .................. [RUN]
+2025-05-26 22:32:06,522 - INFO - utils - [0m22:32:06  58 of 79 PASS not_null_stg_website_activity_session_id ......................... [[32mPASS[0m in 0.66s]
+2025-05-26 22:32:06,574 - INFO - utils - [0m22:32:06  56 of 79 PASS not_null_stg_website_activity_pages_viewed ....................... [[32mPASS[0m in 0.76s]
+2025-05-26 22:32:06,689 - INFO - utils - [0m22:32:06  57 of 79 PASS not_null_stg_website_activity_session_duration ................... [[32mPASS[0m in 0.82s]
+2025-05-26 22:32:06,722 - INFO - utils - [0m22:32:06  59 of 79 PASS not_null_stg_website_activity_upload_date ........................ [[32mPASS[0m in 0.53s]
+2025-05-26 22:32:06,745 - INFO - utils - [0m22:32:06  60 of 79 START test relationships_mart_form_fills_contact_id__contact_id__ref_mart_contacts_  [RUN]
+2025-05-26 22:32:06,765 - INFO - utils - [0m22:32:06  61 of 79 START test relationships_mart_website_activity_contact_id__contact_id__ref_mart_contacts_  [RUN]
+2025-05-26 22:32:06,781 - INFO - utils - [0m22:32:06  62 of 79 START test relationships_stg_campaigns_campaign_name__campaign_id__ref_stg_campaigns_  [RUN]
+2025-05-26 22:32:06,800 - INFO - utils - [0m22:32:06  63 of 79 START test relationships_stg_form_fills_contact_id__contact_id__ref_stg_contacts_  [RUN]
+2025-05-26 22:32:07,276 - INFO - utils - [0m22:32:07  60 of 79 PASS relationships_mart_form_fills_contact_id__contact_id__ref_mart_contacts_  [[32mPASS[0m in 0.51s]
+2025-05-26 22:32:07,299 - INFO - utils - [0m22:32:07  64 of 79 START test relationships_stg_website_activity_contact_id__contact_id__ref_stg_contacts_  [RUN]
+2025-05-26 22:32:07,383 - INFO - utils - [0m22:32:07  62 of 79 FAIL 3 relationships_stg_campaigns_campaign_name__campaign_id__ref_stg_campaigns_  [[31mFAIL 3[0m in 0.56s]
+2025-05-26 22:32:07,420 - INFO - utils - [0m22:32:07  65 of 79 START test unique_mart_campaigns_campaign_id .......................... [RUN]
+2025-05-26 22:32:07,508 - INFO - utils - [0m22:32:07  61 of 79 PASS relationships_mart_website_activity_contact_id__contact_id__ref_mart_contacts_  [[32mPASS[0m in 0.72s]
+2025-05-26 22:32:07,541 - INFO - utils - [0m22:32:07  63 of 79 PASS relationships_stg_form_fills_contact_id__contact_id__ref_stg_contacts_  [[32mPASS[0m in 0.68s]
+2025-05-26 22:32:07,647 - INFO - utils - [0m22:32:07  66 of 79 START test unique_mart_contacts_contact_id ............................ [RUN]
+2025-05-26 22:32:07,652 - INFO - utils - [0m22:32:07  67 of 79 START test unique_mart_contacts_email ................................. [RUN]
+2025-05-26 22:32:07,951 - INFO - utils - [0m22:32:07  64 of 79 PASS relationships_stg_website_activity_contact_id__contact_id__ref_stg_contacts_  [[32mPASS[0m in 0.64s]
+2025-05-26 22:32:08,002 - INFO - utils - [0m22:32:08  68 of 79 START test unique_mart_form_fills_fill_id ............................. [RUN]
+2025-05-26 22:32:08,187 - INFO - utils - [0m22:32:08  65 of 79 PASS unique_mart_campaigns_campaign_id ................................ [[32mPASS[0m in 0.73s]
+2025-05-26 22:32:08,202 - INFO - utils - [0m22:32:08  69 of 79 START test unique_mart_forms_form_id .................................. [RUN]
+2025-05-26 22:32:08,261 - INFO - utils - [0m22:32:08  67 of 79 FAIL 19 unique_mart_contacts_email .................................... [[31mFAIL 19[0m in 0.58s]
+2025-05-26 22:32:08,358 - INFO - utils - [0m22:32:08  66 of 79 PASS unique_mart_contacts_contact_id .................................. [[32mPASS[0m in 0.70s]
+2025-05-26 22:32:08,378 - INFO - utils - [0m22:32:08  70 of 79 START test unique_mart_pages_page_id .................................. [RUN]
+2025-05-26 22:32:08,414 - INFO - utils - [0m22:32:08  71 of 79 START test unique_mart_website_activity_session_id .................... [RUN]
+2025-05-26 22:32:08,440 - INFO - utils - [0m22:32:08  68 of 79 PASS unique_mart_form_fills_fill_id ................................... [[32mPASS[0m in 0.43s]
+2025-05-26 22:32:08,517 - INFO - utils - [0m22:32:08  72 of 79 START test unique_stg_campaigns_campaign_id ........................... [RUN]
+2025-05-26 22:32:08,701 - INFO - utils - [0m22:32:08  69 of 79 PASS unique_mart_forms_form_id ........................................ [[32mPASS[0m in 0.49s]
+2025-05-26 22:32:08,719 - INFO - utils - [0m22:32:08  73 of 79 START test unique_stg_contacts_contact_id ............................. [RUN]
+2025-05-26 22:32:08,795 - INFO - utils - [0m22:32:08  70 of 79 PASS unique_mart_pages_page_id ........................................ [[32mPASS[0m in 0.40s]
+2025-05-26 22:32:09,068 - INFO - utils - [0m22:32:09  71 of 79 PASS unique_mart_website_activity_session_id .......................... [[32mPASS[0m in 0.62s]
+2025-05-26 22:32:09,078 - INFO - utils - [0m22:32:09  74 of 79 START test unique_stg_contacts_email .................................. [RUN]
+2025-05-26 22:32:09,143 - INFO - utils - [0m22:32:09  75 of 79 START test unique_stg_form_fills_fill_id .............................. [RUN]
+2025-05-26 22:32:09,307 - INFO - utils - [0m22:32:09  72 of 79 PASS unique_stg_campaigns_campaign_id ................................. [[32mPASS[0m in 0.76s]
+2025-05-26 22:32:09,364 - INFO - utils - [0m22:32:09  73 of 79 PASS unique_stg_contacts_contact_id ................................... [[32mPASS[0m in 0.64s]
+2025-05-26 22:32:09,369 - INFO - utils - [0m22:32:09  76 of 79 START test unique_stg_forms_form_id ................................... [RUN]
+2025-05-26 22:32:09,405 - INFO - utils - [0m22:32:09  77 of 79 START test unique_stg_pages_page_id ................................... [RUN]
+2025-05-26 22:32:09,524 - INFO - utils - [0m22:32:09  74 of 79 FAIL 19 unique_stg_contacts_email ..................................... [[31mFAIL 19[0m in 0.41s]
+2025-05-26 22:32:09,541 - INFO - utils - [0m22:32:09  78 of 79 START test unique_stg_website_activity_session_id ..................... [RUN]
+2025-05-26 22:32:09,602 - INFO - utils - [0m22:32:09  75 of 79 PASS unique_stg_form_fills_fill_id .................................... [[32mPASS[0m in 0.42s]
+2025-05-26 22:32:09,636 - INFO - utils - [0m22:32:09  79 of 79 START test website_activity_outside_business_hours .................... [RUN]
+2025-05-26 22:32:10,006 - INFO - utils - [0m22:32:10  76 of 79 PASS unique_stg_forms_form_id ......................................... [[32mPASS[0m in 0.61s]
+2025-05-26 22:32:10,132 - INFO - utils - [0m22:32:10  79 of 79 FAIL 3000 website_activity_outside_business_hours ..................... [[31mFAIL 3000[0m in 0.49s]
+2025-05-26 22:32:10,189 - INFO - utils - [0m22:32:10  77 of 79 PASS unique_stg_pages_page_id ......................................... [[32mPASS[0m in 0.76s]
+2025-05-26 22:32:10,241 - INFO - utils - [0m22:32:10  78 of 79 PASS unique_stg_website_activity_session_id ........................... [[32mPASS[0m in 0.69s]
+2025-05-26 22:32:11,196 - INFO - utils - [0m22:32:11
+2025-05-26 22:32:11,204 - INFO - utils - [0m22:32:11  Finished running 79 data tests in 0 hours 0 minutes and 21.29 seconds (21.29s).
+2025-05-26 22:32:11,532 - INFO - utils - [0m22:32:11
+2025-05-26 22:32:11,552 - INFO - utils - [0m22:32:11  [31mCompleted with 12 errors, 0 partial successes, and 0 warnings:[0m
+2025-05-26 22:32:11,558 - INFO - utils - [0m22:32:11
+2025-05-26 22:32:11,562 - INFO - utils - [0m22:32:11    Compilation Error in test expression_is_true_stg_form_fills_fill_date__fill_date_current_timestamp_ (models/staging/schema.yml)
+2025-05-26 22:32:11,567 - INFO - utils - 'test_expression_is_true' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+2025-05-26 22:32:11,577 - INFO - utils - [0m22:32:11
+2025-05-26 22:32:11,584 - INFO - utils - [0m22:32:11    Compilation Error in test expression_is_true_stg_pages_page_url__page_url_LIKE_http_ (models/staging/schema.yml)
+2025-05-26 22:32:11,589 - INFO - utils - 'test_expression_is_true' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+2025-05-26 22:32:11,597 - INFO - utils - [0m22:32:11
+2025-05-26 22:32:11,603 - INFO - utils - [0m22:32:11    Compilation Error in test expression_is_true_stg_website_activity_pages_viewed__pages_viewed_0 (models/staging/schema.yml)
+2025-05-26 22:32:11,607 - INFO - utils - 'test_expression_is_true' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+2025-05-26 22:32:11,615 - INFO - utils - [0m22:32:11
+2025-05-26 22:32:11,621 - INFO - utils - [0m22:32:11  [31mFailure in test accepted_values_stg_contacts_email___ (models/staging/schema.yml)[0m
+2025-05-26 22:32:11,626 - INFO - utils - [0m22:32:11    Got 2978 results, configured to fail if != 0
+2025-05-26 22:32:11,636 - INFO - utils - [0m22:32:11
+2025-05-26 22:32:11,651 - INFO - utils - [0m22:32:11    compiled code at target/compiled/marketing_pipeline/models/staging/schema.yml/accepted_values_stg_contacts_email___.sql
+2025-05-26 22:32:11,658 - INFO - utils - [0m22:32:11
+2025-05-26 22:32:11,663 - INFO - utils - [0m22:32:11  [31mFailure in test no_duplicate_form_fills_per_contact (tests/no_duplicate_form_fills_per_contact.sql)[0m
+2025-05-26 22:32:11,674 - INFO - utils - [0m22:32:11    Got 804 results, configured to fail if != 0
+2025-05-26 22:32:11,678 - INFO - utils - [0m22:32:11
+2025-05-26 22:32:11,682 - INFO - utils - [0m22:32:11    compiled code at target/compiled/marketing_pipeline/tests/no_duplicate_form_fills_per_contact.sql
+2025-05-26 22:32:11,691 - INFO - utils - [0m22:32:11
+2025-05-26 22:32:11,697 - INFO - utils - [0m22:32:11  [31mFailure in test mart_pages_url_format (tests/mart_pages_url_format.sql)[0m
+2025-05-26 22:32:11,706 - INFO - utils - [0m22:32:11    Got 4 results, configured to fail if != 0
+2025-05-26 22:32:11,711 - INFO - utils - [0m22:32:11
+2025-05-26 22:32:11,721 - INFO - utils - [0m22:32:11    compiled code at target/compiled/marketing_pipeline/tests/mart_pages_url_format.sql
+2025-05-26 22:32:11,726 - INFO - utils - [0m22:32:11
+2025-05-26 22:32:11,730 - INFO - utils - [0m22:32:11    Database Error in test not_null_mart_campaigns_end_date (models/marts/schema.yml)
+2025-05-26 22:32:11,735 - INFO - utils - 000904 (42000): SQL compilation error: error line 14 at position 7
+2025-05-26 22:32:11,742 - INFO - utils - invalid identifier 'END_DATE'
+2025-05-26 22:32:11,749 - INFO - utils - compiled code at target/run/marketing_pipeline/models/marts/schema.yml/not_null_mart_campaigns_end_date.sql
+2025-05-26 22:32:11,756 - INFO - utils - [0m22:32:11
+2025-05-26 22:32:11,763 - INFO - utils - [0m22:32:11    Database Error in test not_null_mart_campaigns_start_date (models/marts/schema.yml)
+2025-05-26 22:32:11,770 - INFO - utils - 000904 (42000): SQL compilation error: error line 14 at position 7
+2025-05-26 22:32:11,776 - INFO - utils - invalid identifier 'START_DATE'
+2025-05-26 22:32:11,793 - INFO - utils - compiled code at target/run/marketing_pipeline/models/marts/schema.yml/not_null_mart_campaigns_start_date.sql
+2025-05-26 22:32:11,800 - INFO - utils - [0m22:32:11
+2025-05-26 22:32:11,807 - INFO - utils - [0m22:32:11  [31mFailure in test relationships_stg_campaigns_campaign_name__campaign_id__ref_stg_campaigns_ (models/staging/schema.yml)[0m
+2025-05-26 22:32:11,812 - INFO - utils - [0m22:32:11    Got 3 results, configured to fail if != 0
+2025-05-26 22:32:11,824 - INFO - utils - [0m22:32:11
+2025-05-26 22:32:11,832 - INFO - utils - [0m22:32:11    compiled code at target/compiled/marketing_pipeline/models/staging/schema.yml/relationships_stg_campaigns_3a16908a32571b0bb273e549269b9f1a.sql
+2025-05-26 22:32:11,839 - INFO - utils - [0m22:32:11
+2025-05-26 22:32:11,847 - INFO - utils - [0m22:32:11  [31mFailure in test unique_mart_contacts_email (models/marts/schema.yml)[0m
+2025-05-26 22:32:11,852 - INFO - utils - [0m22:32:11    Got 19 results, configured to fail if != 0
+2025-05-26 22:32:11,859 - INFO - utils - [0m22:32:11
+2025-05-26 22:32:11,866 - INFO - utils - [0m22:32:11    compiled code at target/compiled/marketing_pipeline/models/marts/schema.yml/unique_mart_contacts_email.sql
+2025-05-26 22:32:11,873 - INFO - utils - [0m22:32:11
+2025-05-26 22:32:11,878 - INFO - utils - [0m22:32:11  [31mFailure in test unique_stg_contacts_email (models/staging/schema.yml)[0m
+2025-05-26 22:32:11,884 - INFO - utils - [0m22:32:11    Got 19 results, configured to fail if != 0
+2025-05-26 22:32:11,888 - INFO - utils - [0m22:32:11
+2025-05-26 22:32:11,894 - INFO - utils - [0m22:32:11    compiled code at target/compiled/marketing_pipeline/models/staging/schema.yml/unique_stg_contacts_email.sql
+2025-05-26 22:32:11,898 - INFO - utils - [0m22:32:11
+2025-05-26 22:32:11,902 - INFO - utils - [0m22:32:11  [31mFailure in test website_activity_outside_business_hours (tests/website_activity_outside_business_hours.sql)[0m
+2025-05-26 22:32:11,910 - INFO - utils - [0m22:32:11    Got 3000 results, configured to fail if != 0
+2025-05-26 22:32:11,914 - INFO - utils - [0m22:32:11
+2025-05-26 22:32:11,925 - INFO - utils - [0m22:32:11    compiled code at target/compiled/marketing_pipeline/tests/website_activity_outside_business_hours.sql
+2025-05-26 22:32:11,931 - INFO - utils - [0m22:32:11
+2025-05-26 22:32:11,936 - INFO - utils - [0m22:32:11  Done. PASS=67 WARN=0 ERROR=12 SKIP=0 TOTAL=79
+2025-05-26 22:32:13,798 - ERROR - utils - dbt tests failed: dbt command failed with exit code 1
+2025-05-26 22:32:13,802 - WARNING - email_notification - 📧 Sending generic failure email [Airflow] Failure in Marketing_Data_Pipeline.dbt_run.dbt_test (Attempt 1/1)
+2025-05-26 22:32:17,004 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Run all dbt tests
+2025-05-27 08:06:21,391 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Init Metadata DB
+2025-05-27 08:06:21,414 - INFO - metadata - 🔧 Initializing metadata database...
+2025-05-27 08:06:21,499 - INFO - metadata - ✅ Metadata DB initialized.
+2025-05-27 08:06:21,503 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Init Metadata DB
+2025-05-27 08:07:02,038 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Generate Pages
+2025-05-27 08:07:02,333 - INFO - data_generation - ⏩ Skipping pages_2025-05-26.json, already generated
+2025-05-27 08:07:02,352 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Generate Pages
+2025-05-27 08:07:07,708 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Generate Forms
+2025-05-27 08:07:07,812 - INFO - data_generation - ⏩ Skipping forms_2025-05-26.json, already generated
+2025-05-27 08:07:07,824 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Generate Forms
+2025-05-27 08:07:11,245 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Generate Campaigns
+2025-05-27 08:07:11,292 - INFO - data_generation - ⏩ Skipping campaigns_2025-05-26.json, already generated
+2025-05-27 08:07:11,307 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Generate Campaigns
+2025-05-27 08:07:13,538 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Validate Pages
+2025-05-27 08:07:13,568 - INFO - data_validation - ⏩ Already validated: pages_2025-05-26.json
+2025-05-27 08:07:13,572 - INFO - utils - task_metrics
+2025-05-27 08:07:13,578 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Validate Pages
+2025-05-27 08:07:15,350 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Validate Forms
+2025-05-27 08:07:15,382 - INFO - data_validation - ⏩ Already validated: forms_2025-05-26.json
+2025-05-27 08:07:15,387 - INFO - utils - task_metrics
+2025-05-27 08:07:15,391 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Validate Forms
+2025-05-27 08:07:17,092 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Validate Campaigns
+2025-05-27 08:07:17,135 - INFO - data_validation - ⏩ Already validated: campaigns_2025-05-26.json
+2025-05-27 08:07:17,141 - INFO - utils - task_metrics
+2025-05-27 08:07:17,148 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Validate Campaigns
+2025-05-27 08:07:22,538 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Generate Contacts
+2025-05-27 08:07:22,564 - INFO - data_generation - ⏩ Skipping contacts_2025-05-26.csv, already generated
+2025-05-27 08:07:22,570 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Generate Contacts
+2025-05-27 08:07:28,766 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Generate Form Fills
+2025-05-27 08:07:28,792 - INFO - data_generation - ⏩ Skipping form_fills_2025-05-26.parquet, already generated
+2025-05-27 08:07:28,797 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Generate Form Fills
+2025-05-27 08:07:28,925 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Generate Website Activity
+2025-05-27 08:07:28,968 - INFO - data_generation - ⏩ Skipping website_activity_2025-05-26.json, already generated
+2025-05-27 08:07:28,975 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Generate Website Activity
+2025-05-27 08:07:38,587 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Validate Website Activity
+2025-05-27 08:07:38,688 - INFO - data_validation - ⏩ Already validated: website_activity_2025-05-26.json
+2025-05-27 08:07:38,694 - INFO - utils - task_metrics
+2025-05-27 08:07:38,723 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Validate Website Activity
+2025-05-27 08:07:39,619 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Validate Contacts
+2025-05-27 08:07:39,906 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Validate Form Fills
+2025-05-27 08:07:39,927 - INFO - data_validation - ⏩ Already validated: contacts_2025-05-26.csv
+2025-05-27 08:07:39,958 - INFO - utils - task_metrics
+2025-05-27 08:07:39,984 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Validate Contacts
+2025-05-27 08:07:40,019 - INFO - data_validation - ⏩ Already validated: form_fills_2025-05-26.parquet
+2025-05-27 08:07:40,047 - INFO - utils - task_metrics
+2025-05-27 08:07:40,084 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Validate Form Fills
+2025-05-27 08:07:56,798 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Upload Quarantined to MinIO
+2025-05-27 08:07:57,427 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Upload Validated to MinIO
+2025-05-27 08:08:10,758 - INFO - upload_to_minio - ℹ️ Bucket 'marketing-bucket' already exists
+2025-05-27 08:08:10,770 - INFO - upload_to_minio - ℹ️ Bucket 'marketing-bucket' already exists
+2025-05-27 08:08:10,824 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Upload Quarantined to MinIO
+2025-05-27 08:08:10,862 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Upload Validated to MinIO
+2025-05-27 08:08:39,900 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Print Metadata Logs
+2025-05-27 08:08:40,030 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Upload valid-data to Snowflake RAW
+2025-05-27 08:08:40,329 - INFO - metadata - 🖨️ Metadata printed for 2025-05-26
+2025-05-27 08:08:40,334 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Print Metadata Logs
+2025-05-27 08:08:41,760 - INFO - snowflake_upload - [⏬] downloaded valid-data/contacts/2025-05-26/contacts_2025-05-26.csv → /tmp/tmp42zxuko2/contacts_2025-05-26.csv
+2025-05-27 08:08:48,351 - INFO - snowflake_upload - [INFO] running: PUT file:///tmp/tmp42zxuko2/contacts_2025-05-26.csv @RAW_CONTACTS_STAGE/2025-05-26/
+2025-05-27 08:08:48,357 - INFO - snowflake_upload - [INFO] running COPY INTO RAW.contacts
+2025-05-27 08:08:49,634 - INFO - snowflake_upload - [✅] loaded contacts for 2025-05-26
+2025-05-27 08:08:50,570 - INFO - snowflake_upload - [⏬] downloaded valid-data/form_fills/2025-05-26/form_fills_2025-05-26.parquet → /tmp/tmpwoty18ko/form_fills_2025-05-26.parquet
+2025-05-27 08:08:51,895 - INFO - snowflake_upload - [INFO] running COPY INTO RAW.form_fills
+2025-05-27 08:08:52,289 - INFO - snowflake_upload - [✅] loaded form_fills for 2025-05-26
+2025-05-27 08:08:53,002 - INFO - snowflake_upload - [⏬] downloaded valid-data/website_activity/2025-05-26/website_activity_2025-05-26.json → /tmp/tmposq4z6vr/website_activity_2025-05-26.json
+2025-05-27 08:08:54,601 - INFO - snowflake_upload - [INFO] running: PUT file:///tmp/tmposq4z6vr/website_activity_2025-05-26.json @RAW_WEBSITE_ACTIVITY_STAGE/2025-05-26/
+2025-05-27 08:08:54,605 - INFO - snowflake_upload - [INFO] running COPY INTO RAW.website_activity
+2025-05-27 08:08:55,282 - INFO - snowflake_upload - [✅] loaded website_activity for 2025-05-26
+2025-05-27 08:08:56,057 - INFO - snowflake_upload - [⏬] downloaded valid-data/campaigns/2025-05-26/campaigns_2025-05-26.json → /tmp/tmpvu40yeum/campaigns_2025-05-26.json
+2025-05-27 08:08:57,381 - INFO - snowflake_upload - [INFO] running: PUT file:///tmp/tmpvu40yeum/campaigns_2025-05-26.json @RAW_CAMPAIGNS_STAGE/2025-05-26/
+2025-05-27 08:08:57,384 - INFO - snowflake_upload - [INFO] running COPY INTO RAW.campaigns
+2025-05-27 08:08:57,824 - INFO - snowflake_upload - [✅] loaded campaigns for 2025-05-26
+2025-05-27 08:08:58,762 - INFO - snowflake_upload - [⏬] downloaded valid-data/forms/2025-05-26/forms_2025-05-26.json → /tmp/tmp5mily9ey/forms_2025-05-26.json
+2025-05-27 08:09:00,847 - INFO - snowflake_upload - [INFO] running: PUT file:///tmp/tmp5mily9ey/forms_2025-05-26.json @RAW_FORMS_STAGE/2025-05-26/
+2025-05-27 08:09:00,852 - INFO - snowflake_upload - [INFO] running COPY INTO RAW.forms
+2025-05-27 08:09:01,467 - INFO - snowflake_upload - [✅] loaded forms for 2025-05-26
+2025-05-27 08:09:02,307 - INFO - snowflake_upload - [⏬] downloaded valid-data/pages/2025-05-26/pages_2025-05-26.json → /tmp/tmp0ggedd0c/pages_2025-05-26.json
+2025-05-27 08:09:03,753 - INFO - snowflake_upload - [INFO] running: PUT file:///tmp/tmp0ggedd0c/pages_2025-05-26.json @RAW_PAGES_STAGE/2025-05-26/
+2025-05-27 08:09:03,759 - INFO - snowflake_upload - [INFO] running COPY INTO RAW.pages
+2025-05-27 08:09:04,227 - INFO - snowflake_upload - [✅] loaded pages for 2025-05-26
+2025-05-27 08:09:04,500 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Upload valid-data to Snowflake RAW
+2025-05-27 08:09:20,754 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Run staging models
+2025-05-27 08:09:20,760 - INFO - utils - Running dbt command: cd /opt/dbt/marketing_pipeline && dbt run --models staging --vars '{"batch_date": "2025-05-26"}'
+2025-05-27 08:09:38,876 - INFO - utils - [0m08:09:38  Running with dbt=1.9.4
+2025-05-27 08:09:47,108 - INFO - utils - [0m08:09:47  Registered adapter: snowflake=1.9.4
+2025-05-27 08:09:48,341 - INFO - utils - [0m08:09:48  Unable to do partial parsing because config vars, config profile, or config target have changed
+2025-05-27 08:10:17,897 - INFO - utils - [0m08:10:17  Found 12 models, 79 data tests, 6 sources, 479 macros
+2025-05-27 08:10:17,908 - INFO - utils - [0m08:10:17
+2025-05-27 08:10:17,912 - INFO - utils - [0m08:10:17  Concurrency: 4 threads (target='dev')
+2025-05-27 08:10:17,916 - INFO - utils - [0m08:10:17
+2025-05-27 08:10:28,666 - INFO - utils - [0m08:10:28  1 of 6 START sql incremental model STG.stg_campaigns ........................... [RUN]
+2025-05-27 08:10:28,674 - INFO - utils - [0m08:10:28  2 of 6 START sql incremental model STG.stg_contacts ............................ [RUN]
+2025-05-27 08:10:28,685 - INFO - utils - [0m08:10:28  3 of 6 START sql incremental model STG.stg_form_fills .......................... [RUN]
+2025-05-27 08:10:28,690 - INFO - utils - [0m08:10:28  4 of 6 START sql incremental model STG.stg_forms ............................... [RUN]
+2025-05-27 08:10:39,461 - INFO - utils - [0m08:10:39  1 of 6 OK created sql incremental model STG.stg_campaigns ...................... [[32mSUCCESS 3[0m in 10.76s]
+2025-05-27 08:10:39,488 - INFO - utils - [0m08:10:39  4 of 6 OK created sql incremental model STG.stg_forms .......................... [[32mSUCCESS 4[0m in 10.77s]
+2025-05-27 08:10:39,563 - INFO - utils - [0m08:10:39  5 of 6 START sql incremental model STG.stg_pages ............................... [RUN]
+2025-05-27 08:10:39,758 - INFO - utils - [0m08:10:39  6 of 6 START sql incremental model STG.stg_website_activity .................... [RUN]
+2025-05-27 08:10:40,066 - INFO - utils - [0m08:10:40  2 of 6 OK created sql incremental model STG.stg_contacts ....................... [[32mSUCCESS 1000[0m in 11.37s]
+2025-05-27 08:10:40,206 - INFO - utils - [0m08:10:40  3 of 6 OK created sql incremental model STG.stg_form_fills ..................... [[32mSUCCESS 1000[0m in 11.50s]
+2025-05-27 08:10:42,532 - INFO - utils - [0m08:10:42  5 of 6 OK created sql incremental model STG.stg_pages .......................... [[32mSUCCESS 4[0m in 2.80s]
+2025-05-27 08:10:42,955 - INFO - utils - [0m08:10:42  6 of 6 OK created sql incremental model STG.stg_website_activity ............... [[32mSUCCESS 1000[0m in 3.06s]
+2025-05-27 08:10:43,909 - INFO - utils - [0m08:10:43
+2025-05-27 08:10:43,921 - INFO - utils - [0m08:10:43  Finished running 6 incremental models in 0 hours 0 minutes and 25.99 seconds (25.99s).
+2025-05-27 08:10:44,427 - INFO - utils - [0m08:10:44
+2025-05-27 08:10:44,432 - INFO - utils - [0m08:10:44  [32mCompleted successfully[0m
+2025-05-27 08:10:44,440 - INFO - utils - [0m08:10:44
+2025-05-27 08:10:44,446 - INFO - utils - [0m08:10:44  Done. PASS=6 WARN=0 ERROR=0 SKIP=0 TOTAL=6
+2025-05-27 08:10:46,918 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Run staging models
+2025-05-27 08:10:55,900 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Run mart models
+2025-05-27 08:10:55,904 - INFO - utils - Running dbt command: cd /opt/dbt/marketing_pipeline && dbt run --models marts --vars '{"batch_date": "2025-05-26"}'
+2025-05-27 08:11:06,288 - INFO - utils - [0m08:11:06  Running with dbt=1.9.4
+2025-05-27 08:11:45,014 - INFO - utils - [0m08:11:45  Registered adapter: snowflake=1.9.4
+2025-05-27 08:11:51,302 - INFO - utils - [0m08:11:51  Found 12 models, 79 data tests, 6 sources, 479 macros
+2025-05-27 08:11:51,335 - INFO - utils - [0m08:11:51
+2025-05-27 08:11:51,366 - INFO - utils - [0m08:11:51  Concurrency: 4 threads (target='dev')
+2025-05-27 08:11:51,398 - INFO - utils - [0m08:11:51
+2025-05-27 08:11:55,061 - INFO - utils - [0m08:11:55  1 of 6 START sql incremental model MART.mart_campaigns ......................... [RUN]
+2025-05-27 08:11:55,070 - INFO - utils - [0m08:11:55  3 of 6 START sql incremental model MART.mart_form_fills ........................ [RUN]
+2025-05-27 08:11:55,077 - INFO - utils - [0m08:11:55  4 of 6 START sql incremental model MART.mart_forms ............................. [RUN]
+2025-05-27 08:11:55,096 - INFO - utils - [0m08:11:55  2 of 6 START sql incremental model MART.mart_contacts .......................... [RUN]
+2025-05-27 08:11:59,892 - INFO - utils - [0m08:11:59  1 of 6 OK created sql incremental model MART.mart_campaigns .................... [[32mSUCCESS 3[0m in 4.77s]
+2025-05-27 08:11:59,943 - INFO - utils - [0m08:11:59  4 of 6 OK created sql incremental model MART.mart_forms ........................ [[32mSUCCESS 4[0m in 4.82s]
+2025-05-27 08:11:59,990 - INFO - utils - [0m08:11:59  5 of 6 START sql incremental model MART.mart_pages ............................. [RUN]
+2025-05-27 08:12:00,012 - INFO - utils - [0m08:12:00  6 of 6 START sql incremental model MART.mart_website_activity .................. [RUN]
+2025-05-27 08:12:00,146 - INFO - utils - [0m08:12:00  2 of 6 OK created sql incremental model MART.mart_contacts ..................... [[32mSUCCESS 3000[0m in 5.03s]
+2025-05-27 08:12:00,409 - INFO - utils - [0m08:12:00  3 of 6 OK created sql incremental model MART.mart_form_fills ................... [[32mSUCCESS 3000[0m in 5.30s]
+2025-05-27 08:12:02,981 - INFO - utils - [0m08:12:02  5 of 6 OK created sql incremental model MART.mart_pages ........................ [[32mSUCCESS 4[0m in 2.96s]
+2025-05-27 08:12:03,100 - INFO - utils - [0m08:12:03  6 of 6 OK created sql incremental model MART.mart_website_activity ............. [[32mSUCCESS 3000[0m in 3.07s]
+2025-05-27 08:12:04,175 - INFO - utils - [0m08:12:04
+2025-05-27 08:12:04,182 - INFO - utils - [0m08:12:04  Finished running 6 incremental models in 0 hours 0 minutes and 12.76 seconds (12.76s).
+2025-05-27 08:12:04,564 - INFO - utils - [0m08:12:04
+2025-05-27 08:12:04,574 - INFO - utils - [0m08:12:04  [32mCompleted successfully[0m
+2025-05-27 08:12:04,580 - INFO - utils - [0m08:12:04
+2025-05-27 08:12:04,602 - INFO - utils - [0m08:12:04  Done. PASS=6 WARN=0 ERROR=0 SKIP=0 TOTAL=6
+2025-05-27 08:12:05,597 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Run mart models
+2025-05-27 08:12:16,740 - INFO - Marketing_Data_Pipeline - ▶️ Starting task: Run all dbt tests
+2025-05-27 08:12:16,775 - INFO - utils - Running dbt tests: cd /opt/dbt/marketing_pipeline && dbt test 
+2025-05-27 08:12:16,836 - INFO - utils - Running dbt command: cd /opt/dbt/marketing_pipeline && dbt test 
+2025-05-27 08:12:23,156 - INFO - utils - [0m08:12:23  Running with dbt=1.9.4
+2025-05-27 08:12:25,094 - INFO - utils - [0m08:12:25  Registered adapter: snowflake=1.9.4
+2025-05-27 08:12:26,065 - INFO - utils - [0m08:12:26  Unable to do partial parsing because config vars, config profile, or config target have changed
+2025-05-27 08:12:34,275 - INFO - utils - [0m08:12:34  Found 12 models, 79 data tests, 6 sources, 479 macros
+2025-05-27 08:12:34,323 - INFO - utils - [0m08:12:34
+2025-05-27 08:12:34,327 - INFO - utils - [0m08:12:34  Concurrency: 4 threads (target='dev')
+2025-05-27 08:12:34,333 - INFO - utils - [0m08:12:34
+2025-05-27 08:12:36,097 - INFO - utils - [0m08:12:36  1 of 79 START test accepted_values_stg_contacts_email___ ....................... [RUN]
+2025-05-27 08:12:36,103 - INFO - utils - [0m08:12:36  2 of 79 START test expression_is_true_stg_form_fills_fill_date__fill_date_current_timestamp_  [RUN]
+2025-05-27 08:12:36,115 - INFO - utils - [0m08:12:36  3 of 79 START test expression_is_true_stg_pages_page_url__page_url_LIKE_http_ .. [RUN]
+2025-05-27 08:12:36,122 - INFO - utils - [0m08:12:36  4 of 79 START test expression_is_true_stg_website_activity_pages_viewed__pages_viewed_0  [RUN]
+2025-05-27 08:12:36,313 - INFO - utils - [0m08:12:36  4 of 79 ERROR expression_is_true_stg_website_activity_pages_viewed__pages_viewed_0  [[31mERROR[0m in 0.15s]
+2025-05-27 08:12:36,318 - INFO - utils - [0m08:12:36  3 of 79 ERROR expression_is_true_stg_pages_page_url__page_url_LIKE_http_ ....... [[31mERROR[0m in 0.17s]
+2025-05-27 08:12:36,326 - INFO - utils - [0m08:12:36  2 of 79 ERROR expression_is_true_stg_form_fills_fill_date__fill_date_current_timestamp_  [[31mERROR[0m in 0.19s]
+2025-05-27 08:12:36,373 - INFO - utils - [0m08:12:36  5 of 79 START test mart_no_orphan_form_fills ................................... [RUN]
+2025-05-27 08:12:36,387 - INFO - utils - [0m08:12:36  6 of 79 START test mart_pages_url_format ....................................... [RUN]
+2025-05-27 08:12:36,404 - INFO - utils - [0m08:12:36  7 of 79 START test no_duplicate_form_fills_per_contact ......................... [RUN]
+2025-05-27 08:12:37,204 - INFO - utils - [0m08:12:37  1 of 79 FAIL 2978 accepted_values_stg_contacts_email___ ........................ [[31mFAIL 2978[0m in 1.08s]
+2025-05-27 08:12:37,265 - INFO - utils - [0m08:12:37  7 of 79 FAIL 804 no_duplicate_form_fills_per_contact ........................... [[31mFAIL 804[0m in 0.82s]
+2025-05-27 08:12:37,331 - INFO - utils - [0m08:12:37  8 of 79 START test not_null_mart_campaigns_campaign_id ......................... [RUN]
+2025-05-27 08:12:37,347 - INFO - utils - [0m08:12:37  9 of 79 START test not_null_mart_campaigns_campaign_name ....................... [RUN]
+2025-05-27 08:12:38,168 - INFO - utils - [0m08:12:38  6 of 79 FAIL 4 mart_pages_url_format ........................................... [[31mFAIL 4[0m in 1.73s]
+2025-05-27 08:12:38,181 - INFO - utils - [0m08:12:38  10 of 79 START test not_null_mart_campaigns_end_date ........................... [RUN]
+2025-05-27 08:12:38,204 - INFO - utils - [0m08:12:38  8 of 79 PASS not_null_mart_campaigns_campaign_id ............................... [[32mPASS[0m in 0.86s]
+2025-05-27 08:12:38,244 - INFO - utils - [0m08:12:38  11 of 79 START test not_null_mart_campaigns_start_date ......................... [RUN]
+2025-05-27 08:12:38,273 - INFO - utils - [0m08:12:38  9 of 79 PASS not_null_mart_campaigns_campaign_name ............................. [[32mPASS[0m in 0.91s]
+2025-05-27 08:12:38,336 - INFO - utils - [0m08:12:38  5 of 79 PASS mart_no_orphan_form_fills ......................................... [[32mPASS[0m in 1.91s]
+2025-05-27 08:12:38,361 - INFO - utils - [0m08:12:38  12 of 79 START test not_null_mart_contacts_contact_id .......................... [RUN]
+2025-05-27 08:12:38,408 - INFO - utils - [0m08:12:38  13 of 79 START test not_null_mart_contacts_email ............................... [RUN]
+2025-05-27 08:12:38,714 - INFO - utils - [0m08:12:38  10 of 79 ERROR not_null_mart_campaigns_end_date ................................ [[31mERROR[0m in 0.52s]
+2025-05-27 08:12:38,720 - INFO - utils - [0m08:12:38  11 of 79 ERROR not_null_mart_campaigns_start_date .............................. [[31mERROR[0m in 0.47s]
+2025-05-27 08:12:38,754 - INFO - utils - [0m08:12:38  14 of 79 START test not_null_mart_contacts_signup_date ......................... [RUN]
+2025-05-27 08:12:38,768 - INFO - utils - [0m08:12:38  15 of 79 START test not_null_mart_form_fills_contact_id ........................ [RUN]
+2025-05-27 08:12:38,800 - INFO - utils - [0m08:12:38  12 of 79 PASS not_null_mart_contacts_contact_id ................................ [[32mPASS[0m in 0.41s]
+2025-05-27 08:12:38,976 - INFO - utils - [0m08:12:38  13 of 79 PASS not_null_mart_contacts_email ..................................... [[32mPASS[0m in 0.52s]
+2025-05-27 08:12:39,000 - INFO - utils - [0m08:12:38  16 of 79 START test not_null_mart_form_fills_estimated_value ................... [RUN]
+2025-05-27 08:12:39,028 - INFO - utils - [0m08:12:39  17 of 79 START test not_null_mart_form_fills_fill_date ......................... [RUN]
+2025-05-27 08:12:39,730 - INFO - utils - [0m08:12:39  15 of 79 PASS not_null_mart_form_fills_contact_id .............................. [[32mPASS[0m in 0.95s]
+2025-05-27 08:12:39,758 - INFO - utils - [0m08:12:39  18 of 79 START test not_null_mart_form_fills_fill_id ........................... [RUN]
+2025-05-27 08:12:39,795 - INFO - utils - [0m08:12:39  16 of 79 PASS not_null_mart_form_fills_estimated_value ......................... [[32mPASS[0m in 0.78s]
+2025-05-27 08:12:39,832 - INFO - utils - [0m08:12:39  14 of 79 PASS not_null_mart_contacts_signup_date ............................... [[32mPASS[0m in 1.05s]
+2025-05-27 08:12:39,968 - INFO - utils - [0m08:12:39  17 of 79 PASS not_null_mart_form_fills_fill_date ............................... [[32mPASS[0m in 0.90s]
+2025-05-27 08:12:39,982 - INFO - utils - [0m08:12:39  19 of 79 START test not_null_mart_form_fills_form_id ........................... [RUN]
+2025-05-27 08:12:40,021 - INFO - utils - [0m08:12:40  20 of 79 START test not_null_mart_form_fills_upload_date ....................... [RUN]
+2025-05-27 08:12:40,046 - INFO - utils - [0m08:12:40  21 of 79 START test not_null_mart_forms_form_id ................................ [RUN]
+2025-05-27 08:12:40,862 - INFO - utils - [0m08:12:40  18 of 79 PASS not_null_mart_form_fills_fill_id ................................. [[32mPASS[0m in 1.05s]
+2025-05-27 08:12:40,878 - INFO - utils - [0m08:12:40  22 of 79 START test not_null_mart_forms_form_type .............................. [RUN]
+2025-05-27 08:12:41,001 - INFO - utils - [0m08:12:41  19 of 79 PASS not_null_mart_form_fills_form_id ................................. [[32mPASS[0m in 0.97s]
+2025-05-27 08:12:41,014 - INFO - utils - [0m08:12:41  20 of 79 PASS not_null_mart_form_fills_upload_date ............................. [[32mPASS[0m in 0.98s]
+2025-05-27 08:12:41,062 - INFO - utils - [0m08:12:41  23 of 79 START test not_null_mart_forms_upload_date ............................ [RUN]
+2025-05-27 08:12:41,090 - INFO - utils - [0m08:12:41  21 of 79 PASS not_null_mart_forms_form_id ...................................... [[32mPASS[0m in 0.98s]
+2025-05-27 08:12:41,097 - INFO - utils - [0m08:12:41  24 of 79 START test not_null_mart_pages_page_id ................................ [RUN]
+2025-05-27 08:12:41,237 - INFO - utils - [0m08:12:41  25 of 79 START test not_null_mart_pages_page_title ............................. [RUN]
+2025-05-27 08:12:41,376 - INFO - utils - [0m08:12:41  22 of 79 PASS not_null_mart_forms_form_type .................................... [[32mPASS[0m in 0.49s]
+2025-05-27 08:12:41,443 - INFO - utils - [0m08:12:41  26 of 79 START test not_null_mart_pages_page_url ............................... [RUN]
+2025-05-27 08:12:41,693 - INFO - utils - [0m08:12:41  23 of 79 PASS not_null_mart_forms_upload_date .................................. [[32mPASS[0m in 0.59s]
+2025-05-27 08:12:41,718 - INFO - utils - [0m08:12:41  25 of 79 PASS not_null_mart_pages_page_title ................................... [[32mPASS[0m in 0.43s]
+2025-05-27 08:12:41,733 - INFO - utils - [0m08:12:41  24 of 79 PASS not_null_mart_pages_page_id ...................................... [[32mPASS[0m in 0.61s]
+2025-05-27 08:12:41,786 - INFO - utils - [0m08:12:41  27 of 79 START test not_null_mart_pages_upload_date ............................ [RUN]
+2025-05-27 08:12:41,794 - INFO - utils - [0m08:12:41  28 of 79 START test not_null_mart_website_activity_bounce ...................... [RUN]
+2025-05-27 08:12:41,821 - INFO - utils - [0m08:12:41  29 of 79 START test not_null_mart_website_activity_contact_id .................. [RUN]
+2025-05-27 08:12:41,898 - INFO - utils - [0m08:12:41  26 of 79 PASS not_null_mart_pages_page_url ..................................... [[32mPASS[0m in 0.44s]
+2025-05-27 08:12:41,987 - INFO - utils - [0m08:12:41  30 of 79 START test not_null_mart_website_activity_event_date .................. [RUN]
+2025-05-27 08:12:42,298 - INFO - utils - [0m08:12:42  27 of 79 PASS not_null_mart_pages_upload_date .................................. [[32mPASS[0m in 0.41s]
+2025-05-27 08:12:42,315 - INFO - utils - [0m08:12:42  31 of 79 START test not_null_mart_website_activity_pages_viewed ................ [RUN]
+2025-05-27 08:12:42,382 - INFO - utils - [0m08:12:42  28 of 79 PASS not_null_mart_website_activity_bounce ............................ [[32mPASS[0m in 0.57s]
+2025-05-27 08:12:42,401 - INFO - utils - [0m08:12:42  30 of 79 PASS not_null_mart_website_activity_event_date ........................ [[32mPASS[0m in 0.38s]
+2025-05-27 08:12:42,435 - INFO - utils - [0m08:12:42  29 of 79 PASS not_null_mart_website_activity_contact_id ........................ [[32mPASS[0m in 0.56s]
+2025-05-27 08:12:42,452 - INFO - utils - [0m08:12:42  32 of 79 START test not_null_mart_website_activity_session_duration ............ [RUN]
+2025-05-27 08:12:42,465 - INFO - utils - [0m08:12:42  33 of 79 START test not_null_mart_website_activity_session_id .................. [RUN]
+2025-05-27 08:12:42,501 - INFO - utils - [0m08:12:42  34 of 79 START test not_null_mart_website_activity_upload_date ................. [RUN]
+2025-05-27 08:12:42,756 - INFO - utils - [0m08:12:42  31 of 79 PASS not_null_mart_website_activity_pages_viewed ...................... [[32mPASS[0m in 0.43s]
+2025-05-27 08:12:42,768 - INFO - utils - [0m08:12:42  35 of 79 START test not_null_stg_campaigns_campaign_id ......................... [RUN]
+2025-05-27 08:12:42,885 - INFO - utils - [0m08:12:42  33 of 79 PASS not_null_mart_website_activity_session_id ........................ [[32mPASS[0m in 0.39s]
+2025-05-27 08:12:42,896 - INFO - utils - [0m08:12:42  32 of 79 PASS not_null_mart_website_activity_session_duration .................. [[32mPASS[0m in 0.42s]
+2025-05-27 08:12:42,936 - INFO - utils - [0m08:12:42  34 of 79 PASS not_null_mart_website_activity_upload_date ....................... [[32mPASS[0m in 0.39s]
+2025-05-27 08:12:42,971 - INFO - utils - [0m08:12:42  36 of 79 START test not_null_stg_campaigns_campaign_name ....................... [RUN]
+2025-05-27 08:12:42,982 - INFO - utils - [0m08:12:42  37 of 79 START test not_null_stg_campaigns_upload_date ......................... [RUN]
+2025-05-27 08:12:43,007 - INFO - utils - [0m08:12:43  38 of 79 START test not_null_stg_contacts_contact_id ........................... [RUN]
+2025-05-27 08:12:43,175 - INFO - utils - [0m08:12:43  35 of 79 PASS not_null_stg_campaigns_campaign_id ............................... [[32mPASS[0m in 0.40s]
+2025-05-27 08:12:43,199 - INFO - utils - [0m08:12:43  39 of 79 START test not_null_stg_contacts_email ................................ [RUN]
+2025-05-27 08:12:43,417 - INFO - utils - [0m08:12:43  36 of 79 PASS not_null_stg_campaigns_campaign_name ............................. [[32mPASS[0m in 0.42s]
+2025-05-27 08:12:43,451 - INFO - utils - [0m08:12:43  40 of 79 START test not_null_stg_contacts_signup_date .......................... [RUN]
+2025-05-27 08:12:43,523 - INFO - utils - [0m08:12:43  38 of 79 PASS not_null_stg_contacts_contact_id ................................. [[32mPASS[0m in 0.49s]
+2025-05-27 08:12:43,555 - INFO - utils - [0m08:12:43  37 of 79 PASS not_null_stg_campaigns_upload_date ............................... [[32mPASS[0m in 0.55s]
+2025-05-27 08:12:43,582 - INFO - utils - [0m08:12:43  41 of 79 START test not_null_stg_contacts_upload_date .......................... [RUN]
+2025-05-27 08:12:43,599 - INFO - utils - [0m08:12:43  42 of 79 START test not_null_stg_form_fills_contact_id ......................... [RUN]
+2025-05-27 08:12:43,733 - INFO - utils - [0m08:12:43  39 of 79 PASS not_null_stg_contacts_email ...................................... [[32mPASS[0m in 0.52s]
+2025-05-27 08:12:43,791 - INFO - utils - [0m08:12:43  43 of 79 START test not_null_stg_form_fills_fill_date .......................... [RUN]
+2025-05-27 08:12:43,926 - INFO - utils - [0m08:12:43  40 of 79 PASS not_null_stg_contacts_signup_date ................................ [[32mPASS[0m in 0.47s]
+2025-05-27 08:12:43,953 - INFO - utils - [0m08:12:43  44 of 79 START test not_null_stg_form_fills_fill_id ............................ [RUN]
+2025-05-27 08:12:44,005 - INFO - utils - [0m08:12:44  41 of 79 PASS not_null_stg_contacts_upload_date ................................ [[32mPASS[0m in 0.39s]
+2025-05-27 08:12:44,039 - INFO - utils - [0m08:12:44  45 of 79 START test not_null_stg_form_fills_form_id ............................ [RUN]
+2025-05-27 08:12:44,108 - INFO - utils - [0m08:12:44  42 of 79 PASS not_null_stg_form_fills_contact_id ............................... [[32mPASS[0m in 0.48s]
+2025-05-27 08:12:44,210 - INFO - utils - [0m08:12:44  46 of 79 START test not_null_stg_form_fills_upload_date ........................ [RUN]
+2025-05-27 08:12:44,305 - INFO - utils - [0m08:12:44  43 of 79 PASS not_null_stg_form_fills_fill_date ................................ [[32mPASS[0m in 0.50s]
+2025-05-27 08:12:44,320 - INFO - utils - [0m08:12:44  47 of 79 START test not_null_stg_forms_form_id ................................. [RUN]
+2025-05-27 08:12:44,524 - INFO - utils - [0m08:12:44  44 of 79 PASS not_null_stg_form_fills_fill_id .................................. [[32mPASS[0m in 0.57s]
+2025-05-27 08:12:44,540 - INFO - utils - [0m08:12:44  48 of 79 START test not_null_stg_forms_form_type ............................... [RUN]
+2025-05-27 08:12:44,557 - INFO - utils - [0m08:12:44  45 of 79 PASS not_null_stg_form_fills_form_id .................................. [[32mPASS[0m in 0.51s]
+2025-05-27 08:12:44,607 - INFO - utils - [0m08:12:44  49 of 79 START test not_null_stg_forms_upload_date ............................. [RUN]
+2025-05-27 08:12:44,672 - INFO - utils - [0m08:12:44  46 of 79 PASS not_null_stg_form_fills_upload_date .............................. [[32mPASS[0m in 0.45s]
+2025-05-27 08:12:44,688 - INFO - utils - [0m08:12:44  50 of 79 START test not_null_stg_pages_page_id ................................. [RUN]
+2025-05-27 08:12:44,851 - INFO - utils - [0m08:12:44  47 of 79 PASS not_null_stg_forms_form_id ....................................... [[32mPASS[0m in 0.53s]
+2025-05-27 08:12:44,880 - INFO - utils - [0m08:12:44  51 of 79 START test not_null_stg_pages_page_title .............................. [RUN]
+2025-05-27 08:12:45,002 - INFO - utils - [0m08:12:45  50 of 79 PASS not_null_stg_pages_page_id ....................................... [[32mPASS[0m in 0.31s]
+2025-05-27 08:12:45,030 - INFO - utils - [0m08:12:45  48 of 79 PASS not_null_stg_forms_form_type ..................................... [[32mPASS[0m in 0.45s]
+2025-05-27 08:12:45,081 - INFO - utils - [0m08:12:45  52 of 79 START test not_null_stg_pages_page_url ................................ [RUN]
+2025-05-27 08:12:45,103 - INFO - utils - [0m08:12:45  53 of 79 START test not_null_stg_pages_upload_date ............................. [RUN]
+2025-05-27 08:12:45,124 - INFO - utils - [0m08:12:45  49 of 79 PASS not_null_stg_forms_upload_date ................................... [[32mPASS[0m in 0.51s]
+2025-05-27 08:12:45,194 - INFO - utils - [0m08:12:45  54 of 79 START test not_null_stg_website_activity_contact_id ................... [RUN]
+2025-05-27 08:12:45,351 - INFO - utils - [0m08:12:45  51 of 79 PASS not_null_stg_pages_page_title .................................... [[32mPASS[0m in 0.47s]
+2025-05-27 08:12:45,387 - INFO - utils - [0m08:12:45  55 of 79 START test not_null_stg_website_activity_event_date ................... [RUN]
+2025-05-27 08:12:45,591 - INFO - utils - [0m08:12:45  53 of 79 PASS not_null_stg_pages_upload_date ................................... [[32mPASS[0m in 0.46s]
+2025-05-27 08:12:45,613 - INFO - utils - [0m08:12:45  52 of 79 PASS not_null_stg_pages_page_url ...................................... [[32mPASS[0m in 0.48s]
+2025-05-27 08:12:45,655 - INFO - utils - [0m08:12:45  54 of 79 PASS not_null_stg_website_activity_contact_id ......................... [[32mPASS[0m in 0.45s]
+2025-05-27 08:12:45,685 - INFO - utils - [0m08:12:45  56 of 79 START test not_null_stg_website_activity_pages_viewed ................. [RUN]
+2025-05-27 08:12:45,693 - INFO - utils - [0m08:12:45  57 of 79 START test not_null_stg_website_activity_session_duration ............. [RUN]
+2025-05-27 08:12:45,728 - INFO - utils - [0m08:12:45  58 of 79 START test not_null_stg_website_activity_session_id ................... [RUN]
+2025-05-27 08:12:45,923 - INFO - utils - [0m08:12:45  55 of 79 PASS not_null_stg_website_activity_event_date ......................... [[32mPASS[0m in 0.51s]
+2025-05-27 08:12:45,946 - INFO - utils - [0m08:12:45  59 of 79 START test not_null_stg_website_activity_upload_date .................. [RUN]
+2025-05-27 08:12:46,277 - INFO - utils - [0m08:12:46  58 of 79 PASS not_null_stg_website_activity_session_id ......................... [[32mPASS[0m in 0.53s]
+2025-05-27 08:12:46,318 - INFO - utils - [0m08:12:46  57 of 79 PASS not_null_stg_website_activity_session_duration ................... [[32mPASS[0m in 0.60s]
+2025-05-27 08:12:46,339 - INFO - utils - [0m08:12:46  56 of 79 PASS not_null_stg_website_activity_pages_viewed ....................... [[32mPASS[0m in 0.62s]
+2025-05-27 08:12:46,417 - INFO - utils - [0m08:12:46  60 of 79 START test relationships_mart_form_fills_contact_id__contact_id__ref_mart_contacts_  [RUN]
+2025-05-27 08:12:46,430 - INFO - utils - [0m08:12:46  61 of 79 START test relationships_mart_website_activity_contact_id__contact_id__ref_mart_contacts_  [RUN]
+2025-05-27 08:12:46,441 - INFO - utils - [0m08:12:46  62 of 79 START test relationships_stg_campaigns_campaign_name__campaign_id__ref_stg_campaigns_  [RUN]
+2025-05-27 08:12:46,727 - INFO - utils - [0m08:12:46  59 of 79 PASS not_null_stg_website_activity_upload_date ........................ [[32mPASS[0m in 0.77s]
+2025-05-27 08:12:46,821 - INFO - utils - [0m08:12:46  63 of 79 START test relationships_stg_form_fills_contact_id__contact_id__ref_stg_contacts_  [RUN]
+2025-05-27 08:12:47,135 - INFO - utils - [0m08:12:47  62 of 79 FAIL 3 relationships_stg_campaigns_campaign_name__campaign_id__ref_stg_campaigns_  [[31mFAIL 3[0m in 0.66s]
+2025-05-27 08:12:47,182 - INFO - utils - [0m08:12:47  64 of 79 START test relationships_stg_website_activity_contact_id__contact_id__ref_stg_contacts_  [RUN]
+2025-05-27 08:12:47,208 - INFO - utils - [0m08:12:47  61 of 79 PASS relationships_mart_website_activity_contact_id__contact_id__ref_mart_contacts_  [[32mPASS[0m in 0.76s]
+2025-05-27 08:12:47,290 - INFO - utils - [0m08:12:47  65 of 79 START test unique_mart_campaigns_campaign_id .......................... [RUN]
+2025-05-27 08:12:47,337 - INFO - utils - [0m08:12:47  60 of 79 PASS relationships_mart_form_fills_contact_id__contact_id__ref_mart_contacts_  [[32mPASS[0m in 0.89s]
+2025-05-27 08:12:47,482 - INFO - utils - [0m08:12:47  66 of 79 START test unique_mart_contacts_contact_id ............................ [RUN]
+2025-05-27 08:12:47,594 - INFO - utils - [0m08:12:47  63 of 79 PASS relationships_stg_form_fills_contact_id__contact_id__ref_stg_contacts_  [[32mPASS[0m in 0.72s]
+2025-05-27 08:12:47,682 - INFO - utils - [0m08:12:47  67 of 79 START test unique_mart_contacts_email ................................. [RUN]
+2025-05-27 08:12:48,282 - INFO - utils - [0m08:12:48  65 of 79 PASS unique_mart_campaigns_campaign_id ................................ [[32mPASS[0m in 0.91s]
+2025-05-27 08:12:48,315 - INFO - utils - [0m08:12:48  68 of 79 START test unique_mart_form_fills_fill_id ............................. [RUN]
+2025-05-27 08:12:48,327 - INFO - utils - [0m08:12:48  66 of 79 PASS unique_mart_contacts_contact_id .................................. [[32mPASS[0m in 0.78s]
+2025-05-27 08:12:48,382 - INFO - utils - [0m08:12:48  64 of 79 PASS relationships_stg_website_activity_contact_id__contact_id__ref_stg_contacts_  [[32mPASS[0m in 1.17s]
+2025-05-27 08:12:48,404 - INFO - utils - [0m08:12:48  67 of 79 FAIL 19 unique_mart_contacts_email .................................... [[31mFAIL 19[0m in 0.66s]
+2025-05-27 08:12:48,480 - INFO - utils - [0m08:12:48  69 of 79 START test unique_mart_forms_form_id .................................. [RUN]
+2025-05-27 08:12:48,510 - INFO - utils - [0m08:12:48  70 of 79 START test unique_mart_pages_page_id .................................. [RUN]
+2025-05-27 08:12:48,519 - INFO - utils - [0m08:12:48  71 of 79 START test unique_mart_website_activity_session_id .................... [RUN]
+2025-05-27 08:12:49,028 - INFO - utils - [0m08:12:49  70 of 79 PASS unique_mart_pages_page_id ........................................ [[32mPASS[0m in 0.49s]
+2025-05-27 08:12:49,054 - INFO - utils - [0m08:12:49  69 of 79 PASS unique_mart_forms_form_id ........................................ [[32mPASS[0m in 0.55s]
+2025-05-27 08:12:49,127 - INFO - utils - [0m08:12:49  72 of 79 START test unique_stg_campaigns_campaign_id ........................... [RUN]
+2025-05-27 08:12:49,172 - INFO - utils - [0m08:12:49  68 of 79 PASS unique_mart_form_fills_fill_id ................................... [[32mPASS[0m in 0.83s]
+2025-05-27 08:12:49,199 - INFO - utils - [0m08:12:49  71 of 79 PASS unique_mart_website_activity_session_id .......................... [[32mPASS[0m in 0.64s]
+2025-05-27 08:12:49,258 - INFO - utils - [0m08:12:49  73 of 79 START test unique_stg_contacts_contact_id ............................. [RUN]
+2025-05-27 08:12:49,362 - INFO - utils - [0m08:12:49  74 of 79 START test unique_stg_contacts_email .................................. [RUN]
+2025-05-27 08:12:49,373 - INFO - utils - [0m08:12:49  75 of 79 START test unique_stg_form_fills_fill_id .............................. [RUN]
+2025-05-27 08:12:50,611 - INFO - utils - [0m08:12:50  75 of 79 PASS unique_stg_form_fills_fill_id .................................... [[32mPASS[0m in 1.21s]
+2025-05-27 08:12:50,712 - INFO - utils - [0m08:12:50  72 of 79 PASS unique_stg_campaigns_campaign_id ................................. [[32mPASS[0m in 1.48s]
+2025-05-27 08:12:50,754 - INFO - utils - [0m08:12:50  74 of 79 FAIL 19 unique_stg_contacts_email ..................................... [[31mFAIL 19[0m in 1.36s]
+2025-05-27 08:12:50,805 - INFO - utils - [0m08:12:50  73 of 79 PASS unique_stg_contacts_contact_id ................................... [[32mPASS[0m in 1.47s]
+2025-05-27 08:12:51,087 - INFO - utils - [0m08:12:51  76 of 79 START test unique_stg_forms_form_id ................................... [RUN]
+2025-05-27 08:12:51,132 - INFO - utils - [0m08:12:51  77 of 79 START test unique_stg_pages_page_id ................................... [RUN]
+2025-05-27 08:12:51,195 - INFO - utils - [0m08:12:51  78 of 79 START test unique_stg_website_activity_session_id ..................... [RUN]
+2025-05-27 08:12:51,219 - INFO - utils - [0m08:12:51  79 of 79 START test website_activity_outside_business_hours .................... [RUN]
+2025-05-27 08:12:52,138 - INFO - utils - [0m08:12:52  76 of 79 PASS unique_stg_forms_form_id ......................................... [[32mPASS[0m in 0.92s]
+2025-05-27 08:12:52,167 - INFO - utils - [0m08:12:52  79 of 79 FAIL 3000 website_activity_outside_business_hours ..................... [[31mFAIL 3000[0m in 0.82s]
+2025-05-27 08:12:52,219 - INFO - utils - [0m08:12:52  78 of 79 PASS unique_stg_website_activity_session_id ........................... [[32mPASS[0m in 0.91s]
+2025-05-27 08:12:52,267 - INFO - utils - [0m08:12:52  77 of 79 PASS unique_stg_pages_page_id ......................................... [[32mPASS[0m in 1.03s]
+2025-05-27 08:12:53,418 - INFO - utils - [0m08:12:53
+2025-05-27 08:12:53,433 - INFO - utils - [0m08:12:53  Finished running 79 data tests in 0 hours 0 minutes and 19.08 seconds (19.08s).
+2025-05-27 08:12:53,844 - INFO - utils - [0m08:12:53
+2025-05-27 08:12:53,850 - INFO - utils - [0m08:12:53  [31mCompleted with 12 errors, 0 partial successes, and 0 warnings:[0m
+2025-05-27 08:12:53,860 - INFO - utils - [0m08:12:53
+2025-05-27 08:12:53,866 - INFO - utils - [0m08:12:53    Compilation Error in test expression_is_true_stg_website_activity_pages_viewed__pages_viewed_0 (models/staging/schema.yml)
+2025-05-27 08:12:53,870 - INFO - utils - 'test_expression_is_true' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+2025-05-27 08:12:53,877 - INFO - utils - [0m08:12:53
+2025-05-27 08:12:53,911 - INFO - utils - [0m08:12:53    Compilation Error in test expression_is_true_stg_pages_page_url__page_url_LIKE_http_ (models/staging/schema.yml)
+2025-05-27 08:12:53,917 - INFO - utils - 'test_expression_is_true' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+2025-05-27 08:12:53,921 - INFO - utils - [0m08:12:53
+2025-05-27 08:12:53,928 - INFO - utils - [0m08:12:53    Compilation Error in test expression_is_true_stg_form_fills_fill_date__fill_date_current_timestamp_ (models/staging/schema.yml)
+2025-05-27 08:12:53,936 - INFO - utils - 'test_expression_is_true' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+2025-05-27 08:12:53,943 - INFO - utils - [0m08:12:53
+2025-05-27 08:12:53,950 - INFO - utils - [0m08:12:53  [31mFailure in test accepted_values_stg_contacts_email___ (models/staging/schema.yml)[0m
+2025-05-27 08:12:53,961 - INFO - utils - [0m08:12:53    Got 2978 results, configured to fail if != 0
+2025-05-27 08:12:53,979 - INFO - utils - [0m08:12:53
+2025-05-27 08:12:53,989 - INFO - utils - [0m08:12:53    compiled code at target/compiled/marketing_pipeline/models/staging/schema.yml/accepted_values_stg_contacts_email___.sql
+2025-05-27 08:12:53,995 - INFO - utils - [0m08:12:53
+2025-05-27 08:12:54,003 - INFO - utils - [0m08:12:54  [31mFailure in test no_duplicate_form_fills_per_contact (tests/no_duplicate_form_fills_per_contact.sql)[0m
+2025-05-27 08:12:54,014 - INFO - utils - [0m08:12:54    Got 804 results, configured to fail if != 0
+2025-05-27 08:12:54,024 - INFO - utils - [0m08:12:54
+2025-05-27 08:12:54,033 - INFO - utils - [0m08:12:54    compiled code at target/compiled/marketing_pipeline/tests/no_duplicate_form_fills_per_contact.sql
+2025-05-27 08:12:54,040 - INFO - utils - [0m08:12:54
+2025-05-27 08:12:54,051 - INFO - utils - [0m08:12:54  [31mFailure in test mart_pages_url_format (tests/mart_pages_url_format.sql)[0m
+2025-05-27 08:12:54,061 - INFO - utils - [0m08:12:54    Got 4 results, configured to fail if != 0
+2025-05-27 08:12:54,087 - INFO - utils - [0m08:12:54
+2025-05-27 08:12:54,099 - INFO - utils - [0m08:12:54    compiled code at target/compiled/marketing_pipeline/tests/mart_pages_url_format.sql
+2025-05-27 08:12:54,104 - INFO - utils - [0m08:12:54
+2025-05-27 08:12:54,119 - INFO - utils - [0m08:12:54    Database Error in test not_null_mart_campaigns_end_date (models/marts/schema.yml)
+2025-05-27 08:12:54,150 - INFO - utils - 000904 (42000): SQL compilation error: error line 14 at position 7
+2025-05-27 08:12:54,171 - INFO - utils - invalid identifier 'END_DATE'
+2025-05-27 08:12:54,175 - INFO - utils - compiled code at target/run/marketing_pipeline/models/marts/schema.yml/not_null_mart_campaigns_end_date.sql
+2025-05-27 08:12:54,183 - INFO - utils - [0m08:12:54
+2025-05-27 08:12:54,194 - INFO - utils - [0m08:12:54    Database Error in test not_null_mart_campaigns_start_date (models/marts/schema.yml)
+2025-05-27 08:12:54,201 - INFO - utils - 000904 (42000): SQL compilation error: error line 14 at position 7
+2025-05-27 08:12:54,205 - INFO - utils - invalid identifier 'START_DATE'
+2025-05-27 08:12:54,217 - INFO - utils - compiled code at target/run/marketing_pipeline/models/marts/schema.yml/not_null_mart_campaigns_start_date.sql
+2025-05-27 08:12:54,234 - INFO - utils - [0m08:12:54
+2025-05-27 08:12:54,248 - INFO - utils - [0m08:12:54  [31mFailure in test relationships_stg_campaigns_campaign_name__campaign_id__ref_stg_campaigns_ (models/staging/schema.yml)[0m
+2025-05-27 08:12:54,256 - INFO - utils - [0m08:12:54    Got 3 results, configured to fail if != 0
+2025-05-27 08:12:54,270 - INFO - utils - [0m08:12:54
+2025-05-27 08:12:54,286 - INFO - utils - [0m08:12:54    compiled code at target/compiled/marketing_pipeline/models/staging/schema.yml/relationships_stg_campaigns_3a16908a32571b0bb273e549269b9f1a.sql
+2025-05-27 08:12:54,289 - INFO - utils - [0m08:12:54
+2025-05-27 08:12:54,294 - INFO - utils - [0m08:12:54  [31mFailure in test unique_mart_contacts_email (models/marts/schema.yml)[0m
+2025-05-27 08:12:54,306 - INFO - utils - [0m08:12:54    Got 19 results, configured to fail if != 0
+2025-05-27 08:12:54,311 - INFO - utils - [0m08:12:54
+2025-05-27 08:12:54,315 - INFO - utils - [0m08:12:54    compiled code at target/compiled/marketing_pipeline/models/marts/schema.yml/unique_mart_contacts_email.sql
+2025-05-27 08:12:54,328 - INFO - utils - [0m08:12:54
+2025-05-27 08:12:54,335 - INFO - utils - [0m08:12:54  [31mFailure in test unique_stg_contacts_email (models/staging/schema.yml)[0m
+2025-05-27 08:12:54,346 - INFO - utils - [0m08:12:54    Got 19 results, configured to fail if != 0
+2025-05-27 08:12:54,354 - INFO - utils - [0m08:12:54
+2025-05-27 08:12:54,360 - INFO - utils - [0m08:12:54    compiled code at target/compiled/marketing_pipeline/models/staging/schema.yml/unique_stg_contacts_email.sql
+2025-05-27 08:12:54,373 - INFO - utils - [0m08:12:54
+2025-05-27 08:12:54,379 - INFO - utils - [0m08:12:54  [31mFailure in test website_activity_outside_business_hours (tests/website_activity_outside_business_hours.sql)[0m
+2025-05-27 08:12:54,385 - INFO - utils - [0m08:12:54    Got 3000 results, configured to fail if != 0
+2025-05-27 08:12:54,389 - INFO - utils - [0m08:12:54
+2025-05-27 08:12:54,401 - INFO - utils - [0m08:12:54    compiled code at target/compiled/marketing_pipeline/tests/website_activity_outside_business_hours.sql
+2025-05-27 08:12:54,408 - INFO - utils - [0m08:12:54
+2025-05-27 08:12:54,433 - INFO - utils - [0m08:12:54  Done. PASS=67 WARN=0 ERROR=12 SKIP=0 TOTAL=79
+2025-05-27 08:12:56,308 - ERROR - utils - dbt tests failed: dbt command failed with exit code 1
+2025-05-27 08:12:56,328 - WARNING - email_notification - 📧 Sending generic failure email [Airflow] Failure in Marketing_Data_Pipeline.dbt_run.dbt_test (Attempt 1/1)
+2025-05-27 08:13:00,346 - INFO - Marketing_Data_Pipeline - ✅ Completed task: Run all dbt tests
